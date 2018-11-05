@@ -1,0 +1,38 @@
+.row {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 -10px -23px;
+  width: calc(100% + 20px);
+
+  &--full {
+    margin: 0;
+  }
+
+  &.-field {
+    margin-top: 30px;
+  }
+
+  for $i in 1...13 {
+
+    +above($breakpoint-tablet) {
+      .col-desktop-{$i} {
+        lost-column: $i/12 0 0;
+        margin: 35px 0;
+      }
+    }
+
+    +between($breakpoint, $breakpoint-tablet) {
+      .col-tablet-{$i} {
+        lost-column: $i/12 0 0;
+        margin: 25px 0;
+      }
+    }
+
+    +below($breakpoint) {
+      .col-mobile-{$i} {
+        lost-column: $i/12 0 0;
+        margin: 10px 0;
+      }
+    }
+  }
+}

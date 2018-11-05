@@ -1,0 +1,11 @@
+// ------------------------------
+// Converts PX to REM
+// ------------------------------
+
+torem(value) {
+  return unit((value / $base-font-size), rem);
+}
+
+fluid(value) {
+	return "calc(16px + (%s - 16) * (100vw) / (1440))" % value;
+}

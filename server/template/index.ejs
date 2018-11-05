@@ -1,0 +1,16 @@
+<!doctype html>
+	<html lang="pt-br">
+		<head>
+			<% if (htmlWebpackPlugin.options.isProd) { %>
+				<@- seoConfig @>
+			<% } %>
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+			<link rel="preload" href="<%= htmlWebpackPlugin.files.css[0] %>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	</head>
+	<body class="<%= htmlWebpackPlugin.options.currentFont %>">
+		<div id="react-view"><div><% if (htmlWebpackPlugin.options.isProd) { %><@- markup @><% } %></div></div>
+		<script type="text/javascript" src="<%= htmlWebpackPlugin.options.ADOBE %>"></script>
+	</body>
+</html>
