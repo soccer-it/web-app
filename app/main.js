@@ -1,18 +1,13 @@
 import React from 'react';
 import configureStore from 'utils/redux/configureStore';
 import { render } from 'react-dom';
-import { match, browserHistory } from 'react-router';
 import { AppContainer } from 'react-hot-loader';
+import { match, browserHistory } from 'react-router';
 import { RootComponent } from 'components/RootComponent';
 import setDefaultHeaders from 'utils/setDefaultHeaders';
 import routes from './routes';
-// import lazyLoadImages from 'utils/lazyLoadImages';
 import fontObserver from 'utils/fontObserver';
 import 'utils/thirdPartyScripts';
-
-/* Active PrepaidCard */
-
-localStorage.setItem('hasPrepaidCard', !!/prepaidCard/gi.test(window.location.hash))
 
 /* global APP */
 

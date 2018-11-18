@@ -3,8 +3,7 @@ const reactRedux = require('react-redux'),
 	reactRouter = require('react-router'),
 	{ Helmet } = require('react-helmet'),
 	keys = require('ramda').keys,
-	serialize = require('serialize-javascript'),
-	getCMSData = require('../app/utils/getCMSData').default;
+	serialize = require('serialize-javascript');
 
 const { Provider } = reactRedux,
 	{ RouterContext } = reactRouter,
@@ -80,13 +79,7 @@ const startApp = locals => (store, renderProps, currentState) => {
 		});
 	};
 
-	if (hasDynamicContent) {
-		return getCMSData(store.dispatch)({ page: name.toLowerCase() }).then(res =>
-			createStaticMarkup({ name, category, mainRoute })
-		);
-	} else {
-		return createStaticMarkup({ name, category, mainRoute });
-	}
+	return createStaticMarkup({ name, category, mainRoute });
 };
 
 module.exports = startApp;

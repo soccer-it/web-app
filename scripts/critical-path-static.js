@@ -9,6 +9,8 @@ const generate = (pages) => {
 
 	const { path, name, nonCritical } = pages.shift();
 
+	if (nonCritical) generate(pages);
+
 	critical.generate({
 		inline: true,
 		minify: true,
@@ -19,9 +21,7 @@ const generate = (pages) => {
 		width: 1920,
 		height: 1080,
 		forceInclude: [
-			'#icons',
-			'.side-section',
-			'.hero-simulator'
+			'#icons'
 		],
 		css: `build/${assets.main.css}`,
 		ignore: [/url\(/,'@font-face',/print/,/\[]/]
