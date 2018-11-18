@@ -91,6 +91,9 @@ module.exports = (env = {}) => {
 							]),
 							rupture()
 						],
+						import: [
+							'~styles/config/variables.styl'
+						],
 						define: Object.assign({}, createStylusVars(colors), {
 							'publicPath': new stylus.nodes.String(currentApp.ROOT_PATH),
 							'appName': new stylus.nodes.String(currentApp.appName),
