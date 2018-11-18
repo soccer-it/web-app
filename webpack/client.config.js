@@ -1,7 +1,8 @@
 const webpack = require('webpack'),
 			path = require('path'),
 			AssetsPlugin = require('assets-webpack-plugin'),
-			webpackCommonConfig = require('./common/config.js');
+			webpackCommonConfig = require('./common/config.js'),
+			WebpackPwaManifest = require('webpack-pwa-manifest');
 
 module.exports = env => {
 
@@ -31,7 +32,8 @@ module.exports = env => {
 			}),
 			new AssetsPlugin({
 				filename: "assets.json"
-			})
+			}),
+			new WebpackPwaManifest(currentApp.manifest)
 		])
 	});
 }

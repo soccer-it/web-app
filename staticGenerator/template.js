@@ -52,6 +52,8 @@ const template = ({
 					<link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="${options.rootPath}icons/apple-touch-startup-image-1496x2048.png">
 					<link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="${options.rootPath}icons/apple-touch-startup-image-1536x2008.png">
 					<link rel="stylesheet" href="${main.css}">
+					<link rel="stylesheet" href="${main.css}">
+					<link rel="manifest" href="/app-manifest.json">
 					<script defer src="${vendor.js}"></script>
 					<script defer src="${main.js}"></script>
 			</head>

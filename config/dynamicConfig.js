@@ -1,16 +1,35 @@
+const path = require('path');
+
 const dynamicConfig = {
-	"default": {
-		title: 'Soccer it',
+	default: {
+		theme: {
+			appColor: '#2F3640'
+		},
+		manifest: {
+			name: 'Soccer It',
+			filename: 'app-manifest.json',
+			short_name: 'Soccer It',
+			description: 'Um novo jeito de torcer!',
+			theme_color: '#2F3640',
+			background_color: '#2F3640',
+			crossorigin: null,
+			icons: [
+				{
+					src: path.resolve('build/images/icon.png'),
+					sizes: [96, 128, 192, 256, 384, 512, 1024]
+				}
+			]
+		},
+		title: 'Soccer It | Um novo jeito de torcer',
 		description: '',
 		apps: {},
 		medias: {},
 		API: {
-			APP_KEY: 'e5a3989859b2873853885f452e976741',
-			ROOT: 'https://hts9fj5b72.execute-api.us-east-2.amazonaws.com/dev/',
-			teams: '/teams/'
+			APP_KEY: '',
+			ROOT: ''
 		},
 		ROOT_PATH: '/',
-		"BREAKPOINTS": {
+		BREAKPOINTS: {
 			'bp-xs': '0',
 			'bp-sm': '500',
 			'bp-m': '700',
@@ -19,10 +38,10 @@ const dynamicConfig = {
 			'bp-hd': '1920'
 		},
 	},
-	'local': {},
-	'prod': {},
-	'dev': {},
-	'staging': {}
+	local: {},
+	prod: {},
+	dev: {},
+	staging: {}
 };
 
 module.exports = dynamicConfig;
