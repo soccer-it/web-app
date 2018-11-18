@@ -72,7 +72,7 @@ module.exports = (env = {}) => {
 				defer: ['vendor', 'main']
 			}),
 			new FaviconsWebpackPlugin({
-				logo: path.resolve(__dirname, '../', `build/images/logo.png`),
+				logo: path.resolve(__dirname, '../', `build/images/icon.png`),
 				emitStats: false,
 				prefix: 'icons/',
 				persistentCache: false,
@@ -118,7 +118,7 @@ module.exports = (env = {}) => {
 				minChunks: (m) => m.resource && /node_modules/.test(m.resource)
 			}),
 			new webpack.optimize.MinChunkSizePlugin({
-			  minChunkSize: 80000
+				minChunkSize: 80000
 			}),
 			new bundleAnalyzerPlugin({
 				analyzerMode: 'static',
