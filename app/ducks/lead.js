@@ -14,6 +14,4 @@ export const leadReducer = handleActions({
 			...payload
 		};
 	}
-}, {
-	experience: 'pf'
-});
+}, {});
