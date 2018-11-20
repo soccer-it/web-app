@@ -60,6 +60,11 @@ const template = ({
 			<body>
 				<div id="react-view"><div>${markup}</div></div>
 			</body>
+			<script>
+				(function() {
+					window.__STATE__ = ${currentState}
+				})();
+			</script>
 		</html>
 	`;
 };
