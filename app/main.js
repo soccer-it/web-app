@@ -9,12 +9,35 @@ import routes from './routes';
 import fontObserver from 'utils/fontObserver';
 import 'utils/thirdPartyScripts';
 
+const offlineRuntime = require('offline-plugin/runtime');
+
+offlineRuntime.install({
+	onInstalled: function() {
+		console.log('[SW] - Installed!');
+	},
+
+	onUpdating: function() {
+		console.log('[SW] - Updating ...');
+
+		offlineRuntime.applyUpdate();
+	},
+
+	onUpdateReady: function() {
+		console.log('[SW] - Update Ready!');
+	},
+	
+	onUpdated: function() {
+		console.log('[SW] - Updated!');
+		window.location.reload();
+	}
+});
+
 /* global APP */
 
 window.__CURRENT_APP__ = JSON.stringify(APP);
 
 const { API } = APP,
-	  { APP_KEY } = API;
+			{ APP_KEY } = API;
 
 setDefaultHeaders({ 'x-api-key': APP_KEY });
 

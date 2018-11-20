@@ -2,7 +2,9 @@ const webpack = require('webpack'),
 			path = require('path'),
 			AssetsPlugin = require('assets-webpack-plugin'),
 			webpackCommonConfig = require('./common/config.js'),
-			WebpackPwaManifest = require('webpack-pwa-manifest');
+			WebpackPwaManifest = require('webpack-pwa-manifest'),
+			OfflinePlugin = require('offline-plugin'),
+			glob = require('glob');
 
 module.exports = env => {
 
@@ -13,6 +15,8 @@ module.exports = env => {
 	}).definitions['APP'];
 
 	const currentApp = JSON.parse(currentAppConfig);
+
+	const externalAssets = glob.sync('build/**/*.+(png|jpg|woff2|woff|svg)').map(p => p.replace('build/', currentApp.ROOT_PATH))
 
 	return Object.assign({}, commonWebpackConfig, {
 		name: 'Client',
@@ -33,7 +37,16 @@ module.exports = env => {
 			new AssetsPlugin({
 				filename: "assets.json"
 			}),
-			new WebpackPwaManifest(currentApp.manifest)
+			new WebpackPwaManifest(currentApp.manifest),
+			new OfflinePlugin({
+				excludes: ['**/.*', '**/*.map', '**/*.gz', '*iconstats*', '*manifest*'],
+				publicPath: currentApp.ROOT_PATH,
+				externals: externalAssets,
+				ServiceWorker: {
+					events: true
+				},
+				AppCache: false
+			})
 		])
 	});
 }
