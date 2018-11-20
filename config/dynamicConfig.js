@@ -1,5 +1,9 @@
 const path = require('path');
 
+const APP_ID = 'fd1af7d1a0f7ede7bcb779ca13ebfc96'; // md5 of 'soccer-it-um-novo-jeito-de-torcer'
+
+const ROOT_PATH = '/';
+
 const dynamicConfig = {
 	default: {
 		theme: {
@@ -28,7 +32,7 @@ const dynamicConfig = {
 			APP_KEY: '',
 			ROOT: ''
 		},
-		ROOT_PATH: '/',
+		ROOT_PATH,
 		BREAKPOINTS: {
 			'bp-xs': '0',
 			'bp-sm': '500',
