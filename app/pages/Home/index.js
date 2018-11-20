@@ -1,6 +1,8 @@
+import './Home.styl';
+
 const Home = () => {
   return (
-    <div></div>
+    <div className="home-page"></div>
   );
 };
 

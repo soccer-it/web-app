@@ -7,9 +7,7 @@ const pageNames = createPageNames({ routeUrl: ROOT_PATH, routes: routes });
 
 const generate = (pages) => {
 
-	const { path, name, nonCritical } = pages.shift();
-
-	if (nonCritical) generate(pages);
+	const { path, name } = pages.shift();
 
 	critical.generate({
 		inline: true,
@@ -46,6 +44,8 @@ const start = () => {
 			 ? [].concat(acc, pageConfig)
 			 : acc
 		}, []);
+
+	console.log('pages', pages);
 
 	return generate(pages);
 }

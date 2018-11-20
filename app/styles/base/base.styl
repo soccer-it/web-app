@@ -70,45 +70,26 @@ body {
 
 @font-face {
     font-family: 'Fira Sans';
-    src: local('Fira Sans Medium'), local('FiraSans-Medium'),
-        url(publicPath+'fonts/FiraSans-Medium.woff2') format('woff2');
+    src: url(publicPath+'fonts/FiraSans-Medium.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Fira Sans';
-    src: local('Fira Sans Regular'), local('FiraSans-Regular'),
-        url(publicPath+'fonts/FiraSans-Regular.woff2') format('woff2');
+    src: url(publicPath+'fonts/FiraSans-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Fira Sans';
-    src: local('Fira Sans Bold'), local('FiraSans-Bold'),
-        url(publicPath+'fonts/FiraSans-Bold.woff2') format('woff2');
+    src: url(publicPath+'fonts/FiraSans-Bold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
 }
 
-input {
-	outline: none;
-}
-
-.bold {
-	font-weight: bold;
-}
-
-.grecaptcha-badge {
-	display: none !important;
-}
-
-.captcha {
-	align-items: flex-end;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	overflow: hidden;
-	z-index: 2;
+.app-layout {
+	background-color: rgba(black, .6);
+	min-height: 100vh;
 }
