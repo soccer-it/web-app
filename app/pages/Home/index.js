@@ -1,11 +1,12 @@
-import { Fragment } from 'react'
 import Loader from 'components/Loader'
+import BoxContent from 'components/BoxContent'
+
 
 const Home = () => {
   return (
-    <Fragment>
-      <Loader />
-    </Fragment>
+    <div className='container'>
+      <BoxContent />
+    </div>
   )
 }
 

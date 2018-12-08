@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import Icon from 'components/Icon'
 
 const Logo = ({ logo='', type='', alt='', title='', className='' }) => (
@@ -12,5 +13,13 @@ const Logo = ({ logo='', type='', alt='', title='', className='' }) => (
       title={title} 
     />
 )
+
+Logo.propTypes = {
+  logo: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  alt: PropTypes.string,
+  title: PropTypes.string,
+  className: PropTypes.string
+}
 
 export default Logo
