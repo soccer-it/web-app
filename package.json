@@ -15,7 +15,7 @@
 		"app/styles/vendors"
 	],
 	"scripts": {
-		"start": "node_modules/.bin/run start --",
+		"start": "node_modules/.bin/run start -- --appName=credicard --isOrganic=false",
 		"build": "node_modules/.bin/run build --",
 		"reset": "node_modules/.bin/run reset --",
 		"optimize:images": "node_modules/.bin/run optimize:images",

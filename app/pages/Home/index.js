@@ -1,13 +1,12 @@
-import Teams from 'components/Teams';
+import { Fragment } from 'react'
+import Loader from 'components/Loader'
 
 const Home = () => {
   return (
-    <div>
-      Soccer IT!
-
-      <Teams />
-    </div>
-  );
-};
+    <Fragment>
+      <Loader />
+    </Fragment>
+  )
+}
 
 export default Home;
