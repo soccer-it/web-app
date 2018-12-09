@@ -17,7 +17,7 @@ const Home = () => {
         imageName='news' 
         imageType='png' 
         title='Time topshowba top top' 
-        description='o time é toptopshowba deeemaix, toptoptoptotp showba top o time é toptopshowba deeemaix, toptoptoptotp showba top o time é toptopshowba deeemaix, toptoptoptotp showba top ' 
+        description='o time é toptopshowba deeemaix, toptoptoptotp showba top o time é toptopshowba deeemaix' 
       />
     </div>
   )
