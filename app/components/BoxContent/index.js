@@ -1,10 +1,14 @@
 import PropTypes from 'prop-types'
+import Html from 'components/Html'
+
 import './BoxContent.styl'
 
 const BoxContent = ({ background, content, className='' }) => (
   <div className='box-content' style={{ background: background }}>
     <div className={`wrapper-box-content ${className}`}>
-      {content}
+      <Html>
+        {content}
+      </Html>
     </div>
   </div>
 )

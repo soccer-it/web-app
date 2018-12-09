@@ -136,3 +136,12 @@ export const removeBlockedFields = (fields) => {
   const fieldsWithoutKeysBlocked = R.omit(getKeysWithBlocked(fields), fields)
   return R.omit(modelsBlocked, fieldsWithoutKeysBlocked)
 }
+
+export const truncateString = (name, count) => {
+	if (name.length > count) {
+		const trucateName = name.substring(0, count + 1).concat('...')
+		return trucateName
+	}
+
+	return name
+}
