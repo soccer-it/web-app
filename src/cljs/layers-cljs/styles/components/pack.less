@@ -1,0 +1,36 @@
+@import '../variables.less';
+@import '../utils.less';
+
+.pack {
+  max-width: 400px;
+  background: @primary;
+  color: #FFF;
+  padding: 20px;
+  margin: 20px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  transition: all .2s;
+
+  &:hover {
+    background: darken(@primary, 10%);
+  }
+
+  &.active {
+    background: @secondary;
+    transform: translateY(-10px);
+    box-shadow: 1px 3px 7px #0000006b;
+  }
+
+  .icon {
+    .size(80px, 80px);
+  }
+
+  & > .title {
+    margin: 10px 0;
+  }
+
+  & > .description {
+    font-size: 16px;
+  }
+}

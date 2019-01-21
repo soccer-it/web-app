@@ -1,0 +1,52 @@
+// ===== Utils ===== //
+
+@context: 16;
+//---------------------------------------------------//
+//                    .fontsize2em                   //
+//---------------------------------------------------//
+//               ===== Description =====             //
+//   Convert px into 'em' easily, just pass the      //
+//   number to function as it returns the font       //
+//   size property with last number converted to     //
+//   'em' the context is set to a default value for  //
+//   the body, but you can modify it the way you     //
+//   prefer.                                         //
+
+//                  ===== Example =====              //
+//   yourclass {                                     //
+//     .fontsize2em (42);                            //
+//   }                                               //
+
+//                 ===== Result =====                //
+//   yourclass {                                     //
+//     font-size: 2.625em;                           //
+//   }                                               //
+//---------------------------------------------------//
+.fontsize2em (@font) {
+  font-size: (@font / @context) + 0em;
+}
+
+//---------------------------------------------------//
+//                        .size                      //
+//---------------------------------------------------//
+//              ===== Description =====              //
+//    You can set properties like width and height   //
+//    in an easy way with .size, just pass the       //
+//    values, we will put them for you.              //
+//    You must follow the order of the parameters,   //
+//    first the width after the height               //
+//---------------------------------------------------//
+//                 ===== Example =====               //
+//   .yourclass {                                    //
+//     .size(200px, 150px);                          //
+//   }                                               //
+//                 ===== Result =====                //
+//   .yourclass {                                    //
+//     width: 200px;                                 //
+//     height: 150px;                                //
+//   }                                               //
+//---------------------------------------------------//
+.size(@width, @height) {
+  width: @width;
+  height: @height;
+}

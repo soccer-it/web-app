@@ -1,0 +1,213 @@
+// ===== Variables ===== //
+@xs: 400px;
+@m: 800px;
+@l: 1050px;
+@xl: 1800px;
+@hd: 2200px;
+
+//---------------------------------------------------//
+//                      .belowF                      //
+//---------------------------------------------------//
+//              ===== Description =====              //
+//   is a media query that you can send the value    //
+//   that you prefer to set in max-width             //
+
+//                 ===== Example =====               //
+//   .yourclass {                                    //
+//     .belowF (600px, {                             //
+//        yourstyle                                  //
+//       });                                         //
+//   }                                               //
+
+//                 ===== Result =====                //
+//   .yourclass {                                    //
+//     @media only screen and (max-width: 600px) {   //
+//         yourstyle                                 //
+//     }                                             //
+//   }                                               //
+//---------------------------------------------------//
+
+//===== +size fixed =====//
+.belowF (@size; @content) {
+  @media only screen and (max-width: @size) {@content(); }
+}
+
+//---------------------------------------------------//
+//                .below and .above                  //
+//---------------------------------------------------//
+//              ===== Description =====              //
+//   You can only send a special letter that we      //
+//   reserve with fixed values ​​that we consider      //
+//   appropriate for each modality.                  //
+//   .below will use the value of the last letter    //
+//   and set it to a max-width.                      //
+//   The .above will set in min-width                //
+
+//                ===== variables =====              //
+//   @xs: 400px;                                     //
+//   @m: 800px;                                      //
+//   @l: 1050px;                                     //
+//   @xl: 1800px;                                    //
+//   @hd: 2200px;                                    //
+
+//   detail, you do not pass the letter with the '@' //
+//   the treatment is done by us                     //
+//---------------------------------------------------//
+
+//---------------------------------------------------//
+//                      .below                       //
+//---------------------------------------------------//
+//                 ===== Example =====               //
+//   .yourclass {                                    //
+//     .below (xs, {                                 //
+//        yourstyle                                  //
+//       });                                         //
+//   }                                               //
+//                 ===== Result =====                //
+//   .yourclass {                                    //
+//     @media only screen and (max-width: 400px) {   //
+//         yourstyle                                 //
+//     }                                             //
+//   }                                               //
+//---------------------------------------------------//
+
+//===== +mobile =====//
+.below(xs; @content){
+  @media only screen and (max-width: @xs) { @content(); }
+}
+
+//===== +tablet =====//
+.below(m; @content){
+  @media only screen and (max-width: @m) { @content(); }
+}
+
+//===== +desktop =====//
+.below(l; @content){
+  @media only screen and (max-width: @l) { @content(); }
+}
+
+//===== +hd =====//
+.below(xl; @content){
+  @media only screen and (max-width: @xl) { @content(); }
+}
+
+//===== +max-resolution =====//
+.below(hd; @content){
+  @media only screen and (max-width: @hd) { @content(); }
+}
+
+//---------------------------------------------------//
+//                      .above                       //
+//---------------------------------------------------//
+//                 ===== Example =====               //
+//   .yourclass {                                    //
+//     .above (l, {                                  //
+//        yourstyle                                  //
+//       });                                         //
+//   }                                               //
+
+//                 ===== Result =====                //
+//   .yourclass {                                    //
+//     @media only screen and (min-width: 1050px) {  //
+//         yourstyle                                 //
+//     }                                             //
+//   }                                               //
+//---------------------------------------------------//
+
+// ===== +mobile ===== //
+.above(xs; @content){
+  @media only screen and (min-width: @xs) { @content(); }
+}
+
+// ===== +tablet ===== //
+.above(m; @content){
+  @media only screen and (min-width: @m) { @content(); }
+}
+
+// ===== +desktop ===== //
+.above(l; @content){
+  @media only screen and (min-width: @l) { @content(); }
+}
+
+// ===== +hd ===== //
+.above(xl; @content){
+  @media only screen and (min-width: @xl) { @content(); }
+}
+
+// ===== +max-resolution ===== //
+.above(hd; @content){
+  @media only screen and (min-width: @hd) { @content(); }
+}
+
+//---------------------------------------------------//
+//         .mobile, .tablet, .desktop, .hd           //
+//---------------------------------------------------//
+//              ===== Description =====              //
+//    We've prepared some media query ranges         //
+//    that we think are right for you.               //
+//    You can use one of the functions, only         //
+//    parameter is your style, so you can use        //
+//    our ranges.                                    //
+
+//---------------------------------------------------//
+//                 ===== Example =====               //
+//   .yourclass {                                    //
+//     .mobile ({                                    //
+//        yourstyle                                  //
+//       });                                         //
+//   }                                               //
+//                 ===== Result =====                //
+//   .yourclass {                                    //
+//     @media only screen and (min-width: 400px) {   //
+//         yourstyle                                 //
+//     }                                             //
+//   }                                               //
+//---------------------------------------------------//
+//                 ===== Example =====               //
+//   .yourclass {                                    //
+//     .tablet ({                                    //
+//        yourstyle                                  //
+//       });                                         //
+//   }                                               //
+//                 ===== Result =====                //
+//   .yourclass {                                    //
+//     @media only screen and                        //
+//     (min-width: 400px) and (max-width: 800px) {   //
+//       yourstyle                                   //
+//     }                                             //
+//   }                                               //
+//---------------------------------------------------//
+//                 ===== Example =====               //
+//   .yourclass {                                    //
+//     .desktop ({                                   //
+//        yourstyle                                  //
+//       });                                         //
+//   }                                               //
+//                 ===== Result =====                //
+//   .yourclass {                                    //
+//     @media only screen and                        //
+//     (min-width: 800px) and (max-width: 1050px) {  //
+//       yourstyle                                   //
+//     }                                             //
+//   }                                               //
+//---------------------------------------------------//
+
+// ===== -mobile down width 400px  ===== //
+.mobile(@content) {
+  @media only screen and (max-width: @xs) { @content(); }
+}
+
+// ===== between mobile and tablet ===== //
+.tablet(@content) {
+  @media only screen and (min-width: @xs) and (max-width: @m) { @content(); }
+}
+
+// ===== between tablet and desktop ===== //
+.desktop(@content) {
+  @media only screen and (min-width: @m) and (max-width: @xl){ @content(); }
+}
+
+// ===== high resolution ===== //
+.hd(@content) {
+  @media only screen and (min-width: @xl) { @content(); }
+}
