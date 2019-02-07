@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "file": "main.css",
+  "sources": [
+    "../../../src/cljs/soccer_it_webapp/styles/main.scss"
+  ],
+  "mappings": "AAAA,AAAA,CAAC;AACD,AAAC,CAAA,AAAA,OAAO;AACR,AAAC,CAAA,AAAA,MAAM,CAAC;EACN,UAAU,EAAE,UAAW,GACxB;;AAED,AAAA,IAAI;AACJ,AAAA,IAAI,CAAC;EACH,WAAW,EAAE,UAAW,GACzB",
+  "names": []
+}
