@@ -1,15 +1,14 @@
 (ns soccer-it-webapp.core
   (:require [rum.core :as rum]
-            [components.counter :refer [counter]]
-            [pages.home :refer [home]]))
+            [pages.choose-your-team :refer [choose-your-team]]))
 
 (enable-console-print!)
 
 (rum/defc root-component [active-page]
-  [:div
-   active-page])
+  [:div.app-layout
+   (choose-your-team)])
 
-(rum/mount (root-component (home))
+(rum/mount (root-component)
            (. js/document (getElementById "app")))
 
 (defn on-js-reload []

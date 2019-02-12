@@ -1,10 +1,8 @@
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
+// Vendors
+@import 'vendors/_reset.scss';
 
-html,
-body {
-  font-family: sans-serif;
-}
+// Base
+@import 'base/_base.scss';
+
+// Components
+@import 'components/_teams.scss';

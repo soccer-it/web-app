@@ -14,11 +14,10 @@
 
   :plugins [[lein-figwheel "0.5.16"]
             [lein-cljsbuild "1.1.7" :exclusions [[org.clojure/clojure]]]
-            [yogthos/lein-sass "0.1.7"]]
+            [lein-sass "0.4.0"]]
   
-  ; :hooks [leiningen.scss]
-
-  :sass {:source "src/cljs/soccer_it_webapp/styles" :target "resources/public/css"}
+  :sass {:src "src/cljs/soccer_it_webapp/styles/"
+         :output-directory "resources/public/css/"}
 
   :source-paths ["src"]
 
