@@ -1,1 +1,62 @@
-.teams {}
+.teams {
+  background-color: black;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 100vh;
+
+  & > .wrapper {
+    width: 100%;
+
+    & > .title {
+      font-size: 45px;
+      margin: 0 auto 60px;
+      padding: 0 60px;
+      font-weight: bold;
+    }
+
+    & > .items {
+      & > div {
+        padding: 0 90px;
+      }
+    }
+  }
+
+  [data-swipeable] {
+    padding: 5px;
+
+    &[aria-hidden="false"] {
+      .single-team {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      .caption {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .single-team {
+    overflow: hidden;
+    transform-origin: center;
+    transform: scale(0.6);
+    opacity: 0.4;
+    transition: 0.2s transform, 0.2s opacity;
+
+    & > .banner {
+      max-width: 100%;
+    }
+
+    & > .caption {
+      font-size: 20px;
+      margin: 20px auto;
+      opacity: 0;
+      transform: translateY(-20%);
+      transition: 0.2s opacity, 0.2s transform;
+    }
+  }
+}

@@ -306,8 +306,61 @@ template {
 *,
 *:before,
 *:after {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
 
-html,
 body {
-  font-family: sans-serif; }
+  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300))); }
+
+body,
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  font-family: "Montserrat", sans-serif; }
+
+.container {
+  padding: 0 20px; }
+
+.teams {
+  background-color: black;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 100vh; }
+  .teams > .wrapper {
+    width: 100%; }
+    .teams > .wrapper > .title {
+      font-size: 45px;
+      margin: 0 auto 60px;
+      padding: 0 60px;
+      font-weight: bold; }
+    .teams > .wrapper > .items > div {
+      padding: 0 90px; }
+  .teams [data-swipeable] {
+    padding: 5px; }
+    .teams [data-swipeable][aria-hidden="false"] .single-team {
+      transform: scale(1);
+      opacity: 1; }
+    .teams [data-swipeable][aria-hidden="false"] .caption {
+      opacity: 1;
+      transform: translateY(0); }
+  .teams .single-team {
+    overflow: hidden;
+    transform-origin: center;
+    transform: scale(0.6);
+    opacity: 0.4;
+    transition: 0.2s transform, 0.2s opacity; }
+    .teams .single-team > .banner {
+      max-width: 100%; }
+    .teams .single-team > .caption {
+      font-size: 20px;
+      margin: 20px auto;
+      opacity: 0;
+      transform: translateY(-20%);
+      transition: 0.2s opacity, 0.2s transform; }
