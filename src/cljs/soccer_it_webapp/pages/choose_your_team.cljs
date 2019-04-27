@@ -5,7 +5,6 @@
 
 (rum/defc choose-your-team []
   [:div
-    (header)
-    [:div.choose-your-team
-    (teams)]
-  ])
+   (header)
+   [:div.page [:div.choose-your-team
+               (teams)]]])

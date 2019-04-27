@@ -145,7 +145,8 @@ textarea {
   line-height: 1.15;
   /* 1 */
   margin: 0;
-  /* 2 */ }
+  /* 2 */
+  border: 0 none; }
 
 /**
  * Show the overflow in IE.
@@ -328,16 +329,17 @@ body p {
 
 .teams {
   background-color: black;
+  padding-top: 100px;
   color: white;
   text-align: center;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   height: 100vh; }
   .teams > .wrapper {
     width: 100%; }
     .teams > .wrapper > .title {
-      font-size: 45px;
+      font-size: 42px;
       margin: 0 auto 60px;
       padding: 0 60px;
       font-weight: bold; }
@@ -365,6 +367,18 @@ body p {
       opacity: 0;
       transform: translateY(-20%);
       transition: 0.2s opacity, 0.2s transform; }
+  .teams .search {
+    margin: 0 40px; }
+    .teams .search,
+    .teams .search > input {
+      width: 100%; }
+    .teams .search > input {
+      outline: none;
+      background-color: transparent;
+      border-bottom: solid 1px #707070;
+      display: block;
+      color: white;
+      padding: 10px; }
 
 .header {
   background-color: #27AE60;
