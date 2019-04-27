@@ -59,4 +59,22 @@
       transition: 0.2s opacity, 0.2s transform;
     }
   }
+
+  .search {
+    margin: 0 40px;
+
+    &,
+    & > input {
+      width: 100%;
+    }
+
+    & > input {
+      outline: none;
+      background-color: transparent;
+      border-bottom: solid 1px #707070;
+      display: block;
+      color: white;
+      padding: 10px;
+    }
+  }
 }

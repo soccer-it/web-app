@@ -145,7 +145,8 @@ textarea {
   line-height: 1.15;
   /* 1 */
   margin: 0;
-  /* 2 */ }
+  /* 2 */
+  border: 0 none; }
 
 /**
  * Show the overflow in IE.
@@ -364,3 +365,15 @@ body h6 {
       opacity: 0;
       transform: translateY(-20%);
       transition: 0.2s opacity, 0.2s transform; }
+  .teams .search {
+    margin: 0 40px; }
+    .teams .search,
+    .teams .search > input {
+      width: 100%; }
+    .teams .search > input {
+      outline: none;
+      background-color: transparent;
+      border-bottom: solid 1px #707070;
+      display: block;
+      color: white;
+      padding: 10px; }
