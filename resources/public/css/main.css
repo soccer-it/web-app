@@ -507,16 +507,15 @@ body {
 
 .box {
   background-color: #fff;
-  box-shadow: 0px 1px 3px #000;
   border-radius: 5px; }
   .box.-is-news {
-    max-width: 285px; }
+    max-width: 285px;
+    overflow-y: hidden; }
   .box.-is-user-quiz {
     max-width: 124px; }
 
 .news-boxes {
-  margin-left: 20px;
-  margin-top: 15px; }
+  padding: 20px; }
 
 .news-box {
   display: flex; }
