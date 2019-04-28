@@ -3,12 +3,12 @@
             [components.scoreboard-team :refer [scoreboard-team]]
             [components.content-panel :refer [content-panel]]))
 
-(rum/defc scoreboard [scores]
+(rum/defc scoreboard [{:keys [teams]}]
   (content-panel {:class "-is-match"}
     [:div {:class "scoreboard"}
       [:div {:class "board"}
-        (for [{:keys [src team-name score]} scores]
-          ^{:key score} (scoreboard-team {:src src :team-name team-name :score score}))]
+        (scoreboard-team [:principal teams])
+        (scoreboard-team [:visitor teams])]
     
     [:div {:class "info-local"}
       [:p {:class "stadium-name"} "Allianz Parque"]
