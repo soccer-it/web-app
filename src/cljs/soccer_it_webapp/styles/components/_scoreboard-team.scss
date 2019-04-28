@@ -1,0 +1,15 @@
+.wrapper-team {
+  text-align: center;
+  .team-logo {
+    width: 100%;
+    max-width: 42px;
+    max-height: 42px;
+    margin-bottom: 7px;
+  }
+  .team-name {
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 14px;
+  }
+}
