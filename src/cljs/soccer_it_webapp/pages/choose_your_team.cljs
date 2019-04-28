@@ -14,6 +14,7 @@
     
     [:div.container
       (panel-notice)
+      (panel-notice {:class "-is-quiz-content"})
       (scoreboard)]
 
     (news-boxes)]])

@@ -555,6 +555,16 @@ body {
     font-weight: bold;
     max-width: 232px; }
 
+.panel-notice.-is-quiz-content .wrapper-notice-championship .championship-name {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 21px; }
+
+.panel-notice.-is-quiz-content .wrapper-notice-championship .championship-info-notice {
+  font-size: 12px;
+  line-height: 14px;
+  max-width: 300px; }
+
 .content-panel {
   border-radius: 5px;
   width: 100%;
@@ -598,3 +608,7 @@ body {
       color: #555555;
       font-size: 12px;
       line-height: 15px; }
+
+.page .container > .panel-notice {
+  margin-top: 30px;
+  margin-bottom: 30px; }

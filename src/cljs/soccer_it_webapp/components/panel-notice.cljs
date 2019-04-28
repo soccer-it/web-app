@@ -2,8 +2,8 @@
   (:require [rum.core :as rum]
             [components.content-panel :refer [content-panel]]))
 
-(rum/defc panel-notice []
-  [:div {:class "panel-notice"}
+(rum/defc panel-notice [{:keys [class]}]
+  [:div {:class (str "panel-notice " class)}
     (content-panel {:class "-is-notice"}
       [:div {:class "wrapper-notice-championship"}
         [:p {:class "championship-name"} "Champions League"]

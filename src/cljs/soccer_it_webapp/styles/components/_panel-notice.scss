@@ -14,5 +14,21 @@
       font-weight: bold;
       max-width: 232px;
     }
+
+  }
+  &.-is-quiz-content {
+    .wrapper-notice-championship {
+      .championship-name {
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 21px;
+      }
+  
+      .championship-info-notice {
+        font-size: 12px;
+        line-height: 14px;
+        max-width: 300px;
+      }
+    }
   }
 }
