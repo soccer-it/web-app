@@ -1,8 +1,7 @@
 (ns components.teams
   (:require
-   [sablono.core :as sablono]
    [rum.core :as rum]
-   [cljsjs.react-swipeable-views]))
+   [components.swipeable :refer [swipeable]]))
 
 ;;TODO => Remove Logic from view
 
@@ -10,9 +9,6 @@
   [:figure.single-team
    [:img.banner {:src "images/single-team-banner.svg"}]
    [:figcaption.caption name]])
-
-(rum/defc Swipeable [props children]
-  (js/React.createElement js/SwipeableViews #js {} (sablono/html children)))
 
 (def teamsList [{:name "Corinthians" :slug "COR"}
                 {:name "Palmeiras" :slug "PAL"}
@@ -37,5 +33,5 @@
      [:div.wrapper
       [:h1.title "Escolha seu Time"]
       [:div {:class "items"}
-       (Swipeable {}
+       (swipeable {}
                   [(for [team @currentTeamList] (singleTeam (get team :name)))])]]]))

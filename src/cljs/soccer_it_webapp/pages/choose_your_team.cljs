@@ -8,4 +8,5 @@
   [:div
    (header)
    [:div.page
+    (teams)
     (news-boxes)]])
