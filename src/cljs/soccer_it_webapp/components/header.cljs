@@ -17,8 +17,9 @@
         [:li {:class "avatar"}]
         [:li {:class "user-name"} "Victor Fellype"]
         [:li {:class "user-date"} "Membro desde Abril/2019"]
+        
         [:li {:class "item"}
           [:a {:class "menu-link"} "Quiz do timão"]]
+        
         [:li {:class "item"}
-          [:a {:class "menu-link"} "Simulador de Retrospecto"]]
-        ]]])
+          [:a {:class "menu-link"} "Simulador de Retrospecto"]]]]])

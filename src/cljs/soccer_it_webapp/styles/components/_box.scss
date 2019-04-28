@@ -1,0 +1,12 @@
+.box {
+  background-color: #fff;
+  box-shadow: 0px 1px 3px #000;
+  border-radius: 5px;
+  
+  &.-is-news {
+    max-width: 285px;
+  }
+  &.-is-user-quiz {
+    max-width: 124px;
+  }
+}

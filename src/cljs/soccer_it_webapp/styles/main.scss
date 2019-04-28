@@ -4,6 +4,11 @@
 // Base
 @import 'base/_base.scss';
 
+// Pages
+@import 'pages/_home.scss';
+
 // Components
 @import 'components/_teams.scss';
 @import 'components/_header.scss';
+@import 'components/_box.scss';
+@import 'components/_news-box';

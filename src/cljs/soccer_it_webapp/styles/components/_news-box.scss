@@ -1,0 +1,27 @@
+.news-box {
+  display: flex;
+
+  .wrapper-img {
+    max-height: 90px;
+    .img {
+      max-width: 90px;
+    }
+  }
+
+  .wrapper-news {
+    padding: 15px;
+    .title {
+      color: #27AE60;
+      font-size: 10px;
+      line-height: 12px;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+
+    .description {
+      color: #555555;
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+}
