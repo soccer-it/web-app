@@ -2,6 +2,7 @@
   (:require [rum.core :as rum]
             [components.header :refer [header]]
             [components.scoreboard :refer [scoreboard]]
+            [components.panel-notice :refer [panel-notice]]
             [components.news-boxes :refer [news-boxes]]
             [components.teams :refer [teams]]))
 
@@ -12,6 +13,7 @@
     (teams)
     
     [:div.container
+      (panel-notice)
       (scoreboard)]
 
     (news-boxes)]])

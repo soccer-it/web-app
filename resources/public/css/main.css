@@ -543,15 +543,29 @@ body {
     color: #fff;
     line-height: 14px; }
 
+.panel-notice .wrapper-notice-championship {
+  color: #fff; }
+  .panel-notice .wrapper-notice-championship .championship-name {
+    font-size: 10px;
+    line-height: 12px;
+    margin-bottom: 4px; }
+  .panel-notice .wrapper-notice-championship .championship-info-notice {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: bold;
+    max-width: 232px; }
+
 .content-panel {
   border-radius: 5px;
-  width: 100%; }
+  width: 100%;
+  background-color: #000000;
+  opacity: .8; }
   .content-panel.-is-match {
-    background-color: #000000;
-    opacity: .8;
     padding: 30px 50px;
     margin-top: 30px;
     margin-bottom: 30px; }
+  .content-panel.-is-notice {
+    padding: 109px 12px 11px; }
 
 .box {
   background-color: #fff;
