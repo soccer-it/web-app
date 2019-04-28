@@ -1,7 +1,7 @@
 (ns pages.choose-your-team
   (:require [rum.core :as rum]
             [components.header :refer [header]]
-            [components.scoreboard :refer [scoreboard]]
+            [components.panel-scoreboard :refer [panel-scoreboard]]
             [components.panel-notice :refer [panel-notice]]
             [components.news-boxes :refer [news-boxes]]
             [components.teams :refer [teams]]))
@@ -14,7 +14,8 @@
     
     [:div.container
       (panel-notice)
-      (panel-notice {:class "-is-quiz-content"})
-      (scoreboard)]
+      (panel-notice {:class "-is-quiz-content"})]
+
+    (panel-scoreboard)
 
     (news-boxes)]])

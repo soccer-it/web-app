@@ -1,15 +1,26 @@
 .wrapper-team {
   text-align: center;
-  .team-logo {
-    width: 100%;
-    max-width: 42px;
-    max-height: 42px;
-    margin-bottom: 7px;
+  display: flex;
+  
+  .wrapper-avatar {
+    .team-logo {
+      width: 100%;
+      max-width: 42px;
+      max-height: 42px;
+      margin-bottom: 7px;
+    }
+    .team-name {
+      font-size: 12px;
+      font-weight: bold;
+      color: #fff;
+      line-height: 14px;
+    }
   }
-  .team-name {
-    font-size: 12px;
+  .value-match {
+    font-size: 24px;
     font-weight: bold;
+    line-height: 29px;
     color: #fff;
-    line-height: 14px;
+    margin: 0px 12px;
   }
 }

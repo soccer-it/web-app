@@ -531,17 +531,24 @@ body {
     line-height: 12px; }
 
 .wrapper-team {
-  text-align: center; }
-  .wrapper-team .team-logo {
+  text-align: center;
+  display: flex; }
+  .wrapper-team .wrapper-avatar .team-logo {
     width: 100%;
     max-width: 42px;
     max-height: 42px;
     margin-bottom: 7px; }
-  .wrapper-team .team-name {
+  .wrapper-team .wrapper-avatar .team-name {
     font-size: 12px;
     font-weight: bold;
     color: #fff;
     line-height: 14px; }
+  .wrapper-team .value-match {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 29px;
+    color: #fff;
+    margin: 0px 12px; }
 
 .panel-notice .wrapper-notice-championship {
   color: #fff; }
@@ -573,7 +580,8 @@ body {
   .content-panel.-is-match {
     padding: 30px 50px;
     margin-top: 30px;
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    width: 82%; }
   .content-panel.-is-notice {
     padding: 109px 12px 11px; }
 
