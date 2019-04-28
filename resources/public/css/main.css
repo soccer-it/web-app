@@ -328,12 +328,6 @@ body {
 .container {
   padding: 0 20px; }
 
-.boxes-news {
-  overflow: auto;
-  display: flex; }
-  .boxes-news .box {
-    margin-right: 15px; }
-
 .teams {
   background-color: black;
   padding-top: 100px;
@@ -520,12 +514,17 @@ body {
   .box.-is-user-quiz {
     max-width: 124px; }
 
+.news-boxes {
+  margin-left: 20px;
+  margin-top: 15px; }
+
 .news-box {
   display: flex; }
   .news-box .wrapper-img {
     max-height: 90px; }
     .news-box .wrapper-img .img {
-      max-width: 90px; }
+      max-width: 90px;
+      border-radius: 5px 0 0 5px; }
   .news-box .wrapper-news {
     padding: 15px; }
     .news-box .wrapper-news .title {

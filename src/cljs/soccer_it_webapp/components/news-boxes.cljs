@@ -1,11 +1,7 @@
 (ns components.news-boxes
   (:require [rum.core :as rum]
-            [sablono.core :as sablono]
-            [cljsjs.react-swipeable-views]
+            [components.swipeable :refer [swipeable]]
             [components.news-box :refer [news-box]]))
-
-(rum/defc Swipeable [props children]
-  (js/React.createElement js/SwipeableViews #js {} (sablono/html children)))
 
 (def noticeList [{:title "Corinthians" :description "Corinthians toptopshowba"}
                 {:title "Palmeiras" :description "Palmeiras showbaless"}
@@ -14,6 +10,6 @@
 
 (rum/defc news-boxes []
   [:div {:class "news-boxes"}
-    (Swipeable {}
+    (swipeable {}
       (for [notice noticeList]
-        (news-box notice)))])
+        ^{:key notice} (news-box notice)))])
