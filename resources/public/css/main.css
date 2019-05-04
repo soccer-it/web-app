@@ -595,7 +595,9 @@ body {
     max-width: 124px; }
 
 .news-boxes {
-  padding: 20px; }
+  padding: 20px 0 20px 20px; }
+  .news-boxes > div {
+    padding: 0 40px 0 0; }
 
 .news-box {
   display: flex; }
