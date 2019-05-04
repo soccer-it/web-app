@@ -2,16 +2,18 @@
   .board {
     display: flex;
     justify-content: center;
-  }
-  .wrapper-values {
-    display: flex;
     
-    .scoreboard-value, .scoreboard-separator {
-      font-size: 24px;
-      font-weight: bold;
-      line-height: 29px;
-      color: #fff;
-      margin: 0px 12px;
+    .wrapper-score {
+      display: flex;
+      margin-top: 8px;
+
+      .scoreboard-value, .separator-score {
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 29px;
+        color: #fff;
+        margin: 0px 12px;
+      }
     }
   }
 

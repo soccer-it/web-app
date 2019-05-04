@@ -508,15 +508,15 @@ body {
 .scoreboard .board {
   display: flex;
   justify-content: center; }
-
-.scoreboard .wrapper-values {
-  display: flex; }
-  .scoreboard .wrapper-values .scoreboard-value, .scoreboard .wrapper-values .scoreboard-separator {
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 29px;
-    color: #fff;
-    margin: 0px 12px; }
+  .scoreboard .board .wrapper-score {
+    display: flex;
+    margin-top: 8px; }
+    .scoreboard .board .wrapper-score .scoreboard-value, .scoreboard .board .wrapper-score .separator-score {
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 29px;
+      color: #fff;
+      margin: 0px 12px; }
 
 .scoreboard .info-local {
   color: #fff;
