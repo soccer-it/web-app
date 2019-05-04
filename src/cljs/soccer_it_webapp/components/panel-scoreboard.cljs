@@ -45,6 +45,6 @@
     :stadium "Castelão (CE)"}])
 
 (rum/defc panel-scoreboard []
-  [:div {:class "container -is-scoreboard"}
+  [:div {:class "-is-scoreboard"}
     (swipeable {}
       (for [scores scoreboardList] ^{:key scores} (scoreboard scores)))])

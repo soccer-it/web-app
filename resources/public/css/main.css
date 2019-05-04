@@ -578,9 +578,10 @@ body {
   background-color: #000000;
   opacity: .8; }
   .content-panel.-is-match {
-    padding: 30px 50px;
+    padding: 30px 0px;
     margin-top: 30px;
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    max-width: 310px; }
   .content-panel.-is-notice {
     padding: 109px 12px 11px; }
 
@@ -618,11 +619,10 @@ body {
       font-size: 12px;
       line-height: 15px; }
 
-.-is-scoreboard > div {
-  padding: 0 30px 0 0; }
-
-.-is-scoreboard [data-swipeable] {
-  margin-right: 15px; }
+.-is-scoreboard {
+  padding-left: 20px; }
+  .-is-scoreboard > div {
+    padding: 0 15px 0 0; }
 
 .page .container > .panel-notice {
   margin-top: 30px;
