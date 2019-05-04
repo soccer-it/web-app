@@ -1,14 +1,14 @@
 .panel-notice {
-  .wrapper-notice-championship {
+  .wrapper-notice {
     color: #fff;
     
-    .championship-name {
+    .notice-name {
       font-size: 10px;
       line-height: 12px;
       margin-bottom: 4px;
     }
     
-    .championship-info-notice {
+    .info-notice {
       font-size: 16px;
       line-height: 19px;
       font-weight: bold;
@@ -17,14 +17,14 @@
 
   }
   &.-is-quiz-content {
-    .wrapper-notice-championship {
-      .championship-name {
+    .wrapper-notice {
+      .notice-name {
         font-size: 18px;
         font-weight: bold;
         line-height: 21px;
       }
   
-      .championship-info-notice {
+      .info-notice {
         font-size: 12px;
         line-height: 14px;
         max-width: 300px;

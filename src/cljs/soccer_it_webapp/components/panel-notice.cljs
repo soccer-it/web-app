@@ -5,6 +5,6 @@
 (rum/defc panel-notice [{:keys [class]}]
   [:div {:class (str "panel-notice " class)}
     (content-panel {:class "-is-notice"}
-      [:div {:class "wrapper-notice-championship"}
-        [:p {:class "championship-name"} "Champions League"]
-        [:p {:class "championship-info-notice"} "Real Madrid notices here, champions league test"]])])
+      [:div {:class "wrapper-notice"}
+        [:p {:class "notice-name"} "Você realmente conhece o seu time ?"]
+        [:p {:class "info-notice"} "Um quiz com várias perguntas..."]])])

@@ -550,24 +550,24 @@ body {
     color: #fff;
     margin: 0px 12px; }
 
-.panel-notice .wrapper-notice-championship {
+.panel-notice .wrapper-notice {
   color: #fff; }
-  .panel-notice .wrapper-notice-championship .championship-name {
+  .panel-notice .wrapper-notice .notice-name {
     font-size: 10px;
     line-height: 12px;
     margin-bottom: 4px; }
-  .panel-notice .wrapper-notice-championship .championship-info-notice {
+  .panel-notice .wrapper-notice .info-notice {
     font-size: 16px;
     line-height: 19px;
     font-weight: bold;
     max-width: 232px; }
 
-.panel-notice.-is-quiz-content .wrapper-notice-championship .championship-name {
+.panel-notice.-is-quiz-content .wrapper-notice .notice-name {
   font-size: 18px;
   font-weight: bold;
   line-height: 21px; }
 
-.panel-notice.-is-quiz-content .wrapper-notice-championship .championship-info-notice {
+.panel-notice.-is-quiz-content .wrapper-notice .info-notice {
   font-size: 12px;
   line-height: 14px;
   max-width: 300px; }
