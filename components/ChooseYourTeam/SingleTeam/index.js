@@ -1,8 +1,20 @@
 import styles from "./SingleTeam.scss";
 
-export default function SingleTeam({ name, banner, theme }) {
+const classNames = require("classnames");
+
+export default function SingleTeam({
+  name,
+  banner,
+  theme,
+  customClasses = {}
+}) {
+  const className = classNames({
+    [styles.singleTeam]: true,
+    ...customClasses
+  });
+
   return (
-    <article className={styles.singleTeam} data-theme={theme}>
+    <article className={className} data-theme={theme}>
       <div className="container">
         <figure className={styles.banner}>
           <img

@@ -8,16 +8,18 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next export"
   },
   "devDependencies": {
-    "next-compose-plugins": "^2.2.0",
     "@zeit/next-sass": "^1.0.1",
     "next": "^8.1.0",
+    "next-compose-plugins": "^2.2.0",
     "next-offline": "^4.0.2",
     "node-sass": "^4.12.0"
   },
   "dependencies": {
+    "classnames": "^2.2.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-swipeable-views": "^0.13.3"

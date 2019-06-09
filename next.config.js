@@ -21,6 +21,13 @@ const sassConfig = [
 const nextConfig = {
   resolve: {
     modules: [__dirname, "node_modules"]
+  },
+  exportPathMap: function() {
+    return {
+      "/": {
+        page: "/choose-your-team"
+      }
+    };
   }
 };
 

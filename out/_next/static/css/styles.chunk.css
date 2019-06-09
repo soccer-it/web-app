@@ -1,0 +1,204 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none; }
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+:root {
+  --base-content-color: #000;
+  --small-base-font-size: 12px;
+  --base-font-size: 16px;
+  --small-space: 1.24rem;
+  --medium-space: 2.28rem;
+  --large-space: 3.6rem;
+  --small-font-size: 1rem;
+  --medium-font-size: 1.28rem;
+  --large-font-size: 2.6rem; }
+
+html,
+body {
+  font-family: sans-serif;
+  font-size: calc(var(--small-base-font-size) + 0.4vw); }
+  @media (min-width: 360px) {
+    html,
+    body {
+      font-size: calc(var(--base-font-size) + 0.4vw); } }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  line-height: 124%; }
+
+img {
+  max-width: 100%; }
+
+.static-styles-___baseLayout___2ZvxP {
+  margin-top: var(--large-space); }
+
+.container {
+  max-width: 1190px;
+  margin: 0 var(--small-space); }
+
+.components-ContentSection-___contentSection___2Dq9N {
+  margin: var(--small-space) auto 0;
+  padding-bottom: var(--small-space); }
+
+.components-ContentSection-___title___1gOzh {
+  font-size: var(--medium-font-size);
+  margin-bottom: var(--large-space); }
+
+.components-ChooseYourTeam-SingleTeam-___singleTeam___2MrLg[data-theme="corinthians"] {
+  background-color: #fff;
+  color: var(--base-content-color); }
+
+.components-ChooseYourTeam-SingleTeam-___singleTeam___2MrLg[data-theme="palmeiras"] {
+  background-color: #006436;
+  color: white; }
+
+.components-ChooseYourTeam-SingleTeam-___banner___2hBkR {
+  max-width: 217px; }
+
+.components-ChooseYourTeam-SingleTeam-___link___y-WQN {
+  font-size: var(--small-font-size);
+  color: inherit;
+  font-weight: bold; }
+
+.components-ChooseYourTeam-SingleTeam-___title___6RZlC {
+  font-size: var(--large-font-size);
+  margin: var(--large-space) 0;
+  text-transform: lowercase; }
+
+.components-ChooseYourTeam-TeamsList-___teamsList___3LkSh > div {
+  padding-right: 30px; }
+
+.components-ChooseYourTeam-TeamsList-___swipeable-wrapper___3K8ub {
+  padding: 0 30px; }
+
+.components-ChooseYourTeam-TeamsList-___teamWrapper___mfz1K {
+  padding: 15px; }
+
+
+/*# sourceMappingURL=styles.chunk.css.map*/
