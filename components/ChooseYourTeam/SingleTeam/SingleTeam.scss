@@ -1,0 +1,30 @@
+// TODO => Refactor in favor of CSS custom properties theme managing
+
+.singleTeam {
+  &[data-theme="corinthians"] {
+    background-color: #fff;
+    color: var(--base-content-color);
+  }
+
+  &[data-theme="palmeiras"] {
+    background-color: #006436;
+    color: white;
+  }
+}
+
+.banner {
+  max-width: 217px;
+  margin: -16px 0 -20px; // FIX WRONG IMAGE EXPORT
+}
+
+.link {
+  font-size: var(--small-font-size);
+  color: inherit;
+  font-weight: bold;
+}
+
+.title {
+  font-size: var(--large-font-size);
+  margin: var(--large-space) 0;
+  text-transform: lowercase;
+}
