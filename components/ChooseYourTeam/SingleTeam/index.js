@@ -2,30 +2,19 @@ import styles from "./SingleTeam.scss";
 
 const classNames = require("classnames");
 
-export default function SingleTeam({
-  name,
-  banner,
-  theme,
-  customClasses = {}
-}) {
+export default function SingleTeam({ name, banner, customClasses = {} }) {
   const className = classNames({
     [styles.singleTeam]: true,
     ...customClasses
   });
 
   return (
-    <article className={className} data-theme={theme}>
+    <article className={className}>
       <div className="container">
         <figure className={styles.banner}>
-          <img
-            src={`/static/images${banner}`}
-            alt="Ícone representando a camisa do Corinthians"
-          />
+          <img src={banner} alt={`Ícone representando a camisa do ${name}`} />
         </figure>
         <h1 className={styles.title}>{name}</h1>
-        <a className={styles.link} href="#">
-          selecionar
-        </a>
       </div>
     </article>
   );

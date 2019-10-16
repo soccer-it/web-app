@@ -1,0 +1,73 @@
+@import "./reset.scss";
+
+$x-small-bp: 320px;
+$small-bp: 425px;
+$medium-bp: 768px;
+$large-bp: 1024px;
+$x-large-bp: 1920px;
+
+:root {
+  --base-theme-color: white;
+  --base-content-color: black;
+
+  --choose-your-team-next: 60px;
+
+  --small-base-font-size: 12px;
+  --base-font-size: 16px;
+
+  --small-space: 1.24rem;
+  --medium-space: 2.28rem;
+  --large-space: 3.6rem;
+
+  --small-font-size: 1rem;
+  --medium-font-size: 1.28rem;
+  --large-font-size: 2.6rem;
+}
+
+html,
+body {
+  font-family: sans-serif;
+  font-size: calc(var(--small-base-font-size) + 0.4vw);
+
+  @media (min-width: 360px) {
+    font-size: calc(var(--base-font-size) + 0.4vw);
+  }
+}
+
+body {
+  background-color: var(--base-theme-color);
+  color: var(--base-content-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  line-height: 124%;
+}
+
+img {
+  max-width: 100%;
+}
+
+.baseLayout {
+  margin-top: var(--large-space);
+}
+
+:global {
+  #svg-sprite {
+    display: none !important;
+  }
+
+  .container {
+    max-width: 1190px;
+    margin: 0 var(--small-space);
+  }
+
+  [data-page="choose-your-team"] {
+    overflow: hidden;
+  }
+}

@@ -1,13 +1,28 @@
-.teamsList {
-  & > div {
-    padding-right: 30px;
-  }
-}
-
-.swipeable-wrapper {
-  padding: 0 30px;
-}
-
 .teamWrapper {
   padding: 15px;
+  position: relative;
+}
+
+.link {
+  font-size: var(--medium-font-size);
+  color: inherit;
+  font-weight: bold;
+}
+
+.nextButton {
+  position: absolute;
+  top: 50%;
+  width: var(--choose-your-team-next);
+  right: 0;
+  transform: translateY(-50%);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+
+  svg {
+    width: 40px;
+    height: 40px;
+    fill: var(--base-content-color);
+  }
 }

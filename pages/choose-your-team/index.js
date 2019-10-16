@@ -1,12 +1,22 @@
-import BaseLayout from "../../layouts/BaseLayout";
-import ChooseYourTeam from "../../components/ChooseYourTeam";
+import BaseLayout from "layouts/BaseLayout";
+import ChooseYourTeam from "components/ChooseYourTeam";
 
-import teams from "../../mocks/teams";
-
-export default function ChooseYourTeamPage() {
+function ChooseYourTeamPage({ brazilTeams }) {
   return (
     <BaseLayout pageName="choose-your-team">
-      <ChooseYourTeam teams={teams} />
+      <ChooseYourTeam teams={brazilTeams} />
     </BaseLayout>
   );
 }
+
+ChooseYourTeamPage.getInitialProps = async ({ req }) => {
+  const { getBrazilTeams } = require("utils/getAirtableData");
+
+  const brazilTeams = await getBrazilTeams();
+
+  return {
+    brazilTeams
+  };
+};
+
+export default ChooseYourTeamPage;
