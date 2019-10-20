@@ -1,4 +1,4 @@
-import styles from "./SingleTeam.scss";
+import styles from "../ChooseYourTeam.scss";
 
 const classNames = require("classnames");
 
@@ -14,7 +14,7 @@ export default function SingleTeam({ name, banner, customClasses = {} }) {
         <figure className={styles.banner}>
           <img src={banner} alt={`Ícone representando a camisa do ${name}`} />
         </figure>
-        <h1 className={styles.title}>{name}</h1>
+        <h1 className={styles.teamTitle}>{name}</h1>
       </div>
     </article>
   );

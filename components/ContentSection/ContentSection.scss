@@ -1,6 +1,9 @@
 .contentSection {
-  margin: var(--small-space) auto 0;
   padding-bottom: var(--small-space);
+
+  & + .contentSection {
+    margin-top: var(--small-space);
+  }
 }
 
 .title {

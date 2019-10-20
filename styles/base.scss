@@ -10,8 +10,6 @@ $x-large-bp: 1920px;
   --base-theme-color: white;
   --base-content-color: black;
 
-  --choose-your-team-next: 60px;
-
   --small-base-font-size: 12px;
   --base-font-size: 16px;
 
@@ -28,6 +26,7 @@ html,
 body {
   font-family: sans-serif;
   font-size: calc(var(--small-base-font-size) + 0.4vw);
+  -webkit-font-smoothing: antialiased;
 
   @media (min-width: 360px) {
     font-size: calc(var(--base-font-size) + 0.4vw);
@@ -53,13 +52,25 @@ img {
   max-width: 100%;
 }
 
-.baseLayout {
-  margin-top: var(--large-space);
-}
-
 :global {
   #svg-sprite {
     display: none !important;
+  }
+
+  ::placeholder {
+    color: var(--base-content-color);
+    font-size: 16px;
+    opacity: 1;
+  }
+
+  :-ms-input-placeholder {
+    color: var(--base-content-color);
+    font-size: 16px;
+  }
+
+  ::-ms-input-placeholder {
+    color: var(--base-content-color);
+    font-size: 16px;
   }
 
   .container {
