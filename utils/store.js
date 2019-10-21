@@ -3,9 +3,17 @@ import { observe } from "@nx-js/observer-util";
 import setCustomProperties from "utils/setCustomProperties";
 
 export const userConfig = store({
-  theme: {}
+  theme: {},
+  searchWrapper: {
+    active: false,
+    results: []
+  }
 });
 
 observe(() => {
   setCustomProperties(userConfig.theme);
+
+  setCustomProperties({
+    'base-blur': userConfig.searchWrapper.active ? '10px' : '0'
+  });
 });
