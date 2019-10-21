@@ -6,7 +6,7 @@
   padding: 1.6rem 1.3rem;
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
-  filter: blur(var(--base-blur))
+  filter: blur(var(--base-blur));
 }
 
 .title {
@@ -16,6 +16,7 @@
 }
 
 .teamWrapper {
+  padding: 10vh 0;
   position: relative;
 }
 
@@ -26,7 +27,7 @@
 }
 
 .link {
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 .searchLink {
