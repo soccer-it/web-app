@@ -9,6 +9,9 @@ $x-large-bp: 1920px;
 :root {
   --base-theme-color: white;
   --base-content-color: black;
+  --base-gray-color: #d3d3d3;
+
+  --base-blur: 0;
 
   --small-base-font-size: 12px;
   --base-font-size: 16px;
@@ -58,8 +61,9 @@ img {
   }
 
   ::placeholder {
-    color: var(--base-content-color);
+    color: var(--base-gray-color);
     font-size: 16px;
+    font-weight: bold;
     opacity: 1;
   }
 

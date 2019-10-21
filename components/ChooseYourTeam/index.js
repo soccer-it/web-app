@@ -1,21 +1,32 @@
-import ContentSection from "components/ContentSection";
 import TeamsList from "./TeamsList";
-
-import { chooseYourTeam, title, search } from './ChooseYourTeam.scss';
-
+import Icon from "components/Icon";
 import useLogicLayers from "utils/useLogicLayers";
 import logic from "./logic";
 
-export default function ChooseYourTeam(props) {
-  const { teams, onSwipe } = useLogicLayers(props)(logic);
+import { chooseYourTeam, title, link, searchLink, nextButton } from './ChooseYourTeam.scss';
+
+function ChooseYourTeam(props) {
+  const { teams, onSwipe, activeSearch } = useLogicLayers(props)(logic);
 
   return (
-    <div className={chooseYourTeam}>
-      <div className={title}>escolha seu time</div>
-      {/* <div className={search}>
-        <input type="search" placeholder="pequisar" />
-      </div> */}
-      <TeamsList onSwipe={onSwipe} teams={teams} />
-    </div>
+    <>
+      <div className={chooseYourTeam}>
+        <div className={title}>escolha seu time</div>
+        <TeamsList onSwipe={onSwipe} teams={teams} />
+        <div>
+          <a className={link} href="#">
+            selecionar
+        </a>
+          <a className={searchLink} href="#" onClick={activeSearch}>
+            pesquisar time
+        </a>
+          <a href="#" className={nextButton}>
+            <Icon id="arrow-right" />
+          </a>
+        </div>
+      </div>
+    </>
   );
 }
+
+export default ChooseYourTeam;

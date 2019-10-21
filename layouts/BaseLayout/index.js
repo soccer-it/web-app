@@ -1,7 +1,8 @@
 import Metatags from "./Metatags";
 import baseStyles from "styles/base.scss";
 import loadSvg from "utils/loadSvg";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import SearchWrapper from 'components/SearchWrapper';
 
 export default function BaseLayout({ children, pageName }) {
   useEffect(() => {
@@ -12,6 +13,7 @@ export default function BaseLayout({ children, pageName }) {
     <>
       <Metatags />
       <main className={baseStyles.baseLayout} data-page={pageName}>
+        <SearchWrapper />
         {children}
       </main>
     </>

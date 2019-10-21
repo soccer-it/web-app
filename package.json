@@ -11,6 +11,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "deploy": "node_modules/.bin/now --prod",
     "export": "next export"
   },
   "devDependencies": {
