@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
-
+import { userConfig } from 'utils/store';
 import removeAccents from 'utils/removeAccents';
 
-export default function useSearch({ baseData }) {
+export default function useSearch() {
+  const baseData = userConfig.searchWrapper.data;
+
   const [searchTimeout, setSearchTimeout] = useState(null);
   const [searchValue, setSearchValue] = useState(null);
   const [searchResults, setSearchResults] = useState(baseData);
@@ -20,6 +22,10 @@ export default function useSearch({ baseData }) {
     }
   }, [searchValue]);
 
+  function onClose() {
+    userConfig.searchWrapper.active = false;
+  }
+
   function onSearch(e) {
     if (searchTimeout) {
       clearTimeout(searchTimeout);
@@ -32,6 +38,9 @@ export default function useSearch({ baseData }) {
 
   return {
     onSearch,
-    searchResults
+    searchResults,
+    onClose,
+    currentResults: searchResults || baseData,
+    active: userConfig.searchWrapper.active
   };
 }

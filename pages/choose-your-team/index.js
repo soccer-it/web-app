@@ -1,5 +1,5 @@
-import BaseLayout from "layouts/BaseLayout";
-import ChooseYourTeam from "components/ChooseYourTeam";
+import BaseLayout from 'layouts/BaseLayout';
+import ChooseYourTeam from 'components/ChooseYourTeam';
 
 function ChooseYourTeamPage({ brazilTeams }) {
   return (
@@ -10,7 +10,7 @@ function ChooseYourTeamPage({ brazilTeams }) {
 }
 
 ChooseYourTeamPage.getInitialProps = async ({ req }) => {
-  const { getBrazilTeams } = require("utils/getAirtableData");
+  const { getBrazilTeams } = require('utils/getAirtableData');
 
   const brazilTeams = await getBrazilTeams();
 

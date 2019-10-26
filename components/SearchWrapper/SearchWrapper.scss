@@ -82,22 +82,9 @@
   display: flex;
   flex-wrap: wrap;
   position: relative;
-  overflow: auto;
   height: 65vh;
   z-index: 2;
   margin-top: 20px;
   opacity: 0;
   transition: 0.4s opacity 0.3s;
-}
-
-.singleResult {
-  display: block;
-  width: 25%;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-
-.singleResultBanner {
-  margin-bottom: 10px;
 }
