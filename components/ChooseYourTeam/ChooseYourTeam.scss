@@ -5,8 +5,16 @@
   justify-content: space-between;
   padding: 1.6rem 1.3rem;
   height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
+  min-height: -webkit-fill-available;
   filter: blur(var(--base-blur));
+
+  [data-swipeable][aria-hidden='false'] {
+    :local {
+      .teamWrapper {
+        opacity: 1;
+      }
+    }
+  }
 }
 
 .title {
@@ -17,6 +25,9 @@
 
 .teamWrapper {
   position: relative;
+  opacity: 0;
+  transition: opacity 0.6s;
+  will-change: opacity;
 }
 
 .link,
@@ -36,16 +47,21 @@
   color: var(--base-gray-color);
 }
 
-.nextButton {
+.navButton {
   position: absolute;
   top: 50%;
-  width: var(--choose-your-team-next);
-  right: 0;
   transform: translateY(-50%);
-  padding: 1rem;
+  width: var(--choose-your-team-next);
+  padding: 2rem 1rem;
   overflow: hidden;
-  display: flex;
-  align-items: center;
+
+  &[data-nav='prev'] {
+    left: 0;
+  }
+
+  &[data-nav='next'] {
+    right: 0;
+  }
 
   svg {
     width: 20px;

@@ -1,3 +1,4 @@
 module.exports = _ => ({
-  currentTeam: null
+  currentTeam: null,
+  currentSelectedIndex: 0
 });

@@ -1,6 +1,6 @@
-import { userConfig } from "utils/store";
+import { userConfig } from 'utils/store';
 
-module.exports = (useEffect, { setCurrentTeam, teams, currentTeam }) => {
+module.exports = (useEffect, { currentSelectedIndex, setCurrentTeam, teams, currentTeam }) => {
   useEffect(() => {
     if (!currentTeam) {
       setCurrentTeam(teams[0]);
