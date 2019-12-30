@@ -1,6 +1,6 @@
 import isClient from 'utils/isClient';
 
-export default function setCustomProperties(properties) {
+export default function setCustomProperties(properties = {}) {
   if (!isClient()) return;
 
   Object.keys(properties).forEach(key => {
