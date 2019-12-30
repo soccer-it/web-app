@@ -10,7 +10,7 @@ function ChooseYourTeamPage({ brazilTeams }) {
 }
 
 ChooseYourTeamPage.getInitialProps = async ({ req }) => {
-  const { getBrazilTeams } = require('utils/getAirtableData');
+  const { getBrazilTeams } = require('services/getAirtableData');
 
   const brazilTeams = await getBrazilTeams();
 
