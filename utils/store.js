@@ -4,6 +4,9 @@ import setCustomProperties from 'utils/setCustomProperties';
 
 export const userConfig = store({
   theme: {},
+  assets: {
+    teams: {}
+  },
   searchWrapper: {
     active: false,
     results: []
