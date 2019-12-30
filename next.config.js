@@ -30,6 +30,12 @@ module.exports = withPlugins([
       webpack: (config, _) => {
         config.plugins = config.plugins || [];
 
+        config.node = {
+          fs: 'empty',
+          net: 'empty',
+          tls: 'empty',
+        }
+
         config.plugins = [
           ...config.plugins,
 
@@ -51,7 +57,7 @@ module.exports = withPlugins([
         }
 
         const newAliasConfig = setAbsolutePaths(
-          ["components", "pages", "layouts", "static", "utils", "styles"],
+          ["components", "pages", "layouts", "static", "utils", "services", "styles"],
           config.resolve.alias
         );
 
