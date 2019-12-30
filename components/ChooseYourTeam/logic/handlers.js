@@ -1,11 +1,19 @@
 import { userConfig } from 'utils/store';
+import { getTeamPhoto } from './helpers';
 
 module.exports = {
-  onSwipe: ({ teams, setCurrentSelectedIndex }) => index => {
+  setTeamTheme: ({ setCurrentTeamBanner }) => currentTeam => {
+    getTeamPhoto(currentTeam.banner).then(blobImage => {
+      userConfig.theme = currentTeam.theme;
+      setCurrentTeamBanner(blobImage);
+    });
+  },
+
+  onSwipe: ({ setTeamTheme, teams, setCurrentSelectedIndex }) => index => {
     const currentTeam = teams[index];
     setCurrentSelectedIndex(index);
 
-    userConfig.theme = currentTeam.theme;
+    setTeamTheme(currentTeam);
   },
 
   goNext: ({ setCurrentTeam, teams, currentSelectedIndex, setCurrentSelectedIndex }) => e => {

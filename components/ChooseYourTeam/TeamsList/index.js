@@ -3,7 +3,7 @@ import SingleTeam from '../SingleTeam';
 import Icon from 'components/Icon';
 import styles from '../ChooseYourTeam.scss';
 
-function TeamsList({ onSwipe, teams, goNext, goPrev, currentSelectedIndex }) {
+function TeamsList({ onSwipe, teams, goNext, goPrev, currentSelectedIndex, currentTeamBanner }) {
   const itemClass = {
     [styles.teamWrapper]: true
   };
@@ -19,7 +19,12 @@ function TeamsList({ onSwipe, teams, goNext, goPrev, currentSelectedIndex }) {
         className={styles.swipeableWrapper}
       >
         {teams.map(({ slug, ...team }) => (
-          <SingleTeam customClasses={itemClass} key={slug} {...team} />
+          <SingleTeam
+            customClasses={itemClass}
+            key={slug}
+            {...team}
+            currentTeamBanner={currentTeamBanner}
+          />
         ))}
       </Swipeable>
       <div>

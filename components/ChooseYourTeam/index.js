@@ -13,9 +13,15 @@ import {
 } from './ChooseYourTeam.scss';
 
 function ChooseYourTeam(props) {
-  const { teams, onSwipe, activeSearch, currentSelectedIndex, goPrev, goNext } = useLogicLayers(
-    props
-  )(logic);
+  const {
+    currentTeamBanner,
+    teams,
+    onSwipe,
+    activeSearch,
+    currentSelectedIndex,
+    goPrev,
+    goNext
+  } = useLogicLayers(props)(logic);
 
   const SingleResult = ({ banner, slug }) => {
     return (
@@ -30,8 +36,9 @@ function ChooseYourTeam(props) {
     <>
       <SearchWrapper singleResult={SingleResult} />
       <div className={chooseYourTeam}>
-        <div className={title}>escolha seu time</div>
+        <div className={title}>Qual time faz seu coração bater mais forte?</div>
         <TeamsList
+          currentTeamBanner={currentTeamBanner}
           goPrev={goPrev}
           goNext={goNext}
           currentSelectedIndex={currentSelectedIndex}
