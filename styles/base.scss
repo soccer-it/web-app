@@ -14,7 +14,7 @@ $x-large-bp: 1920px;
 
   --base-blur: 0;
 
-  --small-base-font-size: 12px;
+  --small-base-font-size: 14px;
   --base-font-size: 16px;
 
   --small-space: 1.24rem;
@@ -111,7 +111,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -webkit-touch-callout: none;
 
-  @media (min-width: 360px) {
+  @media (min-width: 400px) {
     font-size: calc(var(--base-font-size) + 0.4vw);
   }
 
