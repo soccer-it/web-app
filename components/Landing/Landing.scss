@@ -1,0 +1,46 @@
+.landingWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+  background-color: var(--base-content-color);
+  height: 100vh;
+  color: white;
+}
+
+.logo {
+  width: 120px;
+  margin: 0 auto 60px;
+  display: block;
+}
+
+.description {
+  font-size: 38px;
+  line-height: 1.2;
+  font-weight: bold;
+  text-align: center;
+
+  :global {
+    .feat {
+      color: #00b6a1;
+    }
+  }
+}
+
+.subDescription {
+  font-size: 20px;
+  line-height: 1.2;
+  margin: 40px 0;
+  font-weight: lighter;
+}
+
+.buttonWrapper {
+  display: block;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 20px auto 0;
+  background-color: #00b6a1;
+}

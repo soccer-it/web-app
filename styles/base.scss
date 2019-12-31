@@ -8,7 +8,7 @@ $x-large-bp: 1920px;
 
 :root {
   --base-theme-color: white;
-  --base-content-color: black;
+  --base-content-color: #232323;
   --base-gray-color: #eee;
   --base-dark-gray-color: #999;
 
@@ -204,5 +204,9 @@ img {
   input,
   button {
     user-select: none;
+  }
+
+  img {
+    max-width: 100%;
   }
 }
