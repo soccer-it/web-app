@@ -10,7 +10,7 @@ function ChooseYourTeamPage({ brazilTeams }) {
 }
 
 ChooseYourTeamPage.getInitialProps = async () => {
-  const teamsData = require('../../static/mappedTeams.json');
+  const teamsData = require('../../public/mappedTeams.json');
 
   return {
     brazilTeams: teamsData.mappedTeams

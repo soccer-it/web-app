@@ -1,10 +1,10 @@
 module.exports = () => {
-  const airtableData = require('../static/mappedTeams.json');
+  const airtableData = require('../public/mappedTeams.json');
 
   const dynamicTeamsRoute = airtableData.mappedTeams.reduce((acc, { slug }) => {
     return {
       ...acc,
-      [`/escolha-seu-time/${slug.toLowerCase()}`]: {
+      [`/escolha-seu-time/${slug.toLowerCase()}/index`]: {
         page: '/choose-your-team'
       }
     };
@@ -14,7 +14,7 @@ module.exports = () => {
     '/': {
       page: '/home'
     },
-    '/escolha-seu-time': {
+    '/escolha-seu-time/:team': {
       page: '/choose-your-team'
     },
     ...dynamicTeamsRoute

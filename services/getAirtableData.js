@@ -37,7 +37,7 @@ function mapTeams(teams) {
       new Promise((resolve, reject) => {
         const currentFields = path(['_rawJson', 'fields'], currentTeam);
         const banner = pathOr(
-          '/static/images/teams/shirt-placeholder.svg',
+          '/public/images/teams/shirt-placeholder.svg',
           ['images/shirt', '0', 'url'],
           currentFields
         );
@@ -92,7 +92,7 @@ function mapTeams(teams) {
 
 const getBrazilTeams = () => {
   return new Promise((resolve, reject) => {
-    const teamsJson = `static/mappedTeams.json`;
+    const teamsJson = `public/mappedTeams.json`;
 
     fs.readFile(teamsJson, function(err, data) {
       if (err) {
@@ -126,4 +126,9 @@ const getBrazilTeams = () => {
   });
 };
 
-getBrazilTeams();
+try {
+  getBrazilTeams();
+} catch (err) {
+  console.log(err);
+  process.exit(-1);
+}

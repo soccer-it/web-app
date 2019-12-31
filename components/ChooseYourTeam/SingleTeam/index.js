@@ -4,7 +4,6 @@ const classNames = require('classnames');
 
 export default function SingleTeam({ name, currentTeamBanner, customClasses = {} }) {
   const className = classNames({
-    [styles.singleTeam]: true,
     ...customClasses
   });
 

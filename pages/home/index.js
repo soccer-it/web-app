@@ -4,7 +4,7 @@ import Link from 'next/link';
 function Home() {
   return (
     <BaseLayout pageName="home">
-      <img src="/static/images/logo-soccerit.svg" alt="Logo soccerit" />
+      <img src="/images/logo-soccerit.svg" alt="Logo soccerit" />
       <h1>
         Um novo jeito de torcer, pra você que ama futebol. Uma experiência criada por torcedores
         para torcedores.
