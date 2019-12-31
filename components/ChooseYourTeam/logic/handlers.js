@@ -1,19 +1,21 @@
 import { userConfig } from 'utils/store';
 import { getTeamPhoto } from './helpers';
+import browserHistory from 'utils/browserHistory';
 
 module.exports = {
-  setTeamTheme: ({ setCurrentTeamBanner }) => currentTeam => {
+  setTeam: ({ setCurrentTeamBanner }) => currentTeam => {
     getTeamPhoto(currentTeam.banner).then(blobImage => {
+      browserHistory().replace(`/escolha-seu-time/${currentTeam.slug.toLowerCase()}`);
       userConfig.theme = currentTeam.theme;
       setCurrentTeamBanner(blobImage);
     });
   },
 
-  onSwipe: ({ setTeamTheme, teams, setCurrentSelectedIndex }) => index => {
+  onSwipe: ({ setTeam, teams, setCurrentSelectedIndex }) => index => {
     const currentTeam = teams[index];
     setCurrentSelectedIndex(index);
 
-    setTeamTheme(currentTeam);
+    setTeam(currentTeam);
   },
 
   goNext: ({ setCurrentTeam, teams, currentSelectedIndex, setCurrentSelectedIndex }) => e => {

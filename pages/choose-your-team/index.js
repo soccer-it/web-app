@@ -9,13 +9,11 @@ function ChooseYourTeamPage({ brazilTeams }) {
   );
 }
 
-ChooseYourTeamPage.getInitialProps = async ({ req }) => {
-  const { getBrazilTeams } = require('services/getAirtableData');
-
-  const brazilTeams = await getBrazilTeams();
+ChooseYourTeamPage.getInitialProps = async () => {
+  const teamsData = require('../../static/mappedTeams.json');
 
   return {
-    brazilTeams
+    brazilTeams: teamsData.mappedTeams
   };
 };
 

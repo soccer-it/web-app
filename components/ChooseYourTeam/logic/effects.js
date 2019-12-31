@@ -1,13 +1,21 @@
-import { userConfig } from 'utils/store';
-import { getTeamPhoto } from './helpers';
+import { useRouter } from 'next/router';
 
-module.exports = (useEffect, { setTeamTheme, setCurrentTeam, teams, currentTeam }) => {
+module.exports = (
+  useEffect,
+  { setCurrentSelectedIndex, setTeam, setCurrentTeam, teams, currentTeam }
+) => {
+  const { asPath } = useRouter();
+
   useEffect(() => {
+    const currentRoute = asPath.split('/').pop();
+    const slugIndex = teams.findIndex(({ slug }) => slug.toLowerCase() === currentRoute);
+    const currentTeamIndex = slugIndex !== -1 ? slugIndex : 0;
+
     if (!currentTeam) {
-      setCurrentTeam(teams[0]);
+      setCurrentTeam(teams[currentTeamIndex]);
+      setCurrentSelectedIndex(currentTeamIndex);
     } else {
-      userConfig.theme = currentTeam.theme;
-      setTeamTheme(currentTeam);
+      setTeam(currentTeam);
     }
   }, [currentTeam]);
 };
