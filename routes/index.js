@@ -10,13 +10,18 @@ module.exports = () => {
     };
   }, {});
 
-  return {
+  const isStaticBuild = process.env.NODE_ENV === 'production';
+  const rootChooseYourTeamRoute = isStaticBuild ? 'index' : ':team';
+
+  let baseRoutes = {
     '/': {
       page: '/home'
     },
-    '/escolha-seu-time/:team': {
+    [`/escolha-seu-time/${rootChooseYourTeamRoute}`]: {
       page: '/choose-your-team'
     },
     ...dynamicTeamsRoute
   };
+
+  return baseRoutes;
 };
