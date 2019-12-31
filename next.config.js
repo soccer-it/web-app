@@ -37,9 +37,6 @@ module.exports = withPlugins([
           tls: 'empty'
         };
 
-        // config.externals = config.externals || {};
-        // config.externals = /(services\/)/gi;
-
         config.plugins = [
           ...config.plugins,
 
@@ -61,7 +58,7 @@ module.exports = withPlugins([
         }
 
         const newAliasConfig = setAbsolutePaths(
-          ['components', 'pages', 'layouts', 'utils', 'styles'],
+          ['components', 'pages', 'hooks', 'layouts', 'utils', 'styles'],
           config.resolve.alias
         );
 

@@ -1,7 +1,10 @@
 import BaseLayout from 'layouts/BaseLayout';
 import ChooseYourTeam from 'components/ChooseYourTeam';
+import useGA from 'hooks/useGA';
 
 function ChooseYourTeamPage({ brazilTeams }) {
+  useGA();
+
   return (
     <BaseLayout pageName="choose-your-team">
       <ChooseYourTeam teams={brazilTeams} />
