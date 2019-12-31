@@ -1,15 +1,16 @@
-require("dotenv").config();
+require('dotenv').config();
 
-const withPlugins = require("next-compose-plugins");
-const withSass = require("@zeit/next-sass");
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const withESLint = require("next-eslint");
-const withOffline = require("next-offline");
-const path = require("path");
-const Dotenv = require("dotenv-webpack");
-const { PHASE_PRODUCTION_BUILD } = require("next-server/constants");
+const withPlugins = require('next-compose-plugins');
+const withSass = require('@zeit/next-sass');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const withESLint = require('next-eslint');
+const withOffline = require('next-offline');
+const path = require('path');
+const routes = require('./routes');
+const Dotenv = require('dotenv-webpack');
+const { PHASE_PRODUCTION_BUILD } = require('next-server/constants');
 
-require("dotenv").config();
+require('dotenv').config();
 
 const getResolvedPath = dir => path.join(__dirname, dir);
 
@@ -33,31 +34,34 @@ module.exports = withPlugins([
         config.node = {
           fs: 'empty',
           net: 'empty',
-          tls: 'empty',
-        }
+          tls: 'empty'
+        };
+
+        // config.externals = config.externals || {};
+        // config.externals = /(services\/)/gi;
 
         config.plugins = [
           ...config.plugins,
 
           new Dotenv({
-            path: path.join(__dirname, ".env"),
+            path: path.join(__dirname, '.env'),
             systemvars: true
           })
         ];
 
         config.module.rules.push({
           test: /\.(raw)(\?v=[/d]\.[/d]\.[/d])?$/,
-          use: "raw-loader"
+          use: 'raw-loader'
         });
 
-        if (config.mode === "production") {
+        if (config.mode === 'production') {
           if (Array.isArray(config.optimization.minimizer)) {
             config.optimization.minimizer.push(new OptimizeCSSAssetsPlugin({}));
           }
         }
 
         const newAliasConfig = setAbsolutePaths(
-          ["components", "pages", "layouts", "static", "utils", "services", "styles"],
+          ['components', 'pages', 'layouts', 'static', 'utils', 'styles'],
           config.resolve.alias
         );
 
@@ -67,23 +71,14 @@ module.exports = withPlugins([
       },
       cssModules: true,
       cssLoaderOptions: {
-        localIdentName: "[path]___[local]___[hash:base64:5]"
+        localIdentName: '[path]___[local]___[hash:base64:5]'
       },
       [PHASE_PRODUCTION_BUILD]: {
         cssLoaderOptions: {
-          localIdentName: "[hash:base64:8]"
+          localIdentName: '[hash:base64:8]'
         }
       },
-      exportPathMap: function() {
-        return {
-          "/": {
-            page: "/home"
-          },
-          "/escolha-seu-time": {
-            page: "/choose-your-team"
-          }
-        };
-      }
+      exportPathMap: routes
     }
   ],
   [withOffline]

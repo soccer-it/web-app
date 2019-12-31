@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const Airtable = require('airtable');
 const request = require('request');
 const fs = require('fs');
@@ -45,20 +47,22 @@ function mapTeams(teams) {
         const baseThemeColor = propOr('white', 'base-theme-color', currentFields);
         const baseContentColor = propOr('black', 'base-content-color', currentFields);
 
-        downloadBanner({ id, url: banner })
-          .then(bannerData => {
-            resolve({
-              name,
-              slug,
-              id,
-              theme: {
-                'base-theme-color': baseThemeColor,
-                'base-content-color': baseContentColor
-              },
-              asset: bannerData
-            });
-          })
-          .catch(reject);
+        setTimeout(() => {
+          downloadBanner({ id, url: banner })
+            .then(bannerData => {
+              resolve({
+                name,
+                slug,
+                id,
+                theme: {
+                  'base-theme-color': baseThemeColor,
+                  'base-content-color': baseContentColor
+                },
+                asset: bannerData
+              });
+            })
+            .catch(reject);
+        }, 600);
       }),
     teams
   );
@@ -86,7 +90,7 @@ function mapTeams(teams) {
   });
 }
 
-export function getBrazilTeams() {
+const getBrazilTeams = () => {
   return new Promise((resolve, reject) => {
     const teamsJson = `static/mappedTeams.json`;
 
@@ -120,4 +124,6 @@ export function getBrazilTeams() {
       return resolve(JSON.parse(data).mappedTeams);
     });
   });
-}
+};
+
+getBrazilTeams();
