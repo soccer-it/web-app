@@ -7,10 +7,14 @@ const withESLint = require('next-eslint');
 const withOffline = require('next-offline');
 const path = require('path');
 const routes = require('./routes');
+const nextBuildId = require('next-build-id');
 const Dotenv = require('dotenv-webpack');
+const webpack = require('webpack');
 const { PHASE_PRODUCTION_BUILD } = require('next-server/constants');
 
 require('dotenv').config();
+
+const getBuildId = () => nextBuildId.sync({ dir: __dirname, describe: true });
 
 const getResolvedPath = dir => path.join(__dirname, dir);
 
@@ -22,6 +26,8 @@ const setAbsolutePaths = (paths = [], currentConfig) =>
     }),
     currentConfig
   );
+
+const currentBuildId = getBuildId();
 
 module.exports = withPlugins([
   [withESLint],
@@ -43,6 +49,9 @@ module.exports = withPlugins([
           new Dotenv({
             path: path.join(__dirname, '.env'),
             systemvars: true
+          }),
+          new webpack.DefinePlugin({
+            'process.env.BUILD_ID': JSON.stringify(currentBuildId)
           })
         ];
 
@@ -70,6 +79,7 @@ module.exports = withPlugins([
       cssLoaderOptions: {
         localIdentName: '[path]___[local]___[hash:base64:5]'
       },
+      generateBuildId: () => currentBuildId,
       [PHASE_PRODUCTION_BUILD]: {
         cssLoaderOptions: {
           localIdentName: '[hash:base64:8]'
