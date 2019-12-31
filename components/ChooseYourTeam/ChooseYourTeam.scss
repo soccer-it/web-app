@@ -17,10 +17,17 @@
   }
 }
 
+.topBar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
 .title {
-  font-size: 1.4rem;
+  font-size: 1rem;
+  max-width: 60vw;
   font-weight: bold;
-  line-height: 1.2;
+  line-height: 1.4;
 }
 
 .teamWrapper {
@@ -41,10 +48,15 @@
 }
 
 .searchLink {
-  display: block;
-  margin: 1rem 0 0;
-  font-size: 1.4rem;
-  color: var(--base-gray-color);
+  padding: 10px;
+
+  :global {
+    svg {
+      width: 24px;
+      height: 24px;
+      fill: var(--base-content-color);
+    }
+  }
 }
 
 .navButton {
@@ -85,9 +97,17 @@
 .singleResult {
   display: block;
   width: 25%;
-  color: white;
+  color: black;
   text-align: center;
-  padding: 20px;
+  padding: 16px 0;
+
+  img {
+    display: block;
+    margin: 0 auto 5px;
+    width: 70%;
+    width: 70%;
+    max-width: 100px;
+  }
 }
 
 .singleResultBanner {

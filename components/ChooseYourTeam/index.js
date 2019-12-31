@@ -1,5 +1,6 @@
 import TeamsList from './TeamsList';
 import SearchWrapper from 'components/SearchWrapper';
+import Icon from 'components/Icon';
 import useLogicLayers from 'utils/useLogicLayers';
 import logic from './logic';
 
@@ -9,7 +10,8 @@ import {
   link,
   searchLink,
   singleResult,
-  singleResultBanner
+  singleResultBanner,
+  topBar
 } from './ChooseYourTeam.scss';
 
 function ChooseYourTeam(props) {
@@ -36,7 +38,12 @@ function ChooseYourTeam(props) {
     <>
       <SearchWrapper singleResult={SingleResult} />
       <div className={chooseYourTeam}>
-        <div className={title}>Qual time faz seu coração bater mais forte?</div>
+        <div className={topBar}>
+          <h1 className={title}>Qual time faz seu coração bater mais forte?</h1>
+          <a className={searchLink} href="#" onClick={activeSearch}>
+            <Icon id="search" />
+          </a>
+        </div>
         <TeamsList
           currentTeamBanner={currentTeamBanner}
           goPrev={goPrev}
@@ -48,9 +55,6 @@ function ChooseYourTeam(props) {
         <div>
           <a className={link} href="#">
             selecionar
-          </a>
-          <a className={searchLink} href="#" onClick={activeSearch}>
-            pesquisar time
           </a>
         </div>
       </div>

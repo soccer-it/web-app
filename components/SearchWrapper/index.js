@@ -1,14 +1,5 @@
 import { view } from 'react-easy-state';
-import { userConfig } from 'utils/store';
-import {
-  searchWrapper,
-  searchWrapperActive,
-  search,
-  close,
-  results,
-  singleResult,
-  singleResultBanner
-} from './SearchWrapper.scss';
+import { searchWrapper, searchWrapperActive, search, close, results } from './SearchWrapper.scss';
 import useSearch from './useSearch';
 import classnames from 'classnames';
 
@@ -24,18 +15,18 @@ function SearchWrapper({ singleResult: SingleResult, ...props }) {
 
   return (
     <div className={searchWrapperClassName}>
-      <span className={close} onClick={onClose}>
-        Fechar
-      </span>
       <div className={search}>
-        <input type="search" onChange={onSearch} placeholder="busque pelo nome do seu time" />
+        <input type="text" onChange={onSearch} placeholder="busque seu time" />
+        <span className={close} onClick={onClose}>
+          &#10005;
+        </span>
       </div>
       <div className={results}>
         {currentResults &&
           currentResults.length &&
-          currentResults.map((result, index) => {
-            return <SingleResult {...result} />;
-          })}
+          currentResults.map((result, index) => (
+            <SingleResult key={`result_${index}`} {...result} />
+          ))}
       </div>
     </div>
   );

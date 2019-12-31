@@ -19,10 +19,13 @@ export default function useSearch() {
 
     if (filteredResults.length) {
       setSearchResults(filteredResults);
+    } else {
+      setSearchResults(null);
     }
   }, [searchValue]);
 
   function onClose() {
+    setSearchValue(null);
     userConfig.searchWrapper.active = false;
   }
 
