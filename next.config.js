@@ -58,7 +58,7 @@ module.exports = withPlugins([
         }
 
         const newAliasConfig = setAbsolutePaths(
-          ['components', 'pages', 'hooks', 'layouts', 'utils', 'styles'],
+          ['components', 'pages', 'layouts', 'utils', 'styles'],
           config.resolve.alias
         );
 

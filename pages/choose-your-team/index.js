@@ -1,12 +1,13 @@
+import Head from 'next/head';
 import BaseLayout from 'layouts/BaseLayout';
 import ChooseYourTeam from 'components/ChooseYourTeam';
-import useGA from 'hooks/useGA';
 
 function ChooseYourTeamPage({ brazilTeams }) {
-  useGA();
-
   return (
     <BaseLayout pageName="choose-your-team">
+      <Head>
+        <title key="title">soccerit | Escolha seu time</title>
+      </Head>
       <ChooseYourTeam teams={brazilTeams} />
     </BaseLayout>
   );

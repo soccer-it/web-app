@@ -1,22 +1,20 @@
 import isClient from 'utils/isClient';
 
-export default function ga() {
+export default function ga(...args) {
   if (!isClient()) {
     return;
   }
 
-  const id = 'UA-149910123-1';
+  const noop = function() {
+    return null;
+  };
 
-  const script = document.createElement('script');
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${id}`;
-  document.body.appendChild(script);
+  const analytics = window.gtag || noop;
 
-  window.dataLayer = window.dataLayer || [];
-
-  function gtag() {
-    dataLayer.push(arguments);
+  try {
+    console.log('analytics', analytics);
+    analytics(...args);
+  } catch (err) {
+    console.error('Error on dispatch GA Pageview', err);
   }
-
-  gtag('js', new Date());
-  gtag('config', id);
 }

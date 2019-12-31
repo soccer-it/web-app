@@ -1,5 +1,6 @@
 import { userConfig } from 'utils/store';
 import { getTeamPhoto } from './helpers';
+import ga from 'utils/ga';
 import browserHistory from 'utils/browserHistory';
 
 module.exports = {
@@ -7,16 +8,22 @@ module.exports = {
     userConfig.theme = currentTeam.theme;
     browserHistory().replace(`/escolha-seu-time/${currentTeam.slug.toLowerCase()}`);
 
+    ga('event', 'view', {
+      event_category: 'Teams',
+      event_label: currentTeam.name,
+      non_interaction: true
+    });
+
     getTeamPhoto(currentTeam.banner).then(blobImage => {
       setCurrentTeamBanner(blobImage);
     });
   },
 
-  onSwipe: ({ setTeam, teams, setCurrentSelectedIndex }) => index => {
+  onSwipe: ({ setCurrentTeam, teams, setCurrentSelectedIndex }) => index => {
     const currentTeam = teams[index];
-    setCurrentSelectedIndex(index);
 
-    setTeam(currentTeam);
+    setCurrentSelectedIndex(index);
+    setCurrentTeam(currentTeam);
   },
 
   goNext: ({ setCurrentTeam, teams, currentSelectedIndex, setCurrentSelectedIndex }) => e => {
