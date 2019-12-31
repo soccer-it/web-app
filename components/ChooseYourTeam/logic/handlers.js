@@ -4,9 +4,10 @@ import browserHistory from 'utils/browserHistory';
 
 module.exports = {
   setTeam: ({ setCurrentTeamBanner }) => currentTeam => {
+    userConfig.theme = currentTeam.theme;
+    browserHistory().replace(`/escolha-seu-time/${currentTeam.slug.toLowerCase()}`);
+
     getTeamPhoto(currentTeam.banner).then(blobImage => {
-      browserHistory().replace(`/escolha-seu-time/${currentTeam.slug.toLowerCase()}`);
-      userConfig.theme = currentTeam.theme;
       setCurrentTeamBanner(blobImage);
     });
   },
