@@ -5,8 +5,10 @@ export default function ga() {
     return;
   }
 
+  const id = 'UA-149910123-1';
+
   const script = document.createElement('script');
-  script.src = 'https://www.googletagmanager.com/gtag/js?id=UA-149910123-1';
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${id}`;
   document.body.appendChild(script);
 
   window.dataLayer = window.dataLayer || [];
@@ -16,5 +18,5 @@ export default function ga() {
   }
 
   gtag('js', new Date());
-  gtag('config', 'UA-149910123-1');
+  gtag('config', id);
 }
