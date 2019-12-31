@@ -1,6 +1,7 @@
 import TeamsList from './TeamsList';
 import SearchWrapper from 'components/SearchWrapper';
 import Icon from 'components/Icon';
+import { view } from 'react-easy-state';
 import useLogicLayers from 'utils/useLogicLayers';
 import logic from './logic';
 
@@ -17,6 +18,7 @@ import {
 function ChooseYourTeam(props) {
   const {
     currentTeamBanner,
+    setupTeam,
     teams,
     onSwipe,
     activeSearch,
@@ -45,6 +47,7 @@ function ChooseYourTeam(props) {
           </a>
         </div>
         <TeamsList
+          setupTeam={setupTeam}
           currentTeamBanner={currentTeamBanner}
           goPrev={goPrev}
           goNext={goNext}
@@ -53,7 +56,7 @@ function ChooseYourTeam(props) {
           teams={teams}
         />
         <div>
-          <a className={link} href="#">
+          <a onClick={setupTeam} className={link} href="#">
             selecionar
           </a>
         </div>
@@ -62,4 +65,4 @@ function ChooseYourTeam(props) {
   );
 }
 
-export default ChooseYourTeam;
+export default view(ChooseYourTeam);

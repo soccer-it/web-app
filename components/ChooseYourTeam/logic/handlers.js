@@ -2,11 +2,22 @@ import { userConfig } from 'utils/store';
 import { getTeamPhoto } from './helpers';
 import ga from 'utils/ga';
 import browserHistory from 'utils/browserHistory';
+import Router from 'next/router';
+
+const getLowerCaseSlug = require('utils/getLowerCaseSlug');
 
 module.exports = {
+  setupTeam: ({ currentTeam }) => e => {
+    e.preventDefault();
+
+    userConfig.userSetup.team = currentTeam;
+    Router.push(`/times/${getLowerCaseSlug(currentTeam)}`);
+  },
+
   setTeam: ({ setCurrentTeamBanner }) => currentTeam => {
     userConfig.theme = currentTeam.theme;
-    browserHistory().replace(`/escolha-seu-time/${currentTeam.slug.toLowerCase()}`);
+    browserHistory().replace(`/escolha-seu-time/${getLowerCaseSlug(currentTeam)}`);
+    setCurrentTeamBanner(null);
 
     ga('event', 'view', {
       event_category: 'Teams',

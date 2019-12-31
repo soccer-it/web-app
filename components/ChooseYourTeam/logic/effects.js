@@ -1,4 +1,3 @@
-import ga from 'utils/ga';
 import { useRouter } from 'next/router';
 
 module.exports = (
