@@ -1,19 +1,8 @@
-import ga from 'utils/ga';
-import Router from 'next/router';
+import useLanding from './useLanding';
 import { landingWrapper, logo, description, subDescription, buttonWrapper } from './Landing.scss';
 
-export default function Landing() {
-  const trackComingSoonClick = e => {
-    e.preventDefault();
-
-    ga('event', 'view', {
-      event_category: 'CTA',
-      event_label: 'Coming Soon Call to Action',
-      non_interaction: true
-    });
-
-    Router.push('/escolha-seu-time/');
-  };
+export default function Landing(props) {
+  const { trackComingSoonClick } = useLanding(props);
 
   return (
     <div className={landingWrapper}>

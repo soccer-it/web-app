@@ -49,12 +49,11 @@ class MyDocument extends Document {
               }
 
               gtag('js', new Date());
-              gtag('config', "${process.env.GA_ID}");
-
-              window.dataLayer.push({
-                'event': 'Pageview',
-                'pagePath': window.location.pathname,
-                'pageTitle': document.title
+              gtag('config', '${process.env.GA_ID}', {
+                location: window.location,
+                path_path: window.location.pathname,
+                path_title: document.title,
+                non_interaction: true
               });
             `
             }}
