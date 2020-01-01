@@ -7,14 +7,14 @@ const withESLint = require('next-eslint');
 const withOffline = require('next-offline');
 const path = require('path');
 const routes = require('./routes');
-const nextBuildId = require('next-build-id');
 const Dotenv = require('dotenv-webpack');
 const webpack = require('webpack');
+const uuidv1 = require('uuid/v1');
 const { PHASE_PRODUCTION_BUILD } = require('next-server/constants');
 
 require('dotenv').config();
 
-const getBuildId = () => nextBuildId.sync({ dir: __dirname, describe: true });
+const getBuildId = () => uuidv1();
 
 const getResolvedPath = dir => path.join(__dirname, dir);
 
@@ -36,6 +36,8 @@ module.exports = withPlugins([
     {
       webpack: (config, _) => {
         config.plugins = config.plugins || [];
+
+        console.log(config.stats);
 
         config.node = {
           fs: 'empty',

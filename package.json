@@ -20,7 +20,6 @@
     "dotenv": "^8.1.0",
     "dotenv-webpack": "^1.7.0",
     "next": "9.1.6",
-    "next-build-id": "^3.0.0",
     "next-compose-plugins": "^2.2.0",
     "next-eslint": "^0.0.4",
     "next-offline": "^4.0.6",
@@ -28,7 +27,8 @@
     "node-sass": "^4.12.0",
     "now": "^16.7.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "uuid": "^3.3.3"
   },
   "dependencies": {
     "@nx-js/observer-util": "^4.2.2",
