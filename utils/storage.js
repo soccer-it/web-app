@@ -14,7 +14,8 @@ const initStore = () => {
     return fallback;
   }
 
-  const Store = store2.namespace(process.env.BUILD_ID);
+  // const Store = store2.namespace(process.env.BUILD_ID);
+  const Store = store2;
 
   if (!Store) {
     return fallback;
