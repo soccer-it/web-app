@@ -4,7 +4,14 @@ import useOnboarding from './useOnboarding';
 import styles from './Onboarding.scss';
 
 function Onboarding(props) {
-  const { userSetup, onSetupStep, currentStep, setUserName, setUserEmail } = useOnboarding(props);
+  const {
+    userSetup,
+    onSetupStep,
+    currentStep,
+    setUserName,
+    setUserEmail,
+    isLoading
+  } = useOnboarding(props);
   const { userName, userEmail, team } = userSetup;
 
   if (!team) {
@@ -14,6 +21,7 @@ function Onboarding(props) {
   return (
     <div className={styles.wrapper}>
       <Steps
+        isLoading={isLoading}
         userName={userName}
         userEmail={userEmail}
         team={team}

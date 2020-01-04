@@ -6,6 +6,8 @@ const omit = require('ramda/src/omit');
 
 export default function useOnboarding() {
   const [currentStep, setCurrentStep] = useState('askName');
+  const [isLoading, setIsLoading] = useState(false);
+
   const currentUserSetup = userConfig.userSetup;
 
   const withDebounce = debounce((callback, ...params) => callback(...params), 300);
@@ -28,7 +30,7 @@ export default function useOnboarding() {
 
   function addUser(data) {
     return new Promise((resolve, reject) => {
-      fetch(`http://localhost:8000/api/addUser/`, {
+      fetch(`${process.env.SOCCERIT_SERVICES}/api/addUser/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -50,14 +52,25 @@ export default function useOnboarding() {
     }
 
     if (currentStep === 'askContact' && userEmail) {
+      if (isLoading) {
+        return;
+      }
+
       const mappedTeam = omit(['images/shirt', 'base-content-color', 'base-theme-color'], team);
+
+      setIsLoading(true);
 
       addUser({
         name: userName,
         email: userEmail,
         team: mappedTeam,
         notificationToken: null
-      });
+      })
+        .then(() => {
+          setIsLoading(false);
+          setCurrentStep('done');
+        })
+        .catch(console.log);
     }
   };
 
@@ -66,6 +79,7 @@ export default function useOnboarding() {
     onSetupStep,
     setUserName,
     setUserEmail,
+    isLoading,
     userSetup: currentUserSetup
   };
 }
