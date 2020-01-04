@@ -7,24 +7,14 @@ export default function SingleTeam({ name, setupTeam, currentTeamBanner, customC
     ...customClasses
   });
 
-  const SetupLink = ({ children }) => (
-    <a title={`Escolher ${name}`} onClick={setupTeam} href="#">
-      {children}
-    </a>
-  );
-
   return (
     <article className={className}>
       {currentTeamBanner && (
-        <div className="container">
+        <div className="container" onClick={setupTeam}>
           <figure className={styles.banner}>
-            <SetupLink>
-              <img src={currentTeamBanner} alt={`Ícone representando a camisa do ${name}`} />
-            </SetupLink>
+            <img src={currentTeamBanner} alt={`Ícone representando a camisa do ${name}`} />
           </figure>
-          <h1 className={styles.teamTitle}>
-            <SetupLink>{name}</SetupLink>
-          </h1>
+          <h1 className={styles.teamTitle}>{name}</h1>
         </div>
       )}
     </article>
