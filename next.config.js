@@ -37,8 +37,6 @@ module.exports = withPlugins([
       webpack: (config, _) => {
         config.plugins = config.plugins || [];
 
-        console.log(config.stats);
-
         config.node = {
           fs: 'empty',
           net: 'empty',
