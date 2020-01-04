@@ -1,13 +1,16 @@
 import { store } from 'react-easy-state';
 import { observe } from '@nx-js/observer-util';
 import setCustomProperties from 'utils/setCustomProperties';
+import pathOr from 'ramda/src/pathOr';
 import { get, set } from 'utils/storage';
 
+const cachedUserData = get('userSetup');
+
 export const userConfig = store({
-  userSetup: get('userSetup') || {
+  userSetup: cachedUserData || {
     team: null
   },
-  theme: {},
+  theme: pathOr({}, ['team', 'theme'], cachedUserData),
   assets: {
     teams: {}
   },

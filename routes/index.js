@@ -8,9 +8,6 @@ module.exports = () => {
 
     return {
       ...acc,
-      [`/times/${teamSlug}/index`]: {
-        page: '/teams/welcome'
-      },
       [`/escolha-seu-time/${teamSlug}/index`]: {
         page: '/choose-your-team'
       }
@@ -24,8 +21,8 @@ module.exports = () => {
     '/': {
       page: '/home'
     },
-    [`/times/${localRoot}`]: {
-      page: '/teams/welcome'
+    [`/app/${localRoot}`]: {
+      page: '/app/onboarding'
     },
     [`/escolha-seu-time/${localRoot}`]: {
       page: '/choose-your-team'

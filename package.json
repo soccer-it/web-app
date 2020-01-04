@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/soccer-it/web-app",
+  "description": "soccerit | webapp",
   "author": "@mjnr",
   "license": "MIT",
+  "engine": {
+    "node": "10.18.0",
+    "npm": "6.13.4"
+  },
   "scripts": {
     "prepare": "node services/getAirtableData.js",
     "now-build": "yarn run prepare && NODE_ENV=production next build && next export -o dist",
@@ -34,6 +39,7 @@
     "@nx-js/observer-util": "^4.2.2",
     "airtable": "^0.7.1",
     "classnames": "^2.2.6",
+    "debounce": "^1.2.0",
     "history": "^4.10.1",
     "js-levenshtein": "^1.1.6",
     "ramda": "^0.26.1",

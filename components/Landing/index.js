@@ -1,5 +1,5 @@
 import useLanding from './useLanding';
-import { landingWrapper, logo, description, subDescription, buttonWrapper } from './Landing.scss';
+import { landingWrapper, logo, description, subDescription } from './Landing.scss';
 
 export default function Landing(props) {
   const { trackComingSoonClick } = useLanding(props);
@@ -15,7 +15,7 @@ export default function Landing(props) {
         </p>
         <p className={subDescription}>Uma experiência criada por torcedores para torcedores.</p>
       </div>
-      <a onClick={trackComingSoonClick} className={buttonWrapper} href="/escolha-seu-time">
+      <a onClick={trackComingSoonClick} className="buttonWrapper" href="/escolha-seu-time">
         Torça com a gente
       </a>
     </div>

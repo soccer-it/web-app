@@ -11,7 +11,7 @@ module.exports = {
     e.preventDefault();
 
     userConfig.userSetup.team = currentTeam;
-    Router.push(`/times/${getLowerCaseSlug(currentTeam)}`);
+    Router.push(`/app/onboarding`);
   },
 
   setTeam: ({ setCurrentTeamBanner }) => currentTeam => {
