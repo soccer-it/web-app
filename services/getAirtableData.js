@@ -42,18 +42,14 @@ function mapTeams(teams) {
           currentFields
         );
 
-        const [name, slug, id] = props(['name', 'slug', 'id'], currentFields);
-
         const baseThemeColor = propOr('white', 'base-theme-color', currentFields);
         const baseContentColor = propOr('black', 'base-content-color', currentFields);
 
         setTimeout(() => {
-          downloadBanner({ id, url: banner })
+          downloadBanner({ id: currentFields.id, url: banner })
             .then(bannerData => {
               resolve({
-                name,
-                slug,
-                id,
+                ...currentFields,
                 theme: {
                   'base-theme-color': baseThemeColor,
                   'base-content-color': baseContentColor
@@ -73,13 +69,14 @@ function mapTeams(teams) {
         uploadAsset(assets.map(({ asset }) => asset))
           .then(res => {
             resolve(
-              assets.map(({ name, slug, id, theme, asset }) => {
+              assets.map(({ name, slug, id, theme, asset, ...teamProps }) => {
                 return {
                   name,
                   slug,
                   id,
                   theme,
-                  banner: `${process.env.ASSETS_URL}/${asset.file}`
+                  banner: `${process.env.ASSETS_URL}/${asset.file}`,
+                  ...teamProps
                 };
               })
             );
