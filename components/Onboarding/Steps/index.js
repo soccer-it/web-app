@@ -14,10 +14,16 @@ export default function Steps({ isLoading, currentStep, onSetupStep, ...stepProp
 
   return (
     <div className={styles.step}>
-      {isLoading ? <div>... carregando</div> : <CurrentStep {...stepProps} />}
-      <button onClick={onSetupStep} className="buttonWrapper">
-        Continuar
-      </button>
+      {isLoading ? (
+        <div>... carregando</div>
+      ) : (
+        <>
+          <CurrentStep {...stepProps} />
+          <button onClick={onSetupStep} className="buttonWrapper">
+            Continuar
+          </button>
+        </>
+      )}
     </div>
   );
 }

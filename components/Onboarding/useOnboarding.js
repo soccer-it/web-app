@@ -30,7 +30,7 @@ export default function useOnboarding() {
 
   function addUser(data) {
     return new Promise((resolve, reject) => {
-      fetch(`${process.env.SOCCERIT_SERVICES}/api/addUser/`, {
+      fetch(`${process.env.SOCCERIT_SERVICES}/addUser/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
