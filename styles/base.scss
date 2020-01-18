@@ -1,0 +1,223 @@
+@import './reset.scss';
+
+$x-small-bp: 320px;
+$small-bp: 425px;
+$medium-bp: 768px;
+$large-bp: 1024px;
+$x-large-bp: 1920px;
+
+:root {
+  --base-theme-color: white;
+  --base-content-color: #232323;
+  --base-gray-color: #eee;
+  --base-dark-gray-color: #999;
+
+  --base-blur: 0;
+
+  --small-base-font-size: 14px;
+  --base-font-size: 16px;
+
+  --small-space: 1.24rem;
+  --medium-space: 2.28rem;
+  --large-space: 3.6rem;
+
+  --small-font-size: 1rem;
+  --medium-font-size: 1.28rem;
+  --large-font-size: 2.6rem;
+}
+
+/*! system-font.css v2.0.2 | CC0-1.0 License | github.com/jonathantneal/system-font-css */
+
+@font-face {
+  font-family: system-ui;
+  font-style: normal;
+  font-weight: 300;
+  src: local('.SFNS-Light'), local('.SFNSText-Light'), local('.HelveticaNeueDeskInterface-Light'),
+    local('.LucidaGrandeUI'), local('Segoe UI Light'), local('Ubuntu Light'), local('Roboto-Light'),
+    local('DroidSans'), local('Tahoma');
+}
+
+@font-face {
+  font-family: system-ui;
+  font-style: italic;
+  font-weight: 300;
+  src: local('.SFNS-LightItalic'), local('.SFNSText-LightItalic'),
+    local('.HelveticaNeueDeskInterface-Italic'), local('.LucidaGrandeUI'),
+    local('Segoe UI Light Italic'), local('Ubuntu Light Italic'), local('Roboto-LightItalic'),
+    local('DroidSans'), local('Tahoma');
+}
+
+@font-face {
+  font-family: system-ui;
+  font-style: normal;
+  font-weight: 400;
+  src: local('.SFNS-Regular'), local('.SFNSText-Regular'),
+    local('.HelveticaNeueDeskInterface-Regular'), local('.LucidaGrandeUI'), local('Segoe UI'),
+    local('Ubuntu'), local('Roboto-Regular'), local('DroidSans'), local('Tahoma');
+}
+
+@font-face {
+  font-family: system-ui;
+  font-style: italic;
+  font-weight: 400;
+  src: local('.SFNS-Italic'), local('.SFNSText-Italic'), local('.HelveticaNeueDeskInterface-Italic'),
+    local('.LucidaGrandeUI'), local('Segoe UI Italic'), local('Ubuntu Italic'),
+    local('Roboto-Italic'), local('DroidSans'), local('Tahoma');
+}
+
+@font-face {
+  font-family: system-ui;
+  font-style: normal;
+  font-weight: 500;
+  src: local('.SFNS-Medium'), local('.SFNSText-Medium'),
+    local('.HelveticaNeueDeskInterface-MediumP4'), local('.LucidaGrandeUI'),
+    local('Segoe UI Semibold'), local('Ubuntu Medium'), local('Roboto-Medium'),
+    local('DroidSans-Bold'), local('Tahoma Bold');
+}
+
+@font-face {
+  font-family: system-ui;
+  font-style: italic;
+  font-weight: 500;
+  src: local('.SFNS-MediumItalic'), local('.SFNSText-MediumItalic'),
+    local('.HelveticaNeueDeskInterface-MediumItalicP4'), local('.LucidaGrandeUI'),
+    local('Segoe UI Semibold Italic'), local('Ubuntu Medium Italic'), local('Roboto-MediumItalic'),
+    local('DroidSans-Bold'), local('Tahoma Bold');
+}
+
+@font-face {
+  font-family: system-ui;
+  font-style: normal;
+  font-weight: 700;
+  src: local('.SFNS-Bold'), local('.SFNSText-Bold'), local('.HelveticaNeueDeskInterface-Bold'),
+    local('.LucidaGrandeUI'), local('Segoe UI Bold'), local('Ubuntu Bold'), local('Roboto-Bold'),
+    local('DroidSans-Bold'), local('Tahoma Bold');
+}
+
+@font-face {
+  font-family: system-ui;
+  font-style: italic;
+  font-weight: 700;
+  src: local('.SFNS-BoldItalic'), local('.SFNSText-BoldItalic'),
+    local('.HelveticaNeueDeskInterface-BoldItalic'), local('.LucidaGrandeUI'),
+    local('Segoe UI Bold Italic'), local('Ubuntu Bold Italic'), local('Roboto-BoldItalic'),
+    local('DroidSans-Bold'), local('Tahoma Bold');
+}
+
+html,
+body {
+  font-size: calc(var(--small-base-font-size) + 0.4vw);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -webkit-touch-callout: none;
+
+  @media (min-width: 400px) {
+    font-size: calc(var(--base-font-size) + 0.4vw);
+  }
+
+  &,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: system-ui;
+  }
+}
+
+body {
+  transition: background-color 0.3s ease-in;
+  background-color: var(--base-theme-color);
+  color: var(--base-content-color);
+
+  &,
+  #__next {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow-y: hidden;
+  }
+}
+
+#__next {
+  z-index: 2;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  line-height: 124%;
+}
+
+img {
+  max-width: 100%;
+}
+
+:global {
+  #svg-sprite {
+    display: none !important;
+  }
+
+  ::placeholder {
+    color: var(--base-dark-gray-color);
+    font-size: 16px;
+    font-weight: bold;
+    opacity: 1;
+  }
+
+  :-ms-input-placeholder {
+    color: var(--base-content-color);
+    font-size: 16px;
+  }
+
+  ::-ms-input-placeholder {
+    color: var(--base-content-color);
+    font-size: 16px;
+  }
+
+  .buttonWrapper {
+    display: block;
+    padding: 20px 40px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 2vh auto 0;
+    background-color: #00b6a1;
+  }
+
+  .container {
+    max-width: 1190px;
+    margin: 0 var(--small-space);
+  }
+
+  [data-page='choose-your-team'] {
+    overflow: hidden;
+  }
+
+  [type] {
+    background-color: white;
+    font-size: 1rem;
+    height: 42px;
+    color: black;
+    padding: 12px 18px;
+    border: solid 1px rgba(black, 0.4);
+    font-weight: bold;
+  }
+
+  input,
+  button {
+    user-select: none;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "build": {
+    "env": {
+      "SOCCERIT_SERVICES": "@soccerit_services"
+    }
+  },
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build"
+    }
+  ]
+}

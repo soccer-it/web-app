@@ -1,0 +1,52 @@
+{
+  "name": "soccer-it_webapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/soccer-it/web-app",
+  "description": "soccerit | webapp",
+  "author": "@mjnr",
+  "license": "MIT",
+  "engine": {
+    "node": "10.18.0",
+    "npm": "6.13.4"
+  },
+  "scripts": {
+    "prepare": "node services/getAirtableData.js",
+    "now-build": "yarn run prepare && NODE_ENV=production next build && next export -o dist",
+    "now-dev": "yarn run prepare && next -p 5000",
+    "dev": "yarn run prepare && next",
+    "format": "prettier --write '**/*.js'",
+    "build": "yarn run prepare && next build",
+    "deploy": "node_modules/.bin/now --prod",
+    "export": "next export"
+  },
+  "devDependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "dotenv": "^8.1.0",
+    "dotenv-webpack": "^1.7.0",
+    "next": "9.1.6",
+    "next-compose-plugins": "^2.2.0",
+    "next-eslint": "^0.0.4",
+    "next-offline": "^4.0.6",
+    "next-server": "9.0.5",
+    "node-sass": "^4.12.0",
+    "now": "^16.7.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "request": "^2.88.0",
+    "uuid": "^3.3.3"
+  },
+  "dependencies": {
+    "@nx-js/observer-util": "^4.2.2",
+    "airtable": "^0.7.1",
+    "classnames": "^2.2.6",
+    "debounce": "^1.2.0",
+    "history": "^4.10.1",
+    "js-levenshtein": "^1.1.6",
+    "ramda": "^0.26.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-easy-state": "^6.1.3",
+    "react-swipeable-views": "^0.13.3",
+    "store2": "^2.10.0"
+  }
+}

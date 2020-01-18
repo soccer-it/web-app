@@ -1,0 +1,12 @@
+.contentSection {
+  padding-bottom: var(--small-space);
+
+  & + .contentSection {
+    margin-top: var(--small-space);
+  }
+}
+
+.title {
+  font-size: var(--medium-font-size);
+  margin-bottom: var(--large-space);
+}

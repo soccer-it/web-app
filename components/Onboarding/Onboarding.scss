@@ -1,0 +1,26 @@
+.wrapper {
+  padding: 1.6rem 1.3rem;
+  text-align: center;
+
+  :global {
+    .buttonWrapper {
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+    }
+  }
+}
+
+.title {
+  font-size: 2rem;
+
+  strong {
+    font-weight: bolder;
+  }
+}
+
+.banner {
+  width: 180px;
+  margin: 20px auto;
+}
