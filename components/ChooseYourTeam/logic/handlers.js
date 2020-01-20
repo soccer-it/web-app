@@ -38,6 +38,13 @@ module.exports = {
     });
   },
 
+  onSelectResult: ({ setupTeam, setTeam }) => (e, currentTeam) => {
+    e.preventDefault();
+
+    setTeam(currentTeam);
+    setupTeam(e);
+  },
+
   onSwipe: ({ setCurrentTeam, teams, setCurrentSelectedIndex }) => index => {
     const currentTeam = teams[index];
 

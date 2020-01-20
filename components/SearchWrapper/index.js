@@ -1,7 +1,9 @@
 import { view } from 'react-easy-state';
 import { searchWrapper, searchWrapperActive, search, close, results } from './SearchWrapper.scss';
 import useSearch from './useSearch';
+import Icon from 'components/Icon';
 import classnames from 'classnames';
+import React from 'react';
 
 /* refactor singleResult */
 
@@ -16,10 +18,10 @@ function SearchWrapper({ singleResult: SingleResult, ...props }) {
   return (
     <div className={searchWrapperClassName}>
       <div className={search}>
-        <input type="text" onChange={onSearch} placeholder="busque seu time" />
-        <span className={close} onClick={onClose}>
-          &#10005;
-        </span>
+        <div className={close} onClick={onClose}>
+          <Icon id="goback" />
+        </div>
+        <input autoFocus={true} type="search" onChange={onSearch} placeholder="procurar time" />
       </div>
       <div className={results}>
         {currentResults &&
@@ -32,4 +34,4 @@ function SearchWrapper({ singleResult: SingleResult, ...props }) {
   );
 }
 
-export default view(SearchWrapper);
+export default React.memo(view(SearchWrapper));
