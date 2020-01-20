@@ -11,7 +11,7 @@
     "npm": "6.13.4"
   },
   "scripts": {
-    "prepare": "node services/getAirtableData.js",
+    "prepare": "node services/getTeams.js",
     "now-build": "yarn run prepare && NODE_ENV=production next build && next export -o dist",
     "now-dev": "yarn run prepare && next -p 5000",
     "dev": "yarn run prepare && next",

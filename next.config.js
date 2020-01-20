@@ -12,8 +12,6 @@ const webpack = require('webpack');
 const uuidv1 = require('uuid/v1');
 const { PHASE_PRODUCTION_BUILD } = require('next-server/constants');
 
-require('dotenv').config();
-
 const getBuildId = () => uuidv1();
 
 const getResolvedPath = dir => path.join(__dirname, dir);
