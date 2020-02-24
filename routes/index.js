@@ -1,9 +1,9 @@
 const getLowerCaseSlug = require('../utils/getLowerCaseSlug');
 
 module.exports = () => {
-  const airtableData = require('../public/mappedTeams.json');
+  const teamsData = require('../public/mappedTeams.json');
 
-  const dynamicTeamsRoute = airtableData.mappedTeams.reduce((acc, currentTeam) => {
+  const dynamicTeamsRoute = teamsData.mappedTeams.reduce((acc, currentTeam) => {
     const teamSlug = getLowerCaseSlug(currentTeam);
 
     return {

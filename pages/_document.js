@@ -10,6 +10,11 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <link rel="dns-prefetch" href="//assets.soccerit.com.br" />
+          <link rel="dns-prefetch" href="//services.soccerit.com.br" />
+          <link rel="dns-prefetch" href="//www.google-analytics.com" />
+          <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+
           <meta name="robots" content="noindex, nofollow" />
           <meta name="mobile-web-app-capable" content="yes" />
           <meta name="apple-mobile-web-app-capable" content="yes" />

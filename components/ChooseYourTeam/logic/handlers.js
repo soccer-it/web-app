@@ -15,7 +15,13 @@ module.exports = {
   },
 
   setTeam: ({ setCurrentTeamBanner }) => currentTeam => {
-    userConfig.theme = currentTeam.theme;
+    const [baseThemeColor, baseContentColor] = ['base-theme-color', 'base-content-color'];
+
+    userConfig.theme = {
+      [baseThemeColor]: currentTeam[baseThemeColor],
+      [baseContentColor]: currentTeam[baseContentColor]
+    };
+
     browserHistory().replace(`/escolha-seu-time/${getLowerCaseSlug(currentTeam)}`);
     setCurrentTeamBanner(null);
 
@@ -25,9 +31,18 @@ module.exports = {
       non_interaction: true
     });
 
-    getTeamPhoto(currentTeam.banner).then(blobImage => {
+    const teamBanner = currentTeam.images.shirt;
+
+    getTeamPhoto(teamBanner).then(blobImage => {
       setCurrentTeamBanner(blobImage);
     });
+  },
+
+  onSelectResult: ({ setupTeam, setTeam }) => (e, currentTeam) => {
+    e.preventDefault();
+
+    setTeam(currentTeam);
+    setupTeam(e);
   },
 
   onSwipe: ({ setCurrentTeam, teams, setCurrentSelectedIndex }) => index => {

@@ -6,7 +6,7 @@ function uploadAsset(assets) {
       {
         url: process.env.DEPLOY_API,
         headers: {
-          Authorization: `Bearer ${process.env.DEPLOY_API_TOKEN}`
+          Authorization: `Bearer ${DEPLOY_API_TOKEN}`
         },
         body: JSON.stringify({
           name: process.env.DEPLOY_BUCKET_NAME,

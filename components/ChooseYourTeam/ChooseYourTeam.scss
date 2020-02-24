@@ -107,20 +107,21 @@
 
 .singleResult {
   display: block;
-  width: 25%;
+  width: 33.3%;
   color: black;
   text-align: center;
   padding: 16px 0;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: lowercase;
 
   img {
     display: block;
-    margin: 0 auto 5px;
-    width: 70%;
-    width: 70%;
-    max-width: 100px;
+    margin: 0 auto 18px;
+    max-width: 76px;
   }
 }
 
 .singleResultBanner {
-  margin-bottom: 10px;
+  margin-bottom: 24px;
 }

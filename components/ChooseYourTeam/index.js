@@ -24,14 +24,19 @@ function ChooseYourTeam(props) {
     activeSearch,
     currentSelectedIndex,
     goPrev,
+    onSelectResult,
     goNext
   } = useLogicLayers(props)(logic);
 
-  const SingleResult = ({ banner, slug }) => {
+  const SingleResult = team => {
+    const { images, alias } = team;
+    const { shirt } = images;
+
+    /* Refactor SingleResult Component */
     return (
-      <div className={singleResult}>
-        <img className={singleResultBanner} src={banner} alt={slug} />
-        <span>{slug}</span>
+      <div className={singleResult} onClick={e => onSelectResult(e, team)}>
+        <img className={singleResultBanner} src={shirt} alt={alias} />
+        <span>{alias}</span>
       </div>
     );
   };
@@ -41,7 +46,7 @@ function ChooseYourTeam(props) {
       <SearchWrapper singleResult={SingleResult} />
       <div className={chooseYourTeam}>
         <div className={topBar}>
-          <h1 className={title}>escolha seu time</h1>
+          <h1 className={title}>Qual time faz seu coração bater mais forte?</h1>
           <a className={searchLink} href="#" onClick={activeSearch}>
             <Icon id="search" />
           </a>
