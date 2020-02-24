@@ -41,7 +41,7 @@ function ChooseYourTeam(props) {
       <SearchWrapper singleResult={SingleResult} />
       <div className={chooseYourTeam}>
         <div className={topBar}>
-          <h1 className={title}>Qual time faz seu coração bater mais forte?</h1>
+          <h1 className={title}>escolha seu time</h1>
           <a className={searchLink} href="#" onClick={activeSearch}>
             <Icon id="search" />
           </a>
@@ -58,6 +58,7 @@ function ChooseYourTeam(props) {
         <div>
           <a onClick={setupTeam} className={link} href="#">
             selecionar
+            <Icon id="arrow-right" />
           </a>
         </div>
       </div>
