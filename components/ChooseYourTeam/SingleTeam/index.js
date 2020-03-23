@@ -1,7 +1,9 @@
-// TODO: remover essas regras para um lugar próprio do SingleTeam
-import { banner, teamTitle, singleTeam } from '../ChooseYourTeam.scss';
-
 const classNames = require('classnames');
+
+// Styles
+// TODO: remover essas regras para um lugar próprio do SingleTeam
+import { banner, teamTitle, singleTeam } from './SingleTeam.scss';
+
 
 export default function SingleTeam({ name, setupTeam, currentTeamBanner, customClasses = {} }) {
   const className = classNames(singleTeam, {

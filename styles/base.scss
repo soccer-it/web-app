@@ -210,18 +210,4 @@ img {
     max-width: 100%;
   }
 
-  // TODO: remover isso aqui depois
-  #slider-wrapper {
-    .react-swipeable-view-container {
-      height: 100%;
-      display: flex;
-      align-items: center;
-
-      > div {
-        height: 100%;
-        display: flex;
-        align-items: center;
-      }
-    }
-  }
 }

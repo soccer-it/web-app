@@ -26,7 +26,7 @@ function TeamsList({
         index={currentSelectedIndex}
         onChangeIndex={onSwipe}
         className={swipeableWrapper}
-        id="slider-wrapper"
+        id="sliderWrapper"
       >
         {teams.map(({ slug, ...team }) => (
           <SingleTeam

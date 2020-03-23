@@ -1,10 +1,18 @@
-import TeamsList from './TeamsList';
-import SearchWrapper from 'components/SearchWrapper';
-import Icon from 'components/Icon';
 import { view } from 'react-easy-state';
-import useLogicLayers from 'utils/useLogicLayers';
+
+// Logic
 import logic from './logic';
 
+// Utils
+import useLogicLayers from 'utils/useLogicLayers';
+
+// Components
+import Icon from 'components/Icon';
+import SearchWrapper from 'components/SearchWrapper';
+import ThumbSlider from './ThumbSlider';
+import TeamsList from './TeamsList';
+
+// Style
 import {
   chooseYourTeam,
   title,
@@ -13,8 +21,7 @@ import {
   searchLink,
   singleResult,
   singleResultBanner,
-  topBar,
-  control
+  topBar
 } from './ChooseYourTeam.scss';
 
 function ChooseYourTeam(props) {
@@ -66,7 +73,7 @@ function ChooseYourTeam(props) {
           selecionar
           <Icon id="arrow-right" className={linkIcon} />
         </a>
-        <div className={control}>Opa</div>
+        <ThumbSlider teams={teams} currentSelectedIndex={currentSelectedIndex} onSwipe={onSwipe} />
       </div>
     </>
   );

@@ -1,0 +1,23 @@
+.singleTeam {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.banner {
+  width: 200px;
+  height: 200px;
+  margin: 20px 0;
+}
+
+.teamTitle {
+  font-size: 52px;
+  margin: 20px 0;
+  text-align: left;
+  text-transform: lowercase;
+
+  & > a {
+    color: var(--base-content-color);
+  }
+}
