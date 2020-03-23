@@ -1,22 +1,21 @@
-import styles from '../ChooseYourTeam.scss';
+// TODO: remover essas regras para um lugar próprio do SingleTeam
+import { banner, teamTitle, singleTeam } from '../ChooseYourTeam.scss';
 
 const classNames = require('classnames');
 
 export default function SingleTeam({ name, setupTeam, currentTeamBanner, customClasses = {} }) {
-  const className = classNames({
+  const className = classNames(singleTeam, {
     ...customClasses
   });
 
   return (
-    <article className={className}>
-      {currentTeamBanner && (
-        <div className="container" onClick={setupTeam}>
-          <figure className={styles.banner}>
-            <img src={currentTeamBanner} alt={`Ícone representando a camisa do ${name}`} />
-          </figure>
-          <h1 className={styles.teamTitle}>{name}</h1>
-        </div>
-      )}
+    <article className={className} onClick={setupTeam}>
+      <figure className={banner}>
+        {currentTeamBanner && (
+          <img src={currentTeamBanner} alt={`Ícone representando a camisa do ${name}`} />
+        )}
+      </figure>
+      <h1 className={teamTitle}>{name}</h1>
     </article>
   );
 }

@@ -1,9 +1,10 @@
-export default function Icon({ id }) {
+const classnames = require('classnames');
+
+export default function Icon({ id, className }) {
+  const customClasses = classnames('icon', className);
   return (
-    <span className="icon">
-      <svg role="img">
-        <use xlinkHref={`#${id}`} />
-      </svg>
-    </span>
+    <svg className={customClasses} role="img">
+      <use xlinkHref={`#${id}`} />
+    </svg>
   );
 }

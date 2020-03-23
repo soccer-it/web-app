@@ -1,30 +1,32 @@
 import Swipeable from 'components/Swipeable';
 import SingleTeam from '../SingleTeam';
-import Icon from 'components/Icon';
-import styles from '../ChooseYourTeam.scss';
+
+
+// TODO: remover essas regras para um lugar próprio do TeamsList
+import {
+  teamWrapper,
+  swipeableWrapper,
+  teamsList,
+} from '../ChooseYourTeam.scss';
 
 function TeamsList({
   setupTeam,
   onSwipe,
   teams,
-  goNext,
-  goPrev,
   currentSelectedIndex,
   currentTeamBanner
 }) {
   const itemClass = {
-    [styles.teamWrapper]: true
+    [teamWrapper]: true
   };
 
-  const hasPrevItem = currentSelectedIndex > 0;
-  const hasNextItem = currentSelectedIndex !== teams.length - 1;
-
   return (
-    <div className={styles.teamsList}>
+    <div className={teamsList}>
       <Swipeable
         index={currentSelectedIndex}
         onChangeIndex={onSwipe}
-        className={styles.swipeableWrapper}
+        className={swipeableWrapper}
+        id="slider-wrapper"
       >
         {teams.map(({ slug, ...team }) => (
           <SingleTeam
@@ -36,18 +38,6 @@ function TeamsList({
           />
         ))}
       </Swipeable>
-      <div>
-        {hasPrevItem && (
-          <a onClick={goPrev} href="#" className={styles.navButton} data-nav="prev">
-            <Icon id="prev" />
-          </a>
-        )}
-        {hasNextItem && (
-          <a onClick={goNext} href="#" className={styles.navButton} data-nav="next">
-            <Icon id="next" />
-          </a>
-        )}
-      </div>
     </div>
   );
 }

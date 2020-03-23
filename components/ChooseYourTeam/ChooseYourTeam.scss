@@ -8,7 +8,7 @@
   min-height: -webkit-fill-available;
   filter: blur(var(--base-blur));
 
-  [data-swipeable][aria-hidden='false'] {
+  [data-swipeable][aria-hidden="false"] {
     :local {
       .teamWrapper {
         opacity: 1;
@@ -19,15 +19,15 @@
 
 .topBar {
   display: flex;
+  align-items: center;
   width: 100%;
   justify-content: space-between;
 }
 
 .title {
-  font-size: 1rem;
-  max-width: 60vw;
+  font-size: 30px;
   font-weight: bold;
-  line-height: 1.4;
+  line-height: 1.6em;
 }
 
 .teamWrapper {
@@ -43,14 +43,28 @@
   }
 }
 
-.link,
 .searchLink {
   color: inherit;
   font-weight: bold;
 }
 
 .link {
-  font-size: 1.8rem;
+  font-size: 25px;
+  line-height: 1.5em;
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  color: var(--base-content-color);
+}
+
+.linkIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
+  fill: var(--base-content-color);
 }
 
 .searchLink {
@@ -65,39 +79,23 @@
   }
 }
 
-.navButton {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: var(--choose-your-team-next);
-  padding: 2rem 1rem;
-  overflow: hidden;
-
-  &[data-nav='prev'] {
-    left: 0;
-  }
-
-  &[data-nav='next'] {
-    right: 0;
-  }
-
-  svg {
-    width: 20px;
-    height: 20px;
-    fill: var(--base-content-color);
-  }
+.singleTeam {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
 }
 
 .banner {
-  max-width: 190px;
-  margin: 0 auto;
-  min-height: 165px;
+  width: 200px;
+  height: 200px;
+  margin: 20px 0;
 }
 
 .teamTitle {
-  font-size: 2.4rem;
-  margin-top: 2rem;
-  text-align: center;
+  font-size: 52px;
+  margin: 20px 0;
+  text-align: left;
   text-transform: lowercase;
 
   & > a {
@@ -124,4 +122,25 @@
 
 .singleResultBanner {
   margin-bottom: 24px;
+}
+
+.teamsList {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.swipeableWrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.setupTeam {
+  display: inline-flex;
+  width: 100%;
+}
+
+.control {
+  display: flex;
 }

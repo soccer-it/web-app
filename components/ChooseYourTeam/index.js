@@ -9,10 +9,12 @@ import {
   chooseYourTeam,
   title,
   link,
+  linkIcon,
   searchLink,
   singleResult,
   singleResultBanner,
-  topBar
+  topBar,
+  control
 } from './ChooseYourTeam.scss';
 
 function ChooseYourTeam(props) {
@@ -46,7 +48,7 @@ function ChooseYourTeam(props) {
       <SearchWrapper singleResult={SingleResult} />
       <div className={chooseYourTeam}>
         <div className={topBar}>
-          <h1 className={title}>Qual time faz seu coração bater mais forte?</h1>
+          <h1 className={title}>escolha seu time</h1>
           <a className={searchLink} href="#" onClick={activeSearch}>
             <Icon id="search" />
           </a>
@@ -60,12 +62,11 @@ function ChooseYourTeam(props) {
           onSwipe={onSwipe}
           teams={teams}
         />
-        <div>
-          <a onClick={setupTeam} className={link} href="#">
-            selecionar
-            <Icon id="arrow-right" />
-          </a>
-        </div>
+        <a onClick={setupTeam} className={link} href="#">
+          selecionar
+          <Icon id="arrow-right" className={linkIcon} />
+        </a>
+        <div className={control}>Opa</div>
       </div>
     </>
   );
