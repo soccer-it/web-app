@@ -3,7 +3,7 @@ import Swipeable from 'components/Swipeable';
 import ThumbItem from './ThumbItem';
 
 // Style
-import { thumbSliderWrapper, itemThumb, teamsThumbList } from './ThumbSlider.scss';
+import { thumbSliderWrapper, itemSlide, teamsThumbList } from './ThumbSlider.scss';
 
 function ThumbSlider({ teams = [], onSwipe, currentSelectedIndex }) {
   return (
@@ -11,8 +11,9 @@ function ThumbSlider({ teams = [], onSwipe, currentSelectedIndex }) {
       <Swipeable
         index={currentSelectedIndex}
         onChangeIndex={onSwipe}
-        slideClassName={itemThumb}
+        slideClassName={itemSlide}
         className={thumbSliderWrapper}
+        
       >
         {teams.map(({ slug, ...team }) => {
           return <ThumbItem key={slug} team={team} />;

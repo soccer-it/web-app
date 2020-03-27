@@ -1,7 +1,13 @@
 .thumbSliderWrapper {
   width: 100%;
-  padding: 20px 0px;
+  padding: 30px 0px 0px;
   flex-shrink: 0;
+
+  :global {
+    .react-swipeable-view-container {
+      padding-left: 0px;
+    }
+  }
 }
 
 .teamsThumbList {
@@ -11,9 +17,14 @@
   flex: 1;
 }
 
-.itemClass {
+.itemSlide {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
+  width: 120px !important;
+  margin: 10px;
+
+  &:first-of-type {
+    margin-left: 20px;
+  }
 }

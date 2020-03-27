@@ -1,9 +1,19 @@
 .thumbItem {
-  background: rgba(0, 0, 0, 0.1);
-  margin: 0 10px;
-  padding: 10px;
-  border-radius: 10px;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  padding: 30px 20px;
+  height: 140px;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: var(--base-content-color);
+    opacity: .1;
+  }
 }
