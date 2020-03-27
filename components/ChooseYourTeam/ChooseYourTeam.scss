@@ -7,26 +7,6 @@
   height: 100vh;
   min-height: -webkit-fill-available;
   filter: blur(var(--base-blur));
-
-  [data-swipeable][aria-hidden="false"] {
-    :local {
-      .teamWrapper {
-        opacity: 1;
-      }
-    }
-  }
-
-  .react-swipeable-view-container {
-    height: 100%;
-    display: flex;
-    align-items: center;
-
-    > div {
-      height: 100%;
-      display: flex;
-      align-items: center;
-    }
-  }
 }
 
 .topBar {
@@ -43,18 +23,7 @@
   line-height: 1.6em;
 }
 
-.teamWrapper {
-  position: relative;
-  opacity: 0;
-  transition: opacity 0.6s;
-  will-change: opacity;
 
-  :global {
-    .container {
-      position: relative;
-    }
-  }
-}
 
 .searchLink {
   color: inherit;
@@ -112,19 +81,6 @@
 
 .singleResultBanner {
   margin-bottom: 24px;
-}
-
-.teamsList {
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.swipeableWrapper {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  padding: 0 1.3rem;
 }
 
 .setupTeam {

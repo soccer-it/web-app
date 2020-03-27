@@ -1,39 +1,23 @@
+// Components
 import Swipeable from 'components/Swipeable';
-import SingleTeam from '../SingleTeam';
+import SingleTeam from './SingleTeam';
 
+import { swipeableWrapper, teamsList, itemClass } from './TeamsList.scss';
 
-// TODO: remover essas regras para um lugar próprio do TeamsList
-import {
-  teamWrapper,
-  swipeableWrapper,
-  teamsList,
-} from '../ChooseYourTeam.scss';
-
-function TeamsList({
-  setupTeam,
-  onSwipe,
-  teams,
-  currentSelectedIndex,
-  currentTeamBanner
-}) {
-  const itemClass = {
-    [teamWrapper]: true
-  };
-
+function TeamsList({ setupTeam, onSwipe, teams = [], currentSelectedIndex, currentTeamBanner }) {
   return (
     <div className={teamsList}>
       <Swipeable
         index={currentSelectedIndex}
         onChangeIndex={onSwipe}
+        slideClassName={itemClass}
         className={swipeableWrapper}
-        id="sliderWrapper"
       >
         {teams.map(({ slug, ...team }) => (
           <SingleTeam
             setupTeam={setupTeam}
-            customClasses={itemClass}
             key={slug}
-            {...team}
+            team={team}
             currentTeamBanner={currentTeamBanner}
           />
         ))}

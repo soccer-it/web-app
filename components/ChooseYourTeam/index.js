@@ -9,8 +9,8 @@ import useLogicLayers from 'utils/useLogicLayers';
 // Components
 import Icon from 'components/Icon';
 import SearchWrapper from 'components/SearchWrapper';
-import ThumbSlider from './ThumbSlider';
-import TeamsList from './TeamsList';
+import ThumbSlider from 'components/ThumbSlider';
+import TeamsList from 'components/TeamsList';
 
 // Style
 import {
@@ -73,7 +73,14 @@ function ChooseYourTeam(props) {
           selecionar
           <Icon id="arrow-right" className={linkIcon} />
         </a>
-        <ThumbSlider teams={teams} currentSelectedIndex={currentSelectedIndex} onSwipe={onSwipe} />
+        <ThumbSlider
+          onSwipe={f => f}
+          goPrev={f => f}
+          goNext={f => f}
+          teams={teams}
+          currentSelectedIndex={currentSelectedIndex}
+          onSwipe={onSwipe}
+        />
       </div>
     </>
   );

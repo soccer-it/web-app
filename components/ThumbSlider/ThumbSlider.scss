@@ -1,0 +1,19 @@
+.thumbSliderWrapper {
+  width: 100%;
+  padding: 20px 0px;
+  flex-shrink: 0;
+}
+
+.teamsThumbList {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.itemClass {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
