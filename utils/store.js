@@ -17,7 +17,8 @@ export const userConfig = store({
   searchWrapper: {
     active: false,
     results: []
-  }
+  },
+  notificationToken: null
 });
 
 observe(() => {
