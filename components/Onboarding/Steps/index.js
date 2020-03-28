@@ -21,7 +21,7 @@ export default function Steps({ isLoading, currentStep, onSetupStep, ...stepProp
           </div>
           <div className={styles.navigationWrapper}>
             <button>Voltar</button>
-            <button>Continuar</button>
+            <button onClick={onSetupStep}>Continuar</button>
           </div>
         </div>
       )}

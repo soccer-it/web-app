@@ -57,4 +57,9 @@
     font-weight: bold;
     border-bottom: solid 3px;
   }
+
+  :global .errorWrapper {
+    color: red;
+    margin-top: 10px;
+  }
 }
