@@ -2,16 +2,13 @@ import useEmailValidation from './useEmailValidation';
 
 export default function EmailField({
   fieldName = 'email',
-  onType,
   label = 'E-mail',
-  isRequired,
   className,
+  onFieldChange,
   inputProps
 }) {
   const { handleEmailChange, emailError } = useEmailValidation({
-    onType,
-    inputProps,
-    isRequired
+    onFieldChange
   });
 
   return (
@@ -26,6 +23,7 @@ export default function EmailField({
         onChange={handleEmailChange}
         onBlur={handleEmailChange}
         type="email"
+        {...inputProps}
       />
       {emailError && <div className="errorWrapper">Insira um e-mail válido</div>}
     </div>

@@ -2,12 +2,12 @@ import Joi from 'joi';
 import { useState } from 'react';
 
 const emailSchema = Joi.string()
-  .email()
+  .email({ tlds: { allow: false } })
   .required();
 
 const checkEmail = email => emailSchema.validate(email);
 
-export default function useEmailValidation() {
+export default function useEmailValidation({ onFieldChange }) {
   const [emailError, setEmailError] = useState(null);
 
   function handleEmailChange(e) {
@@ -15,6 +15,7 @@ export default function useEmailValidation() {
 
     const emailValidation = checkEmail(currentEmailValue);
 
+    onFieldChange(currentEmailValue);
     setEmailError(emailValidation.error);
   }
 
