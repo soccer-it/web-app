@@ -11,7 +11,7 @@ export default function useLanding() {
       non_interaction: true
     });
 
-    Router.push('/escolha-seu-time/');
+    Router.push('/app/escolha-seu-time/');
   };
 
   return {

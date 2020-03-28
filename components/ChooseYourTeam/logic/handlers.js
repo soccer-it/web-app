@@ -7,22 +7,26 @@ import Router from 'next/router';
 const getLowerCaseSlug = require('utils/getLowerCaseSlug');
 
 module.exports = {
-  setupTeam: ({ currentTeam }) => e => {
-    e.preventDefault();
-
-    userConfig.userSetup.team = currentTeam;
-    Router.push(`/app/onboarding`);
-  },
-
-  setTeam: ({ setCurrentTeamBanner }) => currentTeam => {
+  setTeamGlobalConfig: () => currentTeam => {
     const [baseThemeColor, baseContentColor] = ['base-theme-color', 'base-content-color'];
 
+    userConfig.userSetup.team = currentTeam;
     userConfig.theme = {
       [baseThemeColor]: currentTeam[baseThemeColor],
       [baseContentColor]: currentTeam[baseContentColor]
     };
+  },
 
-    browserHistory().replace(`/escolha-seu-time/${getLowerCaseSlug(currentTeam)}`);
+  setupTeam: ({ setTeamGlobalConfig, currentTeam }) => e => {
+    e.preventDefault();
+
+    setTeamGlobalConfig(currentTeam);
+    Router.push(`/app/onboarding`);
+  },
+
+  setTeam: ({ setTeamGlobalConfig, setCurrentTeamBanner }) => currentTeam => {
+    setTeamGlobalConfig(currentTeam);
+    browserHistory().replace(`/app/escolha-seu-time/${getLowerCaseSlug(currentTeam)}`);
     setCurrentTeamBanner(null);
 
     ga('event', 'view', {
@@ -33,9 +37,7 @@ module.exports = {
 
     const teamBanner = currentTeam.images.shirt;
 
-    getTeamPhoto(teamBanner).then(blobImage => {
-      setCurrentTeamBanner(blobImage);
-    });
+    setCurrentTeamBanner(teamBanner);
   },
 
   onSelectResult: ({ setupTeam, setTeam }) => (e, currentTeam) => {

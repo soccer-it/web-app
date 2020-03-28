@@ -1,15 +1,7 @@
 .wrapper {
-  padding: 1.6rem 1.3rem;
   text-align: center;
-
-  :global {
-    .buttonWrapper {
-      position: fixed;
-      width: 100%;
-      bottom: 0;
-      left: 0;
-    }
-  }
+  background-color: var(--base-theme-color);
+  color: var(--base-content-color);
 }
 
 .title {
@@ -23,4 +15,51 @@
 .banner {
   width: 180px;
   margin: 20px auto;
+}
+
+.navigationWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stepWrapper {
+  padding: 1.6rem 1.3rem;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.stepContent {
+  flex: 1;
+}
+
+.field {
+  & {
+    margin-top: 30px;
+  }
+
+  & > input,
+  label {
+    display: block;
+    width: 100%;
+  }
+
+  & > label {
+    margin-bottom: 20px;
+  }
+
+  & > input {
+    padding: 20px;
+    background-color: transparent;
+    color: var(--base-content-color);
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: solid 3px;
+  }
+
+  :global .errorWrapper {
+    color: red;
+    margin-top: 10px;
+  }
 }
