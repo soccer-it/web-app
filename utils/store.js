@@ -1,7 +1,7 @@
 import { store } from 'react-easy-state';
 import { observe } from '@nx-js/observer-util';
 import setCustomProperties from 'utils/setCustomProperties';
-import pathOr from 'ramda/src/pathOr';
+import propOr from 'ramda/src/propOr';
 import { get, set } from 'utils/storage';
 
 const cachedUserData = get('userSetup');
@@ -10,7 +10,7 @@ export const userConfig = store({
   userSetup: cachedUserData || {
     team: null
   },
-  theme: pathOr({}, ['team', 'theme'], cachedUserData),
+  theme: propOr({}, 'theme', cachedUserData),
   assets: {
     teams: {}
   },
@@ -23,9 +23,9 @@ export const userConfig = store({
 observe(() => {
   const { theme, userSetup, searchWrapper } = userConfig;
 
-  setCustomProperties(theme);
+  set('userSetup', { ...userSetup, theme });
 
-  set('userSetup', userSetup);
+  setCustomProperties(theme);
 
   setCustomProperties({
     'base-blur': searchWrapper.active ? '40px' : '0'
