@@ -22,7 +22,7 @@ module.exports = {
       [baseContentColor]: currentTeam[baseContentColor]
     };
 
-    browserHistory().replace(`/escolha-seu-time/${getLowerCaseSlug(currentTeam)}`);
+    browserHistory().replace(`/app/escolha-seu-time/${getLowerCaseSlug(currentTeam)}`);
     setCurrentTeamBanner(null);
 
     ga('event', 'view', {
