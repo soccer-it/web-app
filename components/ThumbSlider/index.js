@@ -7,8 +7,8 @@ import { thumbSliderWrapper } from './ThumbSlider.scss';
 function ThumbSlider({ teams = [] }) {
   return (
     <div className={thumbSliderWrapper}>
-      {teams.map(({ slug, ...team }) => {
-        return <ThumbItem key={slug} team={team} />;
+      {teams.map(({ ...team }) => {
+        return <ThumbItem key={team.slug} team={team} />;
       })}
     </div>
   );

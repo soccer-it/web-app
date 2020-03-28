@@ -40,11 +40,11 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          <script
+          {/* <script
             defer
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_ID}`}
-          ></script>
-          <script
+          ></script> */}
+          {/* <script
             dangerouslySetInnerHTML={{
               __html: `
               window.dataLayer = window.dataLayer || [];
@@ -62,7 +62,7 @@ class MyDocument extends Document {
               });
             `
             }}
-          />
+          /> */}
         </body>
       </Html>
     );
