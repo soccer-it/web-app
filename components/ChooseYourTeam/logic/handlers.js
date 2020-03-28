@@ -33,9 +33,7 @@ module.exports = {
 
     const teamBanner = currentTeam.images.shirt;
 
-    getTeamPhoto(teamBanner).then(blobImage => {
-      setCurrentTeamBanner(blobImage);
-    });
+    setCurrentTeamBanner(teamBanner);
   },
 
   onSelectResult: ({ setupTeam, setTeam }) => (e, currentTeam) => {
