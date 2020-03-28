@@ -73,7 +73,7 @@ function ChooseYourTeam(props) {
           selecionar
           <Icon id="arrow-right" className={linkIcon} />
         </a>
-        <ThumbSlider teams={teams} />
+        <ThumbSlider teams={teams} currentSelectedIndex={currentSelectedIndex} />
       </div>
     </>
   );
