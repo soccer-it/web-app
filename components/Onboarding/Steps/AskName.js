@@ -4,13 +4,14 @@ export default function AskName({ userName, setUserName, team }) {
   return (
     <>
       <figure className={styles.banner}>
-        <img src={team.banner} alt={`camisa ${team.name}`} />
+        <img src={team.images.shirt} alt={`camisa ${team.name}`} />
       </figure>
       <h1 className={styles.title}>
-        <strong>{team.alias}</strong>? Ótimo!
+        Mensagem de boas vindas para um fã do time{` `}
+        <strong>{team.alias}</strong>
       </h1>
-      <div className="field">
-        <label htmlFor="#userName">Precisamos saber como te chamar. Qual é seu nome?</label>
+      <div className={styles.field}>
+        <label htmlFor="#userName">Como podemos te chamar?</label>
         <input
           defaultValue={userName}
           onChange={setUserName}
