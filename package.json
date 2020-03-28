@@ -40,6 +40,7 @@
     "airtable": "^0.7.1",
     "classnames": "^2.2.6",
     "debounce": "^1.2.0",
+    "firebase": "^7.13.1",
     "history": "^4.10.1",
     "joi": "^14.3.1",
     "js-levenshtein": "^1.1.6",
