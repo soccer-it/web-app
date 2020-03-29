@@ -29,11 +29,11 @@ module.exports = {
     browserHistory().replace(`/app/escolha-seu-time/${getLowerCaseSlug(currentTeam)}`);
     setCurrentTeamBanner(null);
 
-    ga('event', 'view', {
-      event_category: 'Teams',
-      event_label: currentTeam.name,
-      non_interaction: true
-    });
+    // ga('event', 'view', {
+    //   event_category: 'Teams',
+    //   event_label: currentTeam.name,
+    //   non_interaction: true
+    // });
 
     const teamBanner = currentTeam.images.shirt;
 
