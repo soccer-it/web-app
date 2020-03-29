@@ -1,9 +1,7 @@
 .chooseYourTeam {
-  // overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1.6rem 0;
   height: 100vh;
   min-height: -webkit-fill-available;
   filter: blur(var(--base-blur));
@@ -14,7 +12,7 @@
   align-items: center;
   width: 100%;
   justify-content: space-between;
-  padding: 0 1.3rem;
+  padding: 20px 15px;
 }
 
 .title {
@@ -22,8 +20,6 @@
   font-weight: bold;
   line-height: 1.6em;
 }
-
-
 
 .searchLink {
   color: inherit;
@@ -37,7 +33,7 @@
   display: flex;
   align-items: center;
   color: var(--base-content-color);
-  padding: 0 1.3rem;
+  padding: 20px 1.3rem;
 }
 
 .linkIcon {

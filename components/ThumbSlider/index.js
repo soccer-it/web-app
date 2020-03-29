@@ -1,24 +1,23 @@
+// Logic
+import logic from './logic';
+
 // Components
-import Swipeable from 'components/Swipeable';
 import ThumbItem from './ThumbItem';
 
-// Style
-import { thumbSliderWrapper, itemSlide, teamsThumbList } from './ThumbSlider.scss';
+// Utils
+import useLogicLayers from 'utils/useLogicLayers';
 
-function ThumbSlider({ teams = [], onSwipe, currentSelectedIndex }) {
+// Style
+import { thumbSliderWrapper } from './ThumbSlider.scss';
+
+function ThumbSlider(props) {
+  const { onSelect, teams = [] } = useLogicLayers(props)(logic);
+  
   return (
-    <div className={teamsThumbList}>
-      <Swipeable
-        index={currentSelectedIndex}
-        onChangeIndex={onSwipe}
-        slideClassName={itemSlide}
-        className={thumbSliderWrapper}
-        
-      >
-        {teams.map(({ slug, ...team }) => {
-          return <ThumbItem key={slug} team={team} />;
-        })}
-      </Swipeable>
+    <div className={thumbSliderWrapper} data-slide>
+      {teams.map(({ ...team }) => {
+        return <ThumbItem key={team.slug} team={team} onSelect={onSelect} />;
+      })}
     </div>
   );
 }
