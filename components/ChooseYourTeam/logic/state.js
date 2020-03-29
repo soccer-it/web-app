@@ -1,5 +1,5 @@
 module.exports = _ => ({
   currentTeam: null,
-  currentTeamBanner: null,
+  currentTeamBanner: '',
   currentSelectedIndex: 0
 });

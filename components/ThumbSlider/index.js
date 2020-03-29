@@ -11,13 +11,24 @@ import useLogicLayers from 'utils/useLogicLayers';
 import { thumbSliderWrapper } from './ThumbSlider.scss';
 
 function ThumbSlider(props) {
-  const { onSelect, teams = [] } = useLogicLayers(props)(logic);
-  
+  const { onSelect, teams = [], handlers } = useLogicLayers(props)(logic);
+  const { currentSelectedIndex } = handlers;
+
   return (
     <div className={thumbSliderWrapper} data-slide>
-      {teams.map(({ ...team }) => {
-        return <ThumbItem key={team.slug} team={team} onSelect={onSelect} />;
-      })}
+      <div className="swiper-wrapper">
+        {teams.map(({ ...team }, index) => {
+          return (
+            <ThumbItem
+              key={team.slug}
+              team={team}
+              className="swiper-slide"
+              onSelect={() => onSelect(index)}
+              activeSlide={currentSelectedIndex === index}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }

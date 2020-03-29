@@ -45,20 +45,18 @@ function mapTeams(teams) {
         const baseThemeColor = propOr('white', 'base-theme-color', currentFields);
         const baseContentColor = propOr('black', 'base-content-color', currentFields);
 
-        setTimeout(() => {
-          downloadBanner({ id: currentFields.id, url: banner })
-            .then(bannerData => {
-              resolve({
-                ...currentFields,
-                theme: {
-                  'base-theme-color': baseThemeColor,
-                  'base-content-color': baseContentColor
-                },
-                asset: bannerData
-              });
-            })
-            .catch(reject);
-        }, 600);
+        downloadBanner({ id: currentFields.id, url: banner })
+          .then(bannerData => {
+            resolve({
+              ...currentFields,
+              theme: {
+                'base-theme-color': baseThemeColor,
+                'base-content-color': baseContentColor
+              },
+              asset: bannerData
+            });
+          })
+          .catch(reject);
       }),
     teams
   );
