@@ -6,8 +6,8 @@ export default {
     const { currentSelectedIndex } = handlers;
     const slider = new Swiper(`[data-slide]`, {
       autoplay: false,
-      slidesPerView: 4.5,
-      spaceBetween: 10
+      slidesPerView: 4.2,
+      // spaceBetween: 10,
     });
 
     slider.slideTo(currentSelectedIndex);
