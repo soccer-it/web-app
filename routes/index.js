@@ -1,6 +1,6 @@
 const getLowerCaseSlug = require('../utils/getLowerCaseSlug');
 
-const baseApp = '/app'
+const baseApp = '/app';
 
 module.exports = () => {
   const teamsData = require('../public/mappedTeams.json');
@@ -20,7 +20,7 @@ module.exports = () => {
   const localRoot = isStaticBuild ? 'index' : ':id';
 
   let baseRoutes = {
-    [`${baseApp}/${localRoot}`]: {
+    [`${baseApp}/onboarding/${localRoot}`]: {
       page: '/onboarding'
     },
     [`${baseApp}/escolha-seu-time/${localRoot}`]: {
