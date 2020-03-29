@@ -19,6 +19,7 @@ function TeamsList({ setupTeam, onSwipe, teams = [], currentSelectedIndex, curre
             key={slug}
             team={team}
             currentTeamBanner={currentTeamBanner}
+            activeSlide={currentSelectedIndex === index}
           />
         ))}
       </Swipeable>

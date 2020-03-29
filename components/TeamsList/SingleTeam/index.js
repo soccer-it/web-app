@@ -1,14 +1,14 @@
 import classNames from 'classnames';
 
 // Styles
-import { banner, teamTitle, teamClass } from './SingleTeam.scss';
+import { banner, teamTitle, teamClass, actived } from './SingleTeam.scss';
 
-export default function SingleTeam({ team, setupTeam, currentTeamBanner }) {
+export default function SingleTeam({ team, setupTeam, currentTeamBanner, activeSlide }) {
   const { name } = team;
   return (
     <article
       className={classNames(teamClass, {
-        ['-loaded']: currentTeamBanner
+        [actived] :activeSlide && currentTeamBanner
       })}
       onClick={setupTeam}
     >
