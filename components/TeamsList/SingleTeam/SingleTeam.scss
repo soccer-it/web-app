@@ -12,10 +12,15 @@
   transform: translateY(-10px);
   transition-delay: 0.2s;
   opacity: 0;
+
+  @media (max-height: 600px) {
+    width: 120px;
+    height: 120px;
+  }
 }
 
 .teamTitle {
-  font-size: 52px;
+  font-size: 32px;
   margin: 10px 0;
   text-align: left;
   text-transform: lowercase;
@@ -26,6 +31,11 @@
 
   & > a {
     color: var(--base-content-color);
+  }
+
+  // TODO: Passar todos os 425 para um arquivo de variáveis
+  @media (min-width: 412px) {
+    font-size: 52px;
   }
 }
 

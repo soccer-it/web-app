@@ -16,9 +16,14 @@
 }
 
 .title {
-  font-size: 30px;
+  font-size: 25px;
   font-weight: bold;
   line-height: 1.6em;
+  
+  // TODO: Passar todos os 425 para um arquivo de variáveis
+  @media (min-width: 412px) {
+    font-size: 30px;
+  }
 }
 
 .searchLink {
@@ -27,13 +32,18 @@
 }
 
 .link {
-  font-size: 25px;
+  font-size: 20px;
   line-height: 1.5em;
   font-weight: normal;
   display: flex;
   align-items: center;
   color: var(--base-content-color);
   padding: 20px 1.3rem;
+
+  // TODO: Passar todos os 425 para um arquivo de variáveis
+  @media (min-width: 412px) {
+    font-size: 25px;
+  }
 }
 
 .linkIcon {
