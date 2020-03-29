@@ -48,6 +48,7 @@ module.exports = {
   },
 
   onSwipe: ({ setCurrentTeam, teams, setCurrentSelectedIndex }) => index => {
+    
     const currentTeam = teams[index];
 
     setCurrentSelectedIndex(index);

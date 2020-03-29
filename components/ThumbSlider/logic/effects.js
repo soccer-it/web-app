@@ -1,9 +1,12 @@
-const effects = (useEffect, { users, initCarousel, currentSelectedIndex }) => {
+export default (useEffect, { users, initCarousel, handlers, slider }) => {
   useEffect(() => {
-    console.log(currentSelectedIndex);
-    
     initCarousel();
-  }, [users, currentSelectedIndex]);
-};
+  }, [users]);
+  useEffect(() => {
+    const { currentSelectedIndex } = handlers;
 
-export default effects;
+    if (slider) {
+      slider.slideTo(currentSelectedIndex);
+    }
+  }, [handlers]);
+};

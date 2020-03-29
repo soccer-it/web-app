@@ -13,7 +13,7 @@ function TeamsList({ setupTeam, onSwipe, teams = [], currentSelectedIndex, curre
         slideClassName={itemClass}
         className={swipeableWrapper}
       >
-        {teams.map(({ slug, ...team }) => (
+        {teams.map(({ slug, ...team }, index) => (
           <SingleTeam
             setupTeam={setupTeam}
             key={slug}
