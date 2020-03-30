@@ -33,9 +33,8 @@ function ChooseYourTeam(props) {
     activeSearch,
     currentSelectedIndex,
     setCurrentSelectedIndex,
-    goPrev,
-    onSelectResult,
-    goNext
+
+    onSelectResult
   } = useLogicLayers(props)(logic);
 
   const SingleResult = team => {
@@ -64,8 +63,6 @@ function ChooseYourTeam(props) {
         <TeamsList
           setupTeam={setupTeam}
           currentTeamBanner={currentTeamBanner}
-          goPrev={goPrev}
-          goNext={goNext}
           currentSelectedIndex={currentSelectedIndex}
           onSwipe={onSwipe}
           teams={teams}
@@ -74,7 +71,10 @@ function ChooseYourTeam(props) {
           selecionar
           <Icon id="arrow-right" className={linkIcon} />
         </a>
-        <ThumbSlider teams={teams} handlers={{ currentSelectedIndex, setCurrentSelectedIndex, onSwipe }} />
+        <ThumbSlider
+          teams={teams}
+          handlers={{ currentSelectedIndex, setCurrentSelectedIndex, onSwipe }}
+        />
       </div>
     </>
   );
