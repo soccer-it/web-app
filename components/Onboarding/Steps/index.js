@@ -1,5 +1,18 @@
 import dynamic from 'next/dynamic';
-import styles from '../Onboarding.scss';
+
+// Components
+import Icon from 'components/Icon';
+
+// Styles
+import {
+  step,
+  stepWrapper,
+  stepContent,
+  navigationWrapper,
+  buttonNext,
+  buttonPrev,
+  buttonIcon
+} from '../Onboarding.scss';
 
 const stepsHandlers = {
   askName: dynamic(import('./AskName').then(m => m.default)),
@@ -11,17 +24,20 @@ export default function Steps({ isLoading, currentStep, onSetupStep, ...stepProp
   const CurrentStep = stepsHandlers[currentStep];
 
   return (
-    <div className={styles.step}>
+    <div className={step}>
       {isLoading ? (
-        <div>... carregando</div>
+        <div>Carregando...</div>
       ) : (
-        <div className={styles.stepWrapper}>
-          <div className={styles.stepContent}>
+        <div className={stepWrapper}>
+          <div className={stepContent}>
             <CurrentStep {...stepProps} />
           </div>
-          <div className={styles.navigationWrapper}>
-            <button>Voltar</button>
-            <button onClick={onSetupStep}>Continuar</button>
+          <div className={navigationWrapper}>
+            <button data-prev className={buttonPrev}>Voltar</button>
+            <button data-next onClick={onSetupStep} className={buttonNext}>
+              Continuar
+              <Icon id="arrow-right" className={buttonIcon} />
+            </button>
           </div>
         </div>
       )}

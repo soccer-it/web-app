@@ -4,27 +4,8 @@
   color: var(--base-content-color);
 }
 
-.title {
-  font-size: 2rem;
-
-  strong {
-    font-weight: bolder;
-  }
-}
-
-.banner {
-  width: 180px;
-  margin: 20px auto;
-}
-
-.navigationWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .stepWrapper {
-  padding: 1.6rem 1.3rem;
+  padding: 20px 30px;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -32,30 +13,97 @@
 
 .stepContent {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.title {
+  font-size: 31px;
+  text-align: left;
+  text-transform: lowercase;
+  margin: 0px;
+  line-height: 1.3em;
+  font-weight: bold;
+
+  strong {
+    font-weight: bolder;
+  }
+}
+
+.banner {
+  width: 100px;
+  margin: 0;
+}
+
+.navigationWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0px;
+}
+
+.buttonNext {
+  display: flex;
+  align-items: center;
+}
+
+.buttonPrev {
+  opacity: 0.3;
+}
+
+.buttonIcon {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  fill: var(--base-content-color);
 }
 
 .field {
-  & {
-    margin-top: 30px;
-  }
+  margin-bottom: 25vh;
+  position: relative;
 
   & > input,
   label {
     display: block;
     width: 100%;
+    text-align: left;
+    font-weight: 400;
+    font-size: 20px;
   }
 
   & > label {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   & > input {
-    padding: 20px;
+    padding: 15px 0;
     background-color: transparent;
     color: var(--base-content-color);
     font-size: 20px;
-    font-weight: bold;
-    border-bottom: solid 3px;
+    font-weight: 500;
+    position: relative;
+    width: 100%;
+
+    &::-webkit-input-placeholder {
+      font-weight: 300;
+      font-size: 18px;
+      color: var(--base-content-color);
+      opacity: 0.3;
+    }
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    display: block;
+    background-color: var(--base-content-color);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.3;
   }
 
   :global .errorWrapper {

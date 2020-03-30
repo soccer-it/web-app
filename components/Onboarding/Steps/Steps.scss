@@ -1,0 +1,26 @@
+.title {
+  font-size: 25px;
+  text-align: left;
+  text-transform: lowercase;
+  margin: 0px;
+  line-height: 1.3em;
+  font-weight: bold;
+
+  strong {
+    font-weight: bolder;
+  }
+}
+
+.subtitle {
+  font-size: 30px;
+  line-height: 40px;
+  text-align: left;
+  text-transform: lowercase;
+}
+
+.paragraph {
+  font-size: 16px;
+  line-height: 25px;
+  text-transform: lowercase;
+  text-align: left;
+}

@@ -155,6 +155,20 @@ img {
   max-width: 100%;
 }
 
+button {
+  font-size: 20px;
+  line-height: 40px;
+  text-align: center;
+  font-weight: bold;
+  background: none;
+  color: var(--base-content-color);
+  text-transform: lowercase;
+
+  &[data-prev] {
+    font-weight: normal;
+  }
+}
+
 :global {
   #svg-sprite {
     display: none !important;

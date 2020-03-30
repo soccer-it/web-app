@@ -4,6 +4,7 @@ export default function EmailField({
   fieldName = 'email',
   label = 'E-mail',
   className,
+  placeholder = '',
   onFieldChange,
   inputProps
 }) {
@@ -19,6 +20,7 @@ export default function EmailField({
         name={fieldName}
         autoComplete="off"
         type="email"
+        placeholder={placeholder}
         maxLength={320}
         onChange={handleEmailChange}
         onBlur={handleEmailChange}
