@@ -4,12 +4,13 @@ import Router from 'next/router';
 
 module.exports = {
   setTeamGlobalConfig: () => currentTeam => {
-    const [baseThemeColor, baseContentColor] = ['base-theme-color', 'base-content-color'];
+    const [baseThemeColor, baseContentColor, baseFeaturedColor] = ['base-theme-color', 'base-content-color', 'base-featured-color'];
 
     userConfig.userSetup.team = currentTeam;
     userConfig.theme = {
       [baseThemeColor]: currentTeam[baseThemeColor],
-      [baseContentColor]: currentTeam[baseContentColor]
+      [baseContentColor]: currentTeam[baseContentColor],
+      [baseFeaturedColor]: currentTeam[baseFeaturedColor]
     };
   },
 

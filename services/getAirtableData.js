@@ -44,6 +44,7 @@ function mapTeams(teams) {
 
         const baseThemeColor = propOr('white', 'base-theme-color', currentFields);
         const baseContentColor = propOr('black', 'base-content-color', currentFields);
+        const baseFeaturedColor = propOr('black', 'base-featured-colo', currentFields);
 
         downloadBanner({ id: currentFields.id, url: banner })
           .then(bannerData => {
@@ -51,7 +52,8 @@ function mapTeams(teams) {
               ...currentFields,
               theme: {
                 'base-theme-color': baseThemeColor,
-                'base-content-color': baseContentColor
+                'base-content-color': baseContentColor,
+                'base-featured-color': baseFeaturedColor
               },
               asset: bannerData
             });
