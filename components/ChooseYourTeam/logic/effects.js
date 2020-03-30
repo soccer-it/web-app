@@ -1,21 +1,24 @@
-import { useRouter } from 'next/router';
+import Router from 'next/router';
+import browserHistory from 'utils/browserHistory';
 
-module.exports = (
-  useEffect,
-  { setCurrentSelectedIndex, setTeam, setCurrentTeam, teams, currentTeam }
-) => {
-  const { asPath } = useRouter();
+module.exports = (useEffect, { setCurrentSelectedIndex, setTeam, setCurrentTeam, teams, currentTeam }) => {
+	useEffect(() => {
+		const urlTeam = Router.router.query.team;
 
-  useEffect(() => {
-    const currentRoute = asPath.split('/').pop();
-    const slugIndex = teams.findIndex(({ slug }) => slug.toLowerCase() === currentRoute);
-    const currentTeamIndex = slugIndex !== -1 ? slugIndex : 0;
+		const currentTeamUrl = urlTeam || teams[0].slug.toLowerCase();
+		const slugIndex = teams.findIndex(({ slug }) => slug.toLowerCase() === currentTeamUrl);
+		const currentTeamIndex = slugIndex !== -1 ? slugIndex : 0;
 
-    if (!currentTeam) {
-      setCurrentTeam(teams[currentTeamIndex]);
-      setCurrentSelectedIndex(currentTeamIndex);
-    } else {
-      setTeam(currentTeam);
-    }
-  }, [currentTeam]);
+		browserHistory().replace(`/app/escolha-seu-time/?team=${currentTeamUrl}`);
+
+		setCurrentTeam(teams[currentTeamIndex]);
+		setCurrentSelectedIndex(currentTeamIndex);
+	}, []);
+
+	useEffect(
+		() => {
+			if (currentTeam) setTeam(currentTeam);
+		},
+		[ currentTeam ]
+	);
 };
