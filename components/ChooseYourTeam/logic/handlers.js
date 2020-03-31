@@ -18,7 +18,7 @@ module.exports = {
     e.preventDefault();
 
     setTeamGlobalConfig(currentTeam);
-    Router.push(`/app/onboarding`);
+    Router.replace(`/app/onboarding`);
   },
 
   setTeam: ({ setTeamGlobalConfig, setCurrentTeamBanner }) => currentTeam => {
