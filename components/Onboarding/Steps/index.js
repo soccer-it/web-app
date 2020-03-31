@@ -1,19 +1,10 @@
 import dynamic from 'next/dynamic';
 
 // Components
-import Icon from 'components/Icon';
-// import BgLogoOutlined from 'components/BgLogoOutlined';
+import FormControl from 'components/FormControl';
 
 // Styles
-import {
-  step,
-  stepWrapper,
-  stepContent,
-  navigationWrapper,
-  buttonNext,
-  buttonPrev,
-  buttonIcon
-} from '../Onboarding.scss';
+import { step, stepWrapper, stepContent } from '../Onboarding.scss';
 
 const stepsHandlers = {
   askName: dynamic(import('./AskName').then(m => m.default)),
@@ -22,7 +13,7 @@ const stepsHandlers = {
 };
 
 export default function Steps({ isLoading, currentStep, onSetupStep, ...stepProps }) {
-  const CurrentStep = stepsHandlers['done'];
+  const CurrentStep = stepsHandlers[currentStep];
 
   return (
     <div className={step}>
@@ -33,18 +24,9 @@ export default function Steps({ isLoading, currentStep, onSetupStep, ...stepProp
           <div className={stepContent}>
             <CurrentStep {...stepProps} />
           </div>
-          <div className={navigationWrapper}>
-            <button data-prev className={buttonPrev}>
-              Voltar
-            </button>
-            <button data-next onClick={onSetupStep} className={buttonNext}>
-              Continuar
-              <Icon id="arrow-right" className={buttonIcon} />
-            </button>
-          </div>
+          <FormControl onNext={onSetupStep} onPrev={f => f} />
         </div>
       )}
-      {/* <BgLogoOutlined /> */}
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import AskForPush from 'components/AskForPush';
+// Components
 import EmailField from 'components/EmailField';
 
 // Styles
@@ -8,7 +8,6 @@ import { title, subtitle, paragraph } from './Steps.scss';
 export default function AskContact({ userName, setUserEmail, userEmail }) {
   return (
     <>
-      {/* <AskForPush /> */}
       <h1 className={title}>bem-vindo, {userName}!</h1>
       <h2 className={subtitle}>topa receber as últimas notícias sobre o furacão?</h2>
       <p className={paragraph}>
