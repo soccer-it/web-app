@@ -3,11 +3,12 @@ import Icon from 'components/Icon';
 import AskForPush from 'components/AskForPush';
 
 // Styles
-import { doneWrapper, doneTitle, doneSubtitle, doneLogo, doneIcon } from './Steps.scss';
+import { doneTitle, doneSubtitle, doneLogo, doneIcon } from './Steps.scss';
+import { stepContent } from '../Onboarding.scss';
 
 export default function Done() {
   return (
-    <div className={doneWrapper}>
+    <div className={stepContent}>
       <AskForPush />
       <Icon className={doneLogo} id="logolettering" />
       <Icon className={doneIcon} id="check" />

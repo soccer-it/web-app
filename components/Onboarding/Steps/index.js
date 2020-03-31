@@ -1,10 +1,7 @@
 import dynamic from 'next/dynamic';
 
-// Components
-import FormControl from 'components/FormControl';
-
 // Styles
-import { step, stepWrapper, stepContent } from '../Onboarding.scss';
+import { step, stepWrapper, stepContent, loader } from '../Onboarding.scss';
 
 const stepsHandlers = {
   askName: dynamic(import('./AskName').then(m => m.default)),
@@ -12,19 +9,16 @@ const stepsHandlers = {
   done: dynamic(import('./Done').then(m => m.default))
 };
 
-export default function Steps({ isLoading, currentStep, onSetupStep, ...stepProps }) {
+export default function Steps({ isLoading, currentStep, ...stepProps }) {
   const CurrentStep = stepsHandlers[currentStep];
 
   return (
     <div className={step}>
       {isLoading ? (
-        <div>Carregando...</div>
+        <div className={loader}>Carregando...</div>
       ) : (
         <div className={stepWrapper}>
-          <div className={stepContent}>
-            <CurrentStep {...stepProps} />
-          </div>
-          <FormControl onNext={onSetupStep} onPrev={f => f} />
+          <CurrentStep {...stepProps} />
         </div>
       )}
     </div>
