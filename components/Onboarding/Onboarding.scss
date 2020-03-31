@@ -110,7 +110,8 @@
 
   :global .errorWrapper {
     position: absolute;
-    color: red;
+    background: red;
+    color: white;
     margin-top: 10px;
   }
 }

@@ -1,10 +1,10 @@
 .title {
-  font-size: 25px;
+  font-size: 22px;
   text-align: left;
   text-transform: lowercase;
   margin: 2vh 0px;
   line-height: 1.3em;
-  font-weight: bold;
+  font-weight: 500;
 
   strong {
     font-weight: bolder;
@@ -27,4 +27,44 @@
   text-align: left;
   padding-right: 20px;
   margin: 1vh 0px 4vh;
+}
+
+// Done
+.doneWrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.doneTitle {
+  font-weight: bold;
+  text-align: left;
+  font-size: 25px;
+  margin: 20px 0px;
+  padding-right: 40px;
+}
+
+.doneSubtitle {
+  font-weight: 900;
+  text-align: left;
+  font-size: 25px;
+  margin: 20px 0px;
+}
+
+.doneIcon {
+  width: 30px;
+  height: 30px;
+  margin: 10px 0px;
+  fill: var(--base-content-color);
+  stroke: var(--base-content-color);
+}
+
+.doneLogo {
+  width: 90px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  margin: 20px 0 40px 0;
+  fill: var(--base-content-color);
+  opacity: 0.3;
 }

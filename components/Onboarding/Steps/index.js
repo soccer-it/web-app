@@ -2,6 +2,7 @@ import dynamic from 'next/dynamic';
 
 // Components
 import Icon from 'components/Icon';
+// import BgLogoOutlined from 'components/BgLogoOutlined';
 
 // Styles
 import {
@@ -21,7 +22,7 @@ const stepsHandlers = {
 };
 
 export default function Steps({ isLoading, currentStep, onSetupStep, ...stepProps }) {
-  const CurrentStep = stepsHandlers[currentStep];
+  const CurrentStep = stepsHandlers['done'];
 
   return (
     <div className={step}>
@@ -33,7 +34,9 @@ export default function Steps({ isLoading, currentStep, onSetupStep, ...stepProp
             <CurrentStep {...stepProps} />
           </div>
           <div className={navigationWrapper}>
-            <button data-prev className={buttonPrev}>Voltar</button>
+            <button data-prev className={buttonPrev}>
+              Voltar
+            </button>
             <button data-next onClick={onSetupStep} className={buttonNext}>
               Continuar
               <Icon id="arrow-right" className={buttonIcon} />
@@ -41,6 +44,7 @@ export default function Steps({ isLoading, currentStep, onSetupStep, ...stepProp
           </div>
         </div>
       )}
+      {/* <BgLogoOutlined /> */}
     </div>
   );
 }
