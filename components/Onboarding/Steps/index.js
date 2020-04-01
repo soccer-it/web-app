@@ -1,4 +1,3 @@
-import dynamic from 'next/dynamic';
 import { CSSTransition } from 'react-transition-group';
 
 // Components
@@ -11,16 +10,12 @@ import logic from '../logic';
 import useLogicLayers from 'utils/useLogicLayers';
 
 // Styles
-import { step, stepWrapper, loader } from '../Onboarding.scss';
-
-const stepsHandlers = {
-  askName: dynamic(import('./AskName').then(m => m.default)),
-  askContact: dynamic(import('./AskContact').then(m => m.default)),
-  done: dynamic(import('./Done').then(m => m.default))
-};
+import { step, stepWrapper } from '../Onboarding.scss';
 
 export default function Steps(props) {
-  const { triggerMotion, isLoading, currentStep, ...stepProps } = useLogicLayers(props)(logic);
+  const { triggerMotion, isLoading, currentStep, stepsHandlers, ...stepProps } = useLogicLayers(
+    props
+  )(logic);
 
   const CurrentStep = stepsHandlers[currentStep];
 
