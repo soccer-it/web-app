@@ -1,6 +1,9 @@
 import dynamic from 'next/dynamic';
 import { CSSTransition } from 'react-transition-group';
 
+// Components
+import Loader from 'components/Loader';
+
 // Logic
 import logic from '../logic';
 
@@ -23,15 +26,12 @@ export default function Steps(props) {
 
   return (
     <div className={step}>
-      {isLoading ? (
-        <div className={loader}>Carregando...</div>
-      ) : (
-        <CSSTransition in={triggerMotion} timeout={300} classNames={stepWrapper}>
-          <div className={stepWrapper}>
-            <CurrentStep {...stepProps} />
-          </div>
-        </CSSTransition>
-      )}
+      <CSSTransition in={triggerMotion} timeout={300} classNames={stepWrapper}>
+        <div className={stepWrapper}>
+          <Loader visible={isLoading} />
+          <CurrentStep {...stepProps} />
+        </div>
+      </CSSTransition>
     </div>
   );
 }
