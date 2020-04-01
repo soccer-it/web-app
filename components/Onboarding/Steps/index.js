@@ -21,7 +21,7 @@ export default function Steps({
         <CSSTransition key={currentStep} timeout={300} classNames={stepWrapper}>
           <div className={stepWrapper}>
             <Loader visible={isLoading} />
-            <CurrentStep {...stepProps} />
+            {CurrentStep && <CurrentStep {...stepProps} />}
           </div>
         </CSSTransition>
       </SwitchTransition>

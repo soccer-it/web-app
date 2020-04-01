@@ -4,7 +4,7 @@ import { userConfig } from 'utils/store';
 export default _ => {
   return {
     triggerMotion: false,
-    currentStep: 'askName',
+    currentStep: '',
     isLoading: false,
     userSetup: userConfig.userSetup
   };
