@@ -14,7 +14,7 @@ export default function Steps({
   stepsHandlers,
   ...stepProps
 }) {
-  const CurrentStep = stepsHandlers['done'];
+  const CurrentStep = stepsHandlers[currentStep];
 
   return (
     <div className={step}>

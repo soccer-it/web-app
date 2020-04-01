@@ -3,7 +3,7 @@ import { userConfig } from 'utils/store';
 import { useState } from 'react';
 
 export default function useAskForPush() {
-  const [active, setActive] = useState(!userConfig.userSetup.notificationToken);
+  const [active, setActive] = useState(false);
 
   function onClose() {
     setActive(false);
@@ -25,6 +25,7 @@ export default function useAskForPush() {
   return {
     active,
     onRequestPermission,
-    onClose
+    onClose,
+    setActive
   };
 }

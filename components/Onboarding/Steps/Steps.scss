@@ -136,7 +136,8 @@
     input,
     .subtitle,
     .doneTitle,
-    .doneSubtitle {
+    .doneSubtitle,
+    .doneIcon {
       opacity: 0;
       transform: translateY(10px);
     }
@@ -160,15 +161,21 @@
     .paragraph,
     .subtitle,
     .doneTitle,
-    .doneSubtitle {
+    .doneSubtitle,
+    .doneIcon {
       transform: translateY(0px);
       opacity: 1;
       transition: transform 0.3s ease, opacity 0.3s ease;
     }
 
-    .title {
+    .doneIcon {
+      transition-delay: 50ms;
+    }
+    
+    .title, .doneTitle {
       transition-delay: 100ms;
     }
+
     .subtitle, .doneSubtitle {
       transition-delay: 150ms;
     }
