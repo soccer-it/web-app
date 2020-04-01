@@ -6,19 +6,8 @@ const stepsHandlers = {
   done: dynamic(import('../Steps/Done').then(m => m.default))
 };
 
-module.exports = () => {
+module.exports = (_) => {
   return {
     stepsHandlers
   };
 };
-
-import { userConfig } from 'utils/store';
-
-module.exports = (_) => {
-	const userSetupTeam = userConfig.userSetup.team;
-
-	return {
-		userSetupTeam
-	};
-};
-
