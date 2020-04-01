@@ -1,5 +1,6 @@
 // Style
-import { banner, title, field, stepContent } from '../Onboarding.scss';
+import { stepContent } from '../Onboarding.scss';
+import { title, banner, field } from './Steps.scss';
 
 // Components
 import FormControl from 'components/FormControl';

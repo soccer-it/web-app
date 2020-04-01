@@ -3,8 +3,8 @@ import EmailField from 'components/EmailField';
 import FormControl from 'components/FormControl';
 
 // Styles
-import { field, stepContent } from '../Onboarding.scss';
-import { title, subtitle, paragraph } from './Steps.scss';
+import { stepContent } from '../Onboarding.scss';
+import { title, subtitle, paragraph, field } from './Steps.scss';
 
 export default function AskContact({ userName, setUserEmail, userEmail, onSetupStep }) {
   return (
