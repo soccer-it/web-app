@@ -8,7 +8,7 @@ module.exports = () => ({
 	'/app/escolha-seu-time': {
 		page: '/app/escolha-seu-time'
 	},
-	'/app/onboarding': {
+	'/app/onboarding/': {
 		page: '/app/onboarding'
 	}
 });
