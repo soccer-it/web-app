@@ -131,10 +131,18 @@
   :local {
     .title,
     .banner,
+    .paragraph,
     label,
-    input {
+    input,
+    .subtitle,
+    .doneTitle,
+    .doneSubtitle {
       opacity: 0;
       transform: translateY(10px);
+    }
+
+    .doneLogo {
+      opacity: 0;
     }
 
     .field:after {
@@ -148,29 +156,46 @@
     .title,
     .banner,
     label,
-    input {
+    input,
+    .paragraph,
+    .subtitle,
+    .doneTitle,
+    .doneSubtitle {
       transform: translateY(0px);
       opacity: 1;
       transition: transform 0.3s ease, opacity 0.3s ease;
     }
 
     .title {
-      transition-delay: 0.1s;
+      transition-delay: 100ms;
+    }
+    .subtitle, .doneSubtitle {
+      transition-delay: 150ms;
+    }
+    .paragraph {
+      transition-delay: 200ms;
     }
     label {
-      transition-delay: 0.2s;
+      transition-delay: 250ms;
     }
     input {
-      transition-delay: 0.3s;
+      transition-delay: 300ms;
+    }
+
+    .doneLogo {
+      opacity: 0.3;
+      transition: opacity 0.3s ease;
     }
 
     .field {
       &:after {
-        transition: transform 0.3s ease;
-        transition-delay: 0.4s;
+        transition: transform 300ms cubic-bezier(0, 0, 0.04, 0.97);
+        transition-delay: 380ms;
         transform: scaleX(1);
         transform-origin: center left;
       }
     }
   }
 }
+
+

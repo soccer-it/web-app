@@ -5,7 +5,7 @@ import Loader from 'components/Loader';
 
 // Styles
 import { step, stepWrapper } from '../Onboarding.scss';
-import { enter, enterDone } from './Steps.scss'
+import { enter, enterDone } from './Steps.scss';
 
 export default function Steps({
   triggerMotion,
@@ -14,17 +14,23 @@ export default function Steps({
   stepsHandlers,
   ...stepProps
 }) {
-  const CurrentStep = stepsHandlers[currentStep];
+  const CurrentStep = stepsHandlers['done'];
 
   return (
     <div className={step}>
       <SwitchTransition>
-        <CSSTransition key={currentStep} timeout={300} transitionentertimeout={500} classNames={
-          {
+        <CSSTransition
+          key={currentStep}
+          timeout={300}
+          transitionentertimeout={500}
+          transitionexittimeout={500}
+          unmountOnExit
+          mountOnEnter
+          classNames={{
             enter: enter,
             enterDone: enterDone,
-          }
-        }>
+          }}
+        >
           <div className={stepWrapper}>
             <Loader visible={isLoading} />
             {CurrentStep && <CurrentStep {...stepProps} />}

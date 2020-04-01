@@ -1,14 +1,20 @@
 .askForPush {
   position: fixed;
   width: 100vw;
-  bottom: 0;
+  top: 100vh;
   left: 0;
   right: 0;
-  padding: 20px 30px 10px;
+  padding: 20px 30px 40px;
   background-color: var(--base-content-color);
   box-shadow: 0px 0px 15px rgba(30, 30, 30, 0.2);
-  border-top-left-radius: 26px;
-  border-top-right-radius: 26px;
+  border-radius: 26px;
+  opacity: 0;
+  transition: transform .3s ease-in-out, opacity .3s ease-in-out;
+}
+
+.pushActived {
+  transform: translateY(calc(-100% + 20px));
+  opacity: 1;
 }
 
 .title {
