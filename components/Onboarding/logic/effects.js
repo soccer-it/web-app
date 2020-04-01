@@ -1,6 +1,6 @@
 module.exports = (
   useEffect,
-  { setTriggerMotion }
+  { setTriggerMotion, stepsHandlers }
 ) => {
   useEffect(() => {
     setTriggerMotion(true)
