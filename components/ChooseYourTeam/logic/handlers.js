@@ -3,54 +3,54 @@ import getLowerCaseSlug from 'utils/getLowerCaseSlug';
 import Router from 'next/router';
 
 module.exports = {
-	setTeamGlobalConfig: () => (currentTeam) => {
-		const [ baseThemeColor, baseContentColor, baseFeaturedColor ] = [
-			'base-theme-color',
-			'base-content-color',
-			'base-featured-color'
-		];
+  setTeamGlobalConfig: () => (currentTeam) => {
+    const [baseThemeColor, baseContentColor, baseFeaturedColor] = [
+      'base-theme-color',
+      'base-content-color',
+      'base-featured-color'
+    ];
 
-		userConfig.userSetup.team = currentTeam;
-		userConfig.theme = {
-			[baseThemeColor]: currentTeam[baseThemeColor],
-			[baseContentColor]: currentTeam[baseContentColor],
-			[baseFeaturedColor]: currentTeam[baseFeaturedColor]
-		};
-	},
+    userConfig.userSetup.team = currentTeam;
+    userConfig.theme = {
+      [baseThemeColor]: currentTeam[baseThemeColor],
+      [baseContentColor]: currentTeam[baseContentColor],
+      [baseFeaturedColor]: currentTeam[baseFeaturedColor]
+    };
+  },
 
-	setupTeam: ({ setTeamGlobalConfig, currentTeam }) => (e) => {
-		e.preventDefault();
+  setupTeam: ({ setTeamGlobalConfig, currentTeam }) => (e) => {
+    e.preventDefault();
 
-		setTeamGlobalConfig(currentTeam);
-		Router.push(`/app/onboarding`);
-	},
+    setTeamGlobalConfig(currentTeam);
+    Router.replace(`/app/onboarding`);
+  },
 
-	setTeam: ({ setTeamGlobalConfig, setCurrentTeamBanner }) => (currentTeam) => {
-		const teamBanner = currentTeam.images.shirt;
-		setCurrentTeamBanner(null);
-		setTeamGlobalConfig(currentTeam);
-		setCurrentTeamBanner(teamBanner);
-	},
+  setTeam: ({ setTeamGlobalConfig, setCurrentTeamBanner }) => (currentTeam) => {
+    const teamBanner = currentTeam.images.shirt;
 
-	onSelectResult: ({ setupTeam, setTeam }) => (e, currentTeam) => {
-		e.preventDefault();
+    setTeamGlobalConfig(currentTeam);
+    setCurrentTeamBanner(teamBanner);
+  },
 
-		setTeam(currentTeam);
-		setupTeam(e);
-	},
+  onSelectResult: ({ setupTeam, setTeam }) => (e, currentTeam) => {
+    e.preventDefault();
 
-	onSwipe: ({ setCurrentTeam, teams, setCurrentSelectedIndex }) => (index) => {
-		const currentTeam = teams[index];
+    setTeam(currentTeam);
+    setupTeam(e);
+  },
 
-		setCurrentSelectedIndex(index);
-		setCurrentTeam(currentTeam);
-		Router.push(`/app/escolha-seu-time/?team=${getLowerCaseSlug(currentTeam)}`);
-	},
+  onSwipe: ({ setCurrentTeam, teams, setCurrentSelectedIndex }) => (index) => {
+    const currentTeam = teams[index];
 
-	activeSearch: ({ teams }) => (e) => {
-		e.preventDefault();
+    setCurrentSelectedIndex(index);
+    setCurrentTeam(currentTeam);
+    Router.push(`/app/escolha-seu-time/?team=${getLowerCaseSlug(currentTeam)}`);
+  },
 
-		userConfig.searchWrapper.active = true;
-		userConfig.searchWrapper.data = teams;
-	}
+  activeSearch: ({ teams }) => (e) => {
+    e.preventDefault();
+
+    userConfig.searchWrapper.active = true;
+    userConfig.searchWrapper.data = teams;
+  }
 };

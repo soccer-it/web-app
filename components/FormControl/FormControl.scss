@@ -1,0 +1,22 @@
+.navigationWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0px;
+}
+
+.buttonNext {
+  display: flex;
+  align-items: center;
+}
+
+.buttonPrev {
+  opacity: 0.3;
+}
+
+.buttonIcon {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  fill: var(--base-content-color);
+}

@@ -1,0 +1,31 @@
+.loader {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  top: -50px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 10px;
+  background-color: var(--base-content-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 0px 15px rgba(30, 30, 30, 0.4);
+  transition: transform 0.2s ease;
+}
+
+.loaderVisible {
+  transform: translateY(100px);
+}
+
+.spinner {
+  fill: var(--base-theme-color);
+  animation: spin 0.5s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

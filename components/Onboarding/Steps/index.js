@@ -1,46 +1,42 @@
-import dynamic from 'next/dynamic';
+import { CSSTransition, SwitchTransition } from 'react-transition-group';
 
 // Components
-import Icon from 'components/Icon';
+import Loader from 'components/Loader';
 
 // Styles
-import {
-  step,
-  stepWrapper,
-  stepContent,
-  navigationWrapper,
-  buttonNext,
-  buttonPrev,
-  buttonIcon
-} from '../Onboarding.scss';
+import { step, stepWrapper } from '../Onboarding.scss';
+import { enter, enterDone } from './Steps.scss';
 
-const stepsHandlers = {
-  askName: dynamic(import('./AskName').then(m => m.default)),
-  askContact: dynamic(import('./AskContact').then(m => m.default)),
-  done: dynamic(import('./Done').then(m => m.default))
-};
-
-export default function Steps({ isLoading, currentStep, onSetupStep, ...stepProps }) {
+export default function Steps({
+  triggerMotion,
+  isLoading,
+  currentStep,
+  stepsHandlers,
+  ...stepProps
+}) {
   const CurrentStep = stepsHandlers[currentStep];
 
   return (
     <div className={step}>
-      {isLoading ? (
-        <div>Carregando...</div>
-      ) : (
-        <div className={stepWrapper}>
-          <div className={stepContent}>
-            <CurrentStep {...stepProps} />
+      <SwitchTransition>
+        <CSSTransition
+          key={currentStep}
+          timeout={300}
+          transitionentertimeout={500}
+          transitionexittimeout={500}
+          unmountOnExit
+          mountOnEnter
+          classNames={{
+            enter: enter,
+            enterDone: enterDone,
+          }}
+        >
+          <div className={stepWrapper}>
+            <Loader visible={isLoading} />
+            {CurrentStep && <CurrentStep {...stepProps} />}
           </div>
-          <div className={navigationWrapper}>
-            <button data-prev className={buttonPrev}>Voltar</button>
-            <button data-next onClick={onSetupStep} className={buttonNext}>
-              Continuar
-              <Icon id="arrow-right" className={buttonIcon} />
-            </button>
-          </div>
-        </div>
-      )}
+        </CSSTransition>
+      </SwitchTransition>
     </div>
   );
 }

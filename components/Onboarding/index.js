@@ -1,6 +1,15 @@
-import Steps from './Steps';
 import { view } from 'react-easy-state';
-import useOnboarding from './useOnboarding';
+
+// Components
+import Steps from './Steps';
+
+// Logic
+import logic from './logic';
+
+// Utils
+import useLogicLayers from 'utils/useLogicLayers';
+
+// Styles
 import styles from './Onboarding.scss';
 
 function Onboarding(props) {
@@ -10,8 +19,10 @@ function Onboarding(props) {
     currentStep,
     setUserName,
     setUserEmail,
-    isLoading
-  } = useOnboarding(props);
+    isLoading,
+    stepsHandlers
+  } = useLogicLayers(props)(logic);
+
   const { userName, userEmail, team } = userSetup;
 
   if (!team) {
@@ -29,6 +40,7 @@ function Onboarding(props) {
         setUserEmail={setUserEmail}
         onSetupStep={onSetupStep}
         currentStep={currentStep}
+        stepsHandlers={stepsHandlers}
       />
     </div>
   );

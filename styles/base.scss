@@ -27,7 +27,13 @@ $x-large-bp: 1920px;
   --large-font-size: 2.6rem;
 }
 
-/*! system-font.css v2.0.2 | CC0-1.0 License | github.com/jonathantneal/system-font-css */
+/* Change the white to any color ;) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+}
 
 @font-face {
   font-family: system-ui;
