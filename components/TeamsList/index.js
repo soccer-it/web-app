@@ -4,7 +4,7 @@ import SingleTeam from './SingleTeam';
 
 import { swipeableWrapper, teamsList, itemClass } from './TeamsList.scss';
 
-function TeamsList({ setupTeam, onSwipe, teams = [], currentSelectedIndex, currentTeamBanner }) {
+function TeamsList({ setupTeam, onSwipe, teams = [], currentSelectedIndex }) {
   return (
     <div className={teamsList}>
       <Swipeable
@@ -18,7 +18,6 @@ function TeamsList({ setupTeam, onSwipe, teams = [], currentSelectedIndex, curre
             setupTeam={setupTeam}
             key={slug}
             team={team}
-            currentTeamBanner={currentTeamBanner}
             activeSlide={currentSelectedIndex === index}
           />
         ))}

@@ -1,7 +1,6 @@
 module.exports = (_) => {
-	return {
-		currentTeam: null,
-		currentTeamBanner: '',
-		currentSelectedIndex: 0
-	};
+  return {
+    currentTeam: null,
+    currentSelectedIndex: 0
+  };
 };

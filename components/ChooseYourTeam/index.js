@@ -26,7 +26,6 @@ import {
 
 function ChooseYourTeam(props) {
   const {
-    currentTeamBanner,
     setupTeam,
     teams,
     onSwipe,
@@ -37,13 +36,13 @@ function ChooseYourTeam(props) {
     onSelectResult
   } = useLogicLayers(props)(logic);
 
-  const SingleResult = team => {
+  const SingleResult = (team) => {
     const { images, alias } = team;
     const { shirt } = images;
 
     /* Refactor SingleResult Component */
     return (
-      <div className={singleResult} onClick={e => onSelectResult(e, team)}>
+      <div className={singleResult} onClick={(e) => onSelectResult(e, team)}>
         <img className={singleResultBanner} src={shirt} alt={alias} />
         <span>{alias}</span>
       </div>
@@ -62,7 +61,6 @@ function ChooseYourTeam(props) {
         </div>
         <TeamsList
           setupTeam={setupTeam}
-          currentTeamBanner={currentTeamBanner}
           currentSelectedIndex={currentSelectedIndex}
           onSwipe={onSwipe}
           teams={teams}

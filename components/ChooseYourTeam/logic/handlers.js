@@ -25,11 +25,10 @@ module.exports = {
     Router.replace(`/app/onboarding`);
   },
 
-  setTeam: ({ setTeamGlobalConfig, setCurrentTeamBanner }) => (currentTeam) => {
+  setTeam: ({ setTeamGlobalConfig }) => (currentTeam) => {
     const teamBanner = currentTeam.images.shirt;
 
     setTeamGlobalConfig(currentTeam);
-    setCurrentTeamBanner(teamBanner);
   },
 
   onSelectResult: ({ setupTeam, setTeam }) => (e, currentTeam) => {
