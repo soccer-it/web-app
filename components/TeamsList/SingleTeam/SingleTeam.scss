@@ -23,7 +23,6 @@
   font-size: 32px;
   margin: 10px 0;
   text-align: left;
-  text-transform: lowercase;
   transition: transform 0.3s ease, opacity 0.3s ease;
   transform: translateY(10px);
   transition-delay: 0.2s;
@@ -41,7 +40,8 @@
 
 .actived {
   :local() {
-    .banner, .teamTitle {
+    .banner,
+    .teamTitle {
       transform: translateY(0px);
       transition: transform 0.3s ease, opacity 0.3s ease;
       transition-delay: 0.2s;

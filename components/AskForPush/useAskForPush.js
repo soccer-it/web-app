@@ -4,49 +4,55 @@ import { userConfig } from 'utils/store';
 import { useState, useEffect } from 'react';
 
 export default function useAskForPush() {
-	const [ active, setActive ] = useState(!userConfig.userSetup.notificationToken);
-	const [ firebaseConfig, setFirebaseConfig ] = useState(null);
+  const [active, setActive] = useState(!userConfig.userSetup.notificationTokens);
+  const [isLoading, setIsLoading] = useState(false);
+  const [firebaseConfig, setFirebaseConfig] = useState(null);
 
-	function onClose() {
-		setActive(false);
-	}
+  function onClose() {
+    setActive(false);
+  }
 
-	useEffect(() => {
-		const firebase = initFirebase();
+  useEffect(() => {
+    const firebase = initFirebase();
 
-		firebase.messaging.onMessage(({ notification }) => {
-			const title = notification.title;
-			const options = {
-				body: notification.body,
-				icon: ''
-			};
+    firebase.messaging.onMessage(({ notification }) => {
+      const title = notification.title;
+      const options = {
+        body: notification.body,
+        icon: ''
+      };
 
-			showNotification({
-				title,
-				options
-			});
-		});
+      showNotification({
+        title,
+        options
+      });
+    });
 
-		setFirebaseConfig(firebase);
-	}, []);
+    setFirebaseConfig(firebase);
+  }, []);
 
-	function onRequestPermission() {
-		const { messaging } = firebaseConfig;
+  function onRequestPermission() {
+    const { messaging } = firebaseConfig;
 
-		messaging
-			.requestPermission()
-			.then(() => {
-				setActive(false);
-				return messaging.getToken();
-			})
-			.then((token) => (userConfig.userSetup.notificationToken = token))
-			.catch((err) => console.log('No permission to send push', err));
-	}
+    messaging
+      .requestPermission()
+      .then(() => {
+        setIsLoading(true);
+        return messaging.getToken();
+      })
+      .then((token) => {
+        setIsLoading(false);
+        setActive(false);
+        userConfig.userSetup.notificationTokens = [token];
+      })
+      .catch((err) => console.log('No permission to send push', err));
+  }
 
-	return {
-		active,
-		onRequestPermission,
-		onClose,
-		setActive
-	};
+  return {
+    isLoading,
+    active,
+    onRequestPermission,
+    onClose,
+    setActive
+  };
 }

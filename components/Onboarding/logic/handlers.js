@@ -1,7 +1,7 @@
 import { userConfig } from 'utils/store';
 import withDebounce from 'utils/withDebounce';
 
-const fetchAddUser = function(data) {
+const fetchAddUser = function (data) {
   return fetch(`${process.env.SOCCERIT_SERVICES}/addUser/`, {
     method: 'POST',
     headers: {
@@ -12,27 +12,22 @@ const fetchAddUser = function(data) {
 };
 
 module.exports = {
-  setUserName: () => e => {
+  setUserName: () => (e) => {
     e.preventDefault();
 
-    withDebounce(name => {
+    withDebounce((name) => {
       userConfig.userSetup.userName = name;
     }, e.target.value);
   },
-  setUserEmail: () => currentEmail => {
-    withDebounce(email => {
+  setUserEmail: () => (currentEmail) => {
+    withDebounce((email) => {
       userConfig.userSetup.userEmail = email;
     }, currentEmail);
   },
   addUser: () => fetchAddUser,
-  onSetupStep: ({
-    userSetup,
-    isLoading,
-    currentStep,
-    setCurrentStep,
-    setIsLoading,
-    addUser
-  }) => e => {
+  onSetupStep: ({ userSetup, isLoading, currentStep, setCurrentStep, setIsLoading, addUser }) => (
+    e
+  ) => {
     e.preventDefault();
 
     const { userName, userEmail, team } = userSetup;
@@ -52,7 +47,7 @@ module.exports = {
         name: userName,
         email: userEmail,
         team: team.id,
-        notificationToken: userSetup.notificationToken
+        notificationTokens: userSetup.notificationTokens
       })
         .then(() => {
           setIsLoading(false);

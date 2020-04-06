@@ -1,3 +1,7 @@
+.step {
+  text-transform: lowercase;
+}
+
 .wrapper {
   text-align: center;
   background-color: var(--base-theme-color);
@@ -27,7 +31,6 @@
 .title {
   font-size: 28px;
   text-align: left;
-  text-transform: lowercase;
   margin: 4vh 0px;
   padding-right: 20px;
   line-height: 35px;

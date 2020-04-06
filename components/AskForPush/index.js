@@ -7,6 +7,9 @@ import useAskForPush from './useAskForPush';
 // Utils
 import { userConfig } from 'utils/store';
 
+// Components
+import Loader from 'components/Loader';
+
 // Styles
 import {
   askForPush,
@@ -18,11 +21,11 @@ import {
 } from './AskForPush.scss';
 
 export default function AskForPush() {
-  const { active, onClose, onRequestPermission, setActive } = useAskForPush();
+  const { isLoading, active, onClose, onRequestPermission, setActive } = useAskForPush();
 
   useEffect(() => {
     setTimeout(() => {
-      setActive(!userConfig.userSetup.notificationToken);
+      setActive(!userConfig.userSetup.notificationTokens);
     }, 500);
   }, []);
 
@@ -32,15 +35,23 @@ export default function AskForPush() {
         [pushActived]: active
       })}
     >
-      <h1 className={title}>você gostaria de receber informações sobre o seu time do coração?</h1>
-      <div className={holder}>
-        <button className={buttonReject} onClick={onClose}>
-          mais tarde
-        </button>
-        <button className={buttonAccept} onClick={onRequestPermission}>
-          aceito
-        </button>
-      </div>
+      {isLoading ? (
+        <Loader visible={isLoading} />
+      ) : (
+        <>
+          <h1 className={title}>
+            você gostaria de receber informações sobre o seu time do coração?
+          </h1>
+          <div className={holder}>
+            <button className={buttonReject} onClick={onClose}>
+              mais tarde
+            </button>
+            <button className={buttonAccept} onClick={onRequestPermission}>
+              aceito
+            </button>
+          </div>
+        </>
+      )}
     </div>
   );
 }

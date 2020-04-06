@@ -18,7 +18,7 @@ export const userConfig = store({
     active: false,
     results: []
   },
-  notificationToken: null
+  notificationTokens: null
 });
 
 observe(() => {

@@ -4,6 +4,7 @@
   justify-content: space-between;
   height: 100vh;
   min-height: -webkit-fill-available;
+  text-transform: lowercase;
   filter: blur(var(--base-blur));
 }
 
@@ -19,7 +20,7 @@
   font-size: 25px;
   font-weight: bold;
   line-height: 1.6em;
-  
+
   // TODO: Passar todos os 425 para um arquivo de variáveis
   @media (min-width: 412px) {
     font-size: 30px;
@@ -76,7 +77,6 @@
   padding: 16px 0;
   font-size: 15px;
   font-weight: bold;
-  text-transform: lowercase;
 
   img {
     display: block;
