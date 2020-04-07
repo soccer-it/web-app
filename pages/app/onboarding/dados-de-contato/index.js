@@ -4,7 +4,7 @@ import Head from 'next/head';
 import BaseLayout from 'layouts/BaseLayout';
 import Onboarding from 'components/Onboarding';
 
-export default function OnboardingPage() {
+export default function ContactDataPage() {
   return (
     <BaseLayout pageName="onboarding">
       <Head>

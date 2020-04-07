@@ -16,5 +16,8 @@ module.exports = () => ({
 	},
 	'/app/onboarding/dados-de-contato': {
 		page: '/app/onboarding/dados-de-contato'
+	},
+	'/app/onboarding/sucesso': {
+		page: '/app/onboarding/sucesso'
 	}
 });

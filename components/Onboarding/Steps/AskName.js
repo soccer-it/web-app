@@ -27,7 +27,7 @@ export default function AskName({ userName, setUserName, team, onNext }) {
               e.persist();
               e.preventDefault();
               withDebounce((name) => {
-                () => setUserName(e);
+                () => setUserName(name);
               }, e.target.value);
             }}
             type="text"

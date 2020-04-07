@@ -4,13 +4,13 @@ import Head from 'next/head';
 import BaseLayout from 'layouts/BaseLayout';
 import Onboarding from 'components/Onboarding';
 
-export default function PersonalDataPage() {
+export default function SucessoPage() {
   return (
     <BaseLayout pageName="onboarding">
       <Head>
         <title key="title">soccerit | seja bem-vindo</title>
       </Head>
-      <Onboarding step="askName" />
+      <Onboarding step="done" />
     </BaseLayout>
   );
 }
