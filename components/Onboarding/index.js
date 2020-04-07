@@ -25,9 +25,7 @@ function Onboarding(props) {
 
   const { userName, userEmail, team } = userSetup;
 
-  if (!team) {
-    return null;
-  }
+  if (!team) return null;
 
   return (
     <div className={styles.wrapper}>
