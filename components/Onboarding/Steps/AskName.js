@@ -1,6 +1,3 @@
-// Style
-import withDebounce from 'utils/withDebounce';
-
 // Styles
 import { stepContent } from '../Onboarding.scss';
 import { title, banner, field } from './Steps.scss';
@@ -23,13 +20,7 @@ export default function AskName({ userName, setUserName, team, onNext }) {
           <label htmlFor="#userName">Como podemos te chamar?</label>
           <input
             defaultValue={userName}
-            onChange={(e) => {
-              e.persist();
-              e.preventDefault();
-              withDebounce((name) => {
-                () => setUserName(name);
-              }, e.target.value);
-            }}
+            onChange={setUserName}
             type="text"
             name="userName"
             id="userName"

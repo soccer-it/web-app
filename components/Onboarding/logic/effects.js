@@ -1,6 +1,6 @@
-module.exports = (useEffect, { setTriggerMotion, setCurrentStep, step }) => {
+module.exports = (useEffect, { setTriggerMotion, setCurrentStep, step = 'askName' }) => {
   useEffect(() => {
     setTriggerMotion(true);
-    setCurrentStep(step || 'askName');
+    setCurrentStep(step);
   }, []);
 };

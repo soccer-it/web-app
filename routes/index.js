@@ -8,9 +8,6 @@ module.exports = () => ({
 	'/app/escolha-seu-time': {
 		page: '/app/escolha-seu-time'
 	},
-	'/app/onboarding/': {
-		page: '/app/onboarding/dados-pessoais'
-	},
 	'/app/onboarding/dados-pessoais': {
 		page: '/app/onboarding/dados-pessoais'
 	},

@@ -8,7 +8,7 @@ export default function OnboardingPage() {
       <Head>
         <title key="title">soccerit | Seja bem-vindo</title>
       </Head>
-      <Onboarding />
+      <Onboarding step="askName" />
     </BaseLayout>
   );
 }

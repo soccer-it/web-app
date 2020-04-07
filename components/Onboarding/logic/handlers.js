@@ -14,11 +14,10 @@ const fetchAddUser = function (data) {
 
 module.exports = {
   setUserName: () => (e) => {
-    e.preventDefault();
-
+    const currentName = e.target.value;
     withDebounce((name) => {
       userConfig.userSetup.userName = name;
-    }, e.target.value);
+    }, currentName);
   },
   setUserEmail: () => (currentEmail) => {
     withDebounce((email) => {
@@ -52,9 +51,9 @@ module.exports = {
           setIsLoading(false);
           Router.push(`/app/onboarding/sucesso`);
         })
-        .catch(err => {
+        .catch((err) => {
           setIsLoading(false);
-          console.log(err)
+          console.log(err);
         });
     }
   }

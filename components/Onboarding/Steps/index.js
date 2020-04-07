@@ -1,4 +1,5 @@
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
+import { useEffect, useState } from 'react';
 
 // Components
 import Loader from 'components/Loader';
@@ -14,7 +15,10 @@ export default function Steps({
   stepsHandlers,
   ...stepProps
 }) {
-  const CurrentStep = stepsHandlers[currentStep];
+  const [CurrentStepComponent, setCurrentStepComponent] = useState(null);
+  useEffect(() => {
+    setCurrentStepComponent(stepsHandlers[currentStep]);
+  }, [currentStep]);
 
   return (
     <div className={step}>
@@ -28,12 +32,12 @@ export default function Steps({
           mountOnEnter
           classNames={{
             enter: enter,
-            enterDone: enterDone,
+            enterDone: enterDone
           }}
         >
           <div className={stepWrapper}>
             <Loader visible={isLoading} />
-            {CurrentStep && <CurrentStep {...stepProps} />}
+            {CurrentStepComponent && <CurrentStepComponent {...stepProps} />}
           </div>
         </CSSTransition>
       </SwitchTransition>
