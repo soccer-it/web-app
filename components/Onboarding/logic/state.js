@@ -3,7 +3,7 @@ import { userConfig } from 'utils/store';
 
 export default _ => {
   return {
-    triggerMotion: false,
+    triggerMotion: true,
     currentStep: '',
     isLoading: false,
     userSetup: userConfig.userSetup

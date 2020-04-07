@@ -15,7 +15,7 @@ import styles from './Onboarding.scss';
 function Onboarding(props) {
   const {
     userSetup,
-    onSetupStep,
+    onNext,
     currentStep,
     setUserName,
     setUserEmail,
@@ -36,7 +36,7 @@ function Onboarding(props) {
         team={team}
         setUserName={setUserName}
         setUserEmail={setUserEmail}
-        onSetupStep={onSetupStep}
+        onNext={onNext}
         currentStep={currentStep}
         stepsHandlers={stepsHandlers}
       />

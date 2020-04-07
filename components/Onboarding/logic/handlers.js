@@ -1,5 +1,6 @@
 import { userConfig } from 'utils/store';
 import withDebounce from 'utils/withDebounce';
+import Router from 'next/router';
 
 const fetchAddUser = function (data) {
   return fetch(`${process.env.SOCCERIT_SERVICES}/addUser/`, {
@@ -24,36 +25,37 @@ module.exports = {
       userConfig.userSetup.userEmail = email;
     }, currentEmail);
   },
-  addUser: () => fetchAddUser,
-  onSetupStep: ({ userSetup, isLoading, currentStep, setCurrentStep, setIsLoading, addUser }) => (
-    e
-  ) => {
-    e.preventDefault();
+  addUser: ({ userSetup, setIsLoading, isLoading }) => () => {
+    if (isLoading) return;
+    setIsLoading(true);
 
     const { userName, userEmail, team } = userSetup;
 
+    return fetchAddUser({
+      name: userName,
+      email: userEmail,
+      team: team.id,
+      notificationTokens: userSetup.notificationTokens
+    });
+  },
+  onNext: ({ userSetup, currentStep, addUser, setIsLoading }) => (e) => {
+    e.preventDefault();
+    const { userName, userEmail } = userSetup;
+
     if (currentStep === 'askName' && userName) {
-      setCurrentStep('askContact');
+      Router.push(`/app/onboarding/dados-de-contato`);
     }
 
     if (currentStep === 'askContact' && userEmail) {
-      if (isLoading) {
-        return;
-      }
-
-      setIsLoading(true);
-
-      addUser({
-        name: userName,
-        email: userEmail,
-        team: team.id,
-        notificationTokens: userSetup.notificationTokens
-      })
+      addUser()
         .then(() => {
           setIsLoading(false);
-          setCurrentStep('done');
+          Router.push(`/app/onboarding/sucesso`);
         })
-        .catch(console.log);
+        .catch(err => {
+          setIsLoading(false);
+          console.log(err)
+        });
     }
   }
 };

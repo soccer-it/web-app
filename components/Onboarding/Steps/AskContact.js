@@ -7,7 +7,7 @@ import AskForPush from 'components/AskForPush';
 import { stepContent } from '../Onboarding.scss';
 import { title, subtitle, paragraph, field } from './Steps.scss';
 
-export default function AskContact({ userName, setUserEmail, userEmail, onSetupStep }) {
+export default function AskContact({ userName, setUserEmail, userEmail, onNext }) {
   return (
     <>
       <AskForPush />
@@ -28,7 +28,7 @@ export default function AskContact({ userName, setUserEmail, userEmail, onSetupS
           />
         </div>
       </div>
-      <FormControl onNext={onSetupStep} onPrev={(f) => f} />
+      <FormControl onNext={onNext} onPrev={(f) => f} />
     </>
   );
 }

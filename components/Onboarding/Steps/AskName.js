@@ -1,11 +1,14 @@
 // Style
+import withDebounce from 'utils/withDebounce';
+
+// Styles
 import { stepContent } from '../Onboarding.scss';
 import { title, banner, field } from './Steps.scss';
 
 // Components
 import FormControl from 'components/FormControl';
 
-export default function AskName({ userName, setUserName, team, onSetupStep }) {
+export default function AskName({ userName, setUserName, team, onNext }) {
   return (
     <>
       <div className={stepContent}>
@@ -20,7 +23,13 @@ export default function AskName({ userName, setUserName, team, onSetupStep }) {
           <label htmlFor="#userName">Como podemos te chamar?</label>
           <input
             defaultValue={userName}
-            onChange={setUserName}
+            onChange={(e) => {
+              e.persist();
+              e.preventDefault();
+              withDebounce((name) => {
+                () => setUserName(e);
+              }, e.target.value);
+            }}
             type="text"
             name="userName"
             id="userName"
@@ -28,7 +37,7 @@ export default function AskName({ userName, setUserName, team, onSetupStep }) {
           />
         </div>
       </div>
-      <FormControl onNext={onSetupStep} onPrev={f => f} />
+      <FormControl onNext={onNext} onPrev={(f) => f} />
     </>
   );
 }
