@@ -14,12 +14,10 @@ export default function useEmailValidation({ onFieldChange }) {
   function handleEmailChange(e) {
     e.persist();
     e.preventDefault();
-
-    withDebounce((email) => {
-      () => onFieldChange(email);
-      const emailValidation = checkEmail(email);
-      setEmailError(emailValidation.error);
-    }, e.target.value);
+    const email = e.target.value;
+    onFieldChange(email);
+    const emailValidation = checkEmail(email);
+    setEmailError(emailValidation.error);
   }
 
   return {

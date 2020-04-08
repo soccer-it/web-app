@@ -45,6 +45,7 @@ module.exports = {
       Router.push(`/app/onboarding/dados-de-contato`);
     }
 
+    debugger;
     if (currentStep === 'askContact' && userEmail) {
       addUser()
         .then(() => {
