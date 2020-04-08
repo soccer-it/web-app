@@ -6,6 +6,7 @@ import { title, banner, field } from './Steps.scss';
 
 // Components
 import FormControl from 'components/FormControl';
+import PlaceholderShirt from 'components/PlaceholderShirt';
 
 export default function AskName({ userName, setUserName, team, onNext }) {
   return (
@@ -13,6 +14,7 @@ export default function AskName({ userName, setUserName, team, onNext }) {
       <div className={stepContent}>
         <figure className={banner}>
           <img src={team.images.shirt} alt={`camisa ${team.name}`} />
+          <PlaceholderShirt />
         </figure>
         <h1 className={title}>
           boas vindas para um fã do time{` `}
