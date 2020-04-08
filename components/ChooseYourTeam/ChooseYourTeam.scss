@@ -70,18 +70,29 @@
 }
 
 .singleResult {
-  display: block;
   width: 33.3%;
+  height: 150px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   color: black;
   text-align: center;
-  padding: 16px 0;
+  padding: 16px;
   font-size: 15px;
   font-weight: bold;
 
   img {
     display: block;
     margin: 0 auto 18px;
-    max-width: 76px;
+    width: 70px;
+    height: 70px;
+  }
+
+  span {
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: lowercase;
   }
 }
 
