@@ -1,5 +1,8 @@
 import classNames from 'classnames';
 
+// Components
+import PlaceholderShirt from 'components/PlaceholderShirt'
+
 // Styles
 import { banner, teamTitle, teamClass, actived } from './SingleTeam.scss';
 
@@ -18,6 +21,7 @@ export default function SingleTeam({ team, setupTeam, activeSlide }) {
     >
       <figure className={banner}>
         <img src={shirt} alt={`Ícone representando a camisa do ${name}`} />
+        <PlaceholderShirt />
       </figure>
       <h1 className={teamTitle}>{name}</h1>
     </article>

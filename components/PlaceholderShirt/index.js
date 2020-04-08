@@ -1,8 +1,11 @@
 import React from 'react';
 
+// Styles
+import { placeholderShirt } from './PlaceholderShirt.scss'
+
 function PlaceholderShirt() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 240 204.75">
+    <svg className={placeholderShirt} xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 240 204.75">
       <path
         d="M153.37,6.36,142.78.81a7,7,0,1,0-6.57,12.41l10.6,5.55a6.79,6.79,0,0,0,3.28.79,7,7,0,0,0,3.28-13.2"
         transform="translate(0 0)"

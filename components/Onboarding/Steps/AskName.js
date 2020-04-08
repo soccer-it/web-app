@@ -17,7 +17,7 @@ export default function AskName({ userName, setUserName, team, onNext }) {
           <PlaceholderShirt />
         </figure>
         <h1 className={title}>
-          boas vindas para um fã do time{` `}
+          boas vindas para um fã <br /> do {` `}
           <strong>{team.alias}</strong>
         </h1>
         <div className={field}>
