@@ -1,3 +1,5 @@
+import Router from 'next/router';
+
 // Components
 import EmailField from 'components/EmailField';
 import FormControl from 'components/FormControl';
@@ -27,7 +29,7 @@ export default function AskContact({ userName, setUserEmail, userEmail, onNext }
           />
         </div>
       </div>
-      <FormControl onNext={onNext} onPrev={(f) => f} />
+      <FormControl onNext={onNext} onPrev={() => Router.push('/app/onboarding/dados-pessoais')} />
     </>
   );
 }

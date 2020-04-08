@@ -1,3 +1,5 @@
+import Router from 'next/router';
+
 // Styles
 import { stepContent } from '../Onboarding.scss';
 import { title, banner, field } from './Steps.scss';
@@ -28,7 +30,7 @@ export default function AskName({ userName, setUserName, team, onNext }) {
           />
         </div>
       </div>
-      <FormControl onNext={onNext} onPrev={(f) => f} />
+      <FormControl onNext={onNext} onPrev={() => Router.push('/app/escolha-seu-time/')} />
     </>
   );
 }
