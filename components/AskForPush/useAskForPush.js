@@ -1,7 +1,10 @@
+import { useState, useEffect } from 'react';
+
+// Utils
 import initFirebase from 'utils/init-firebase';
 import showNotification from 'utils/showNotification';
 import { userConfig } from 'utils/store';
-import { useState, useEffect } from 'react';
+import isPushSuported from 'utils/isPushSuported';
 
 export default function useAskForPush() {
   const [active, setActive] = useState(!userConfig.userSetup.notificationTokens);
@@ -13,22 +16,23 @@ export default function useAskForPush() {
   }
 
   useEffect(() => {
-    const firebase = initFirebase();
+    if (isPushSuported()) {
+      const firebase = initFirebase();
+      firebase.messaging.onMessage(({ notification }) => {
+        const title = notification.title;
+        const options = {
+          body: notification.body,
+          icon: ''
+        };
 
-    firebase.messaging.onMessage(({ notification }) => {
-      const title = notification.title;
-      const options = {
-        body: notification.body,
-        icon: ''
-      };
-
-      showNotification({
-        title,
-        options
+        showNotification({
+          title,
+          options
+        });
       });
-    });
 
-    setFirebaseConfig(firebase);
+      setFirebaseConfig(firebase);
+    }
   }, []);
 
   function onRequestPermission() {
