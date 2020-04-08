@@ -8,15 +8,17 @@ import FormControl from 'components/FormControl';
 import { stepContent } from '../Onboarding.scss';
 import { title, subtitle, paragraph, field } from './Steps.scss';
 
-export default function AskContact({ userName, setUserEmail, userEmail, onNext }) {
+export default function AskContact({ userName, setUserEmail, userEmail, onNext, team }) {
+  const { alias } = team
+  console.log(alias);
+  
   return (
     <>
-      
       <div className={stepContent}>
         <h1 className={title}>bem-vindo, {userName}!</h1>
-        <h2 className={subtitle}>topa receber as últimas notícias sobre o furacão?</h2>
+        <h2 className={subtitle}>topa receber as últimas notícias sobre o {alias}?</h2>
         <p className={paragraph}>
-          estamos construindo um app muito foda! Enquanto isso, deixe seu email com a gente aí pô.
+          estamos construindo um serviço muito foda! Enquanto não fica pronto, deixe seu email aí com a gente!
         </p>
         <div>
           <EmailField
@@ -29,7 +31,11 @@ export default function AskContact({ userName, setUserEmail, userEmail, onNext }
           />
         </div>
       </div>
-      <FormControl onNext={onNext} onPrev={() => Router.push('/app/onboarding/dados-pessoais')} />
+      <FormControl
+        onNext={onNext}
+        onPrev={() => Router.push('/app/onboarding/dados-pessoais')}
+        nextLabel={'inscrever-se'}
+      />
     </>
   );
 }

@@ -6,7 +6,7 @@ import Loader from 'components/Loader';
 
 // Styles
 import { step, stepWrapper } from '../Onboarding.scss';
-import { enter, enterDone } from './Steps.scss';
+import { enter, enterDone, exitDone } from './Steps.scss';
 
 export default function Steps({
   triggerMotion,
@@ -28,11 +28,11 @@ export default function Steps({
           timeout={300}
           transitionentertimeout={500}
           transitionexittimeout={500}
-          unmountOnExit
           mountOnEnter
           classNames={{
             enter: enter,
-            enterDone: enterDone
+            enterDone: enterDone,
+            exitDone: exitDone
           }}
         >
           <div className={stepWrapper}>
