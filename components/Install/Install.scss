@@ -1,0 +1,38 @@
+.install {
+  display: flex;
+  align-items: center;
+  background-color: var(--base-content-color);
+  padding: 20px 10px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin: 0 15px 0 5px;
+  fill: var(--base-theme-color);
+}
+
+.title {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: var(--base-theme-color);
+}
+
+.text {
+  font-size: 12px;
+  line-height: 16px;
+  padding-right: 30px;
+  display: inline-flex;
+  color: var(--base-theme-color);
+}
+
+.buttonInstall {
+  background-color: var(--base-theme-color);
+  color: var(--base-content-color);
+  padding: 10px 10px;
+  line-height: 14px;
+  border-radius: 35px;
+  font-size: 14px;
+  font-weight: bold;
+}

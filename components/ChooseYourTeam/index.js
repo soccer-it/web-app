@@ -11,6 +11,7 @@ import Icon from 'components/Icon';
 import SearchWrapper from 'components/SearchWrapper';
 import ThumbSlider from 'components/ThumbSlider';
 import TeamsList from 'components/TeamsList';
+import Install from 'components/Install';
 
 // Style
 import {
@@ -53,6 +54,7 @@ function ChooseYourTeam(props) {
     <>
       <SearchWrapper singleResult={SingleResult} />
       <div className={chooseYourTeam}>
+        <Install />
         <div className={topBar}>
           <h1 className={title}>escolha seu time</h1>
           <a className={searchLink} href="#" onClick={activeSearch}>
