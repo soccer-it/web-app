@@ -54,7 +54,7 @@ function ChooseYourTeam(props) {
     <>
       <SearchWrapper singleResult={SingleResult} />
       <div className={chooseYourTeam}>
-        <Install />
+        {/* <Install /> */}
         <div className={topBar}>
           <h1 className={title}>escolha seu time</h1>
           <a className={searchLink} href="#" onClick={activeSearch}>
