@@ -25,6 +25,10 @@
   @media (min-width: 412px) {
     font-size: 30px;
   }
+
+  @media (max-height: 650px) {
+    font-size: 20px;
+  }
 }
 
 .searchLink {
@@ -45,6 +49,10 @@
   @media (min-width: 412px) {
     font-size: 25px;
   }
+
+  @media (max-height: 650px) {
+    font-size: 16px;
+  }
 }
 
 .linkIcon {
@@ -55,6 +63,11 @@
   height: 20px;
   margin: 0 10px;
   fill: var(--base-content-color);
+
+  @media (max-height: 650px) {
+    width: 15px;
+    height: 15px;
+  }
 }
 
 .searchLink {
@@ -65,6 +78,11 @@
       width: 24px;
       height: 24px;
       fill: var(--base-content-color);
+
+      @media (max-height: 650px) {
+        width: 17px;
+        height: 17px;
+      }
     }
   }
 }

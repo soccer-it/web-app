@@ -14,9 +14,10 @@
   transition-delay: 0.2s;
   opacity: 0;
 
-  @media (max-height: 600px) {
+  @media (max-height: 650px) {
     width: 120px;
     height: 120px;
+    margin-top: 0;
   }
 }
 
@@ -36,6 +37,10 @@
   // TODO: Passar todos os 425 para um arquivo de variáveis
   @media (min-width: 412px) {
     font-size: 52px;
+  }
+
+  @media (max-height: 650px) {
+    font-size: 28px;
   }
 }
 

@@ -2,7 +2,15 @@
   display: flex;
   align-items: center;
   background-color: var(--base-content-color);
-  padding: 20px 10px;
+  padding: 30px 10px;
+
+  @media (max-height: 700px) {
+    padding: 20px 10px;
+  }
+
+  @media (max-height: 600px) {
+    padding: 15px 10px;
+  }
 }
 
 .icon {
@@ -17,6 +25,10 @@
   margin-bottom: 5px;
   font-size: 14px;
   color: var(--base-theme-color);
+
+  @media (max-height: 650px) {
+    font-size: 12px;
+  }
 }
 
 .text {
@@ -25,6 +37,10 @@
   padding-right: 30px;
   display: inline-flex;
   color: var(--base-theme-color);
+
+  @media (max-height: 650px) {
+    font-size: 11px;
+  }
 }
 
 .buttonInstall {

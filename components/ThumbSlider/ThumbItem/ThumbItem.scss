@@ -6,7 +6,7 @@
   flex-shrink: 0;
   padding: 15px 7px;
 
-  // TODO: Passar todos os 425 para um arquivo de variáveis
+  // TODO: Passar todos os 412 para um arquivo de variáveis
   @media (min-width: 412px) {
     padding: 15px 8px;
   }
@@ -21,7 +21,7 @@
   justify-content: center;
 
   &:before {
-    content: '';
+    content: "";
     width: 100%;
     height: 100%;
     position: absolute;
@@ -48,25 +48,22 @@
       font-size: 16px;
     }
   }
-}
 
-// :global {
-//   .swiper-slide-active {
-//     height: 120px;
-//     &:before {
-//       opacity: 1;
-//     }
-//     p {
-//       color: var(--base-theme-color)
-//     }
-//   }
-// }
+  @media (max-height: 650px) {
+    height: 80px;
+  }
+}
 
 .selected {
   &:before {
     transform: scaleY(1.3) scaleX(1.1);
     opacity: 1;
     border-radius: 13px;
+
+    // TODO: Passar todos os 650 para um arquivo de variáveis
+    @media (max-height: 650px) {
+      transform: scaleY(1.2) scaleX(1.1);
+    }
   }
   p {
     color: var(--base-theme-color);
