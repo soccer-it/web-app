@@ -30,7 +30,7 @@
     "next-eslint": "^0.0.4",
     "next-offline": "^4.0.6",
     "next-server": "9.0.5",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "now": "^16.7.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "request": "^2.88.0",
